@@ -8,7 +8,7 @@ The site for you to check out if you're too lazy to read through my resume
 
 Come see it for yourself!
 
-[Personal Website](www.aaronj.in)
+[Personal Website](https://www.aaronj.in/)
 
 Technologies used: JavaScript, React, Tailwind, Next.js
 
