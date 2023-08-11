@@ -44,9 +44,9 @@ export default function Home() {
             ref={desc}
             className="text-sm tablet:text-base p-1 tablet:p-2 w-full"
           >
-            I'm an undergrad at Stanford studying Computer Science and Data
-            Science. I'm passionate about tackling challenges in the spheres of
-            product, data, and business.
+            I&apos;m an undergrad at Stanford studying Computer Science and Data
+            Science. I&apos;m passionate about tackling challenges in the
+            spheres of product, data, and business.
           </h1>
         </div>
         <div className="tablet:flex hidden">

@@ -54,8 +54,8 @@ export default function Projects() {
               ref={desc}
               className="text-sm tablet:text-base p-1 tablet:p-2 text-bold w-full"
             >
-              I like building for fun. Here are some cool creations that I've
-              been working on.
+              I like building for fun. Here are some cool creations that
+              I&apos;ve been working on.
             </h1>
           </div>
         </div>

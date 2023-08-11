@@ -117,10 +117,10 @@ export default function About() {
               className="text-sm tablet:text-base p-1 tablet:p-2 text-bold w-full"
             >
               I love building and delivering products that are user-focused. In
-              the past, I've created user-facing products solo, with lean
-              start-ups, and in big corporations. I'm also passionate about the
-              research between ML and human biology, strategy consulting, and
-              playing the oboe.
+              the past, I&apos;ve created user-facing products solo, with lean
+              start-ups, and in big corporations. I&apos;m also passionate about
+              the research between ML and human biology, strategy consulting,
+              and playing the oboe.
             </h2>
           </div>
         </div>
@@ -278,8 +278,8 @@ export default function About() {
               </p>
 
               <p className="text-sm tablet:text-base mt-3">
-                &bull; Spearheaded product strategy for Typed's U.S. market team
-                by identifying and addressing user pain points related to
+                &bull; Spearheaded product strategy for Typed&apos;s U.S. market
+                team by identifying and addressing user pain points related to
                 mobile-to-web sign-ups, collaborating closely with its
                 engineering and design teams, and achieving a significant 40%
                 decrease in drop-off rates.
@@ -314,7 +314,7 @@ export default function About() {
               className="font-bold tablet:font-normal text-sm tablet:text-base"
               ref={outside}
             >
-              Outside of the classroom, I'm...
+              Outside of the classroom, I&apos;m...
             </div>
 
             <div
@@ -323,7 +323,8 @@ export default function About() {
             >
               <p>
                 <span className="font-bold">
-                  a bioinformatics research assistant at Stanford Medicine's{" "}
+                  a bioinformatics research assistant at Stanford
+                  Medicine&apos;s{" "}
                   <a
                     href="https://ajglab.org/"
                     target="_blank"
@@ -334,8 +335,9 @@ export default function About() {
                   </a>
                 </span>
                 <span className={theme === "dark" ? "opacity-50" : ""}>
-                  , where I've analyzed, visualized, and deconvoluted complex
-                  RNA datasets to effectively treat chemo-resistant cancers.
+                  , where I&apos;ve analyzed, visualized, and deconvoluted
+                  complex RNA datasets to effectively treat chemo-resistant
+                  cancers.
                 </span>
               </p>
             </div>
@@ -357,7 +359,7 @@ export default function About() {
                   </a>
                 </span>
                 <span className={theme === "dark" ? "opacity-50" : ""}>
-                  , where I've organized and facilitated{" "}
+                  , where I&apos;ve organized and facilitated{" "}
                   <a
                     href="https://shift.stanford.edu/healthai/"
                     target="_blank"
@@ -388,8 +390,8 @@ export default function About() {
                   </a>
                 </span>
                 <span className={theme === "dark" ? "opacity-50" : ""}>
-                  , where I've served clients like Microsoft and Typed for M&A
-                  and GTM strategy.
+                  , where I&apos;ve served clients like Microsoft and Typed for
+                  M&amp;A and GTM strategy.
                 </span>
               </p>
             </div>
@@ -411,8 +413,8 @@ export default function About() {
                   </a>
                 </span>
                 <span className={theme === "dark" ? "opacity-50" : ""}>
-                  , where I've united the Korean student community and showcased
-                  Korean culture to Stanford through dynamic events.
+                  , where I&apos;ve united the Korean student community and
+                  showcased Korean culture to Stanford through dynamic events.
                 </span>
               </p>
             </div>
@@ -434,7 +436,8 @@ export default function About() {
                   </a>
                 </span>
                 <span className={theme === "dark" ? "opacity-50" : ""}>
-                  , where I've spearheaded all things media and online presence.
+                  , where I&apos;ve spearheaded all things media and online
+                  presence.
                 </span>
               </p>
             </div>
@@ -456,8 +459,8 @@ export default function About() {
                   </a>
                 </span>
                 <span className={theme === "dark" ? "opacity-50" : ""}>
-                  , where I've been able to step back from academics and tap
-                  into what brings me the most joy.
+                  , where I&apos;ve been able to step back from academics and
+                  tap into what brings me the most joy.
                 </span>
               </p>
             </div>
@@ -479,7 +482,7 @@ export default function About() {
                   </a>
                 </span>
                 <span className={theme === "dark" ? "opacity-50" : ""}>
-                  , where I've been dabbling with entrepreneurship.
+                  , where I&apos;ve been dabbling with entrepreneurship.
                 </span>
               </p>
             </div>
@@ -645,7 +648,7 @@ export default function About() {
             <p className="text-sm tablet:text-base">
               <p>
                 Music has always been the way for me to express myself when
-                words couldn't. I love playing the{" "}
+                words couldn&apos;t. I love playing the{" "}
                 <a
                   href="https://youtu.be/DAcQVU2A1uw"
                   target="_blank"
@@ -657,8 +660,8 @@ export default function About() {
                 and performing solos at concert halls.
               </p>
               <p className="pt-2">
-                More recently, I've been having fun building personal web and
-                mobile applications. I'm always intrigued by the latest
+                More recently, I&apos;ve been having fun building personal web
+                and mobile applications. I&apos;m always intrigued by the latest
                 breakthroughs in life sciences and biotech. To keep things
                 balanced and energized, I make it a point to hit the gym every
                 day.
