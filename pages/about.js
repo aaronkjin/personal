@@ -87,8 +87,9 @@ export default function About() {
             <p className="text-sm tablet:text-base mt-3">
               &bull; Utilized R, Excel, and Google Analytics to construct
               comprehensive financial models, facilitating cash flow analysis
-              and informing growth-hack strategies, scaling measures, and
-              organic marketing initiatives for new user acquisition.
+              and leading cross-functional teams in developing growth-hack
+              strategies, scaling measures, and organic marketing initiatives
+              for new user acquisition.
             </p>
           </div>
         </div>
@@ -370,16 +371,16 @@ export default function About() {
 
           <div className="text-sm tablet:text-base mt-1 laptop:mt-3">
             <div>
-              CS 111
+              CS 221
               <span className={theme === "dark" ? "opacity-50" : ""}>
-                : Operating Systems Principles
+                : Artificial Intelligence
               </span>
             </div>
 
             <div>
-              MS&E 265
+              CS 177
               <span className={theme === "dark" ? "opacity-50" : ""}>
-                : Intro to Product Management
+                : Human-Centered Product Management
               </span>
             </div>
 
