@@ -60,6 +60,16 @@ export default function Projects() {
 
           <div>
             <WorkCard
+              key="Bonsai"
+              img="/images/bonsai.png"
+              name="Bonsai"
+              description="An iOS app for personal expense management. Built with Swift and SwiftUI."
+              onClick={() => window.open("https://github.com/aaronkjin/bonsai")}
+            />
+          </div>
+
+          <div>
+            <WorkCard
               key="PlaceX"
               img="/images/placex.png"
               name="PlaceX"
