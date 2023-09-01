@@ -40,8 +40,56 @@ export default function About() {
       </div>
 
       <div className="grid tablet:grid-cols-1 p-2 gap-4">
-        {/* Wagyu.ai */}
+        {/* NoRamp */}
         <div className="flex flex-col tablet:flex-row">
+          {/* Left Side */}
+          <div className="w-full tablet:w-1/3">
+            <p className="font-bold text-lg tablet:text-2xl">NoRamp</p>
+            <p
+              className={`text-sm tablet:text-base ${
+                theme === "dark" ? "opacity-50" : ""
+              }`}
+            >
+              Software Engineer Intern
+            </p>
+            <p
+              className={`text-sm tablet:text-base ${
+                theme === "dark" ? "opacity-50" : ""
+              }`}
+            >
+              Sep 2023 &mdash; Present
+            </p>
+          </div>
+          {/* Right Side */}
+          <div className="w-full tablet:w-2/3">
+            <p className="text-sm tablet:text-base">
+              &bull; Developed an end-to-end mobile app using React Native,
+              TypeScript, Next.js, and Nest.js to facilitate seamless purchases
+              of digital items using fiat money, create a bridge between
+              traditional online shopping and digital assets, and deliver a
+              user-friendly checkout experience.
+            </p>
+
+            <p className="text-sm tablet:text-base mt-3">
+              &bull; Spearheaded various engineering initiatives within{" "}
+              <a
+                href="https://www.noramp.io/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline hover:no-underline"
+              >
+                NoRamp
+              </a>
+              , such as optimizing payment processing, enhancing security
+              measures, and improving platform performance to ensure a robust
+              and reliable digital asset marketplace and social network between
+              buyers and sellers.
+            </p>
+          </div>
+        </div>
+
+        {/* Wagyu.ai */}
+        <div className="flex flex-col tablet:flex-row mt-3 tablet:mt-5">
           {/* Left Side */}
           <div className="w-full tablet:w-1/3">
             <p className="font-bold text-lg tablet:text-2xl">Wagyu.ai</p>
@@ -57,7 +105,7 @@ export default function About() {
                 theme === "dark" ? "opacity-50" : ""
               }`}
             >
-              May 2023 &mdash; Present
+              May 2023 &mdash; Sep 2023
             </p>
           </div>
           {/* Right Side */}
@@ -106,7 +154,7 @@ export default function About() {
                 theme === "dark" ? "opacity-50" : ""
               }`}
             >
-              Software Engineering Intern
+              Software Engineer Intern
             </p>
             <p
               className={`text-sm tablet:text-base ${
@@ -168,7 +216,7 @@ export default function About() {
               >
                 Typed
               </a>
-              , a Series A document-based SaaS start-up, for entering the U.S.
+              , a Series A document-based SaaS start-up, on entering the U.S.
               market by conducting comprehensive market sizing, profitability,
               and CRM analytics, leading to the development of a targeted,
               bottoms-up GTM strategy.
@@ -378,9 +426,9 @@ export default function About() {
             </div>
 
             <div>
-              CS 177
+              CS 148
               <span className={theme === "dark" ? "opacity-50" : ""}>
-                : Human-Centered Product Management
+                : Computer Graphics and Imaging
               </span>
             </div>
 
@@ -392,9 +440,9 @@ export default function About() {
             </div>
 
             <div>
-              STATS 191
+              SYMSYS 1
               <span className={theme === "dark" ? "opacity-50" : ""}>
-                : Applied Statistics
+                : Minds & Machines
               </span>
             </div>
           </div>
