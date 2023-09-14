@@ -116,7 +116,7 @@ export default function About() {
             </p>
 
             <p className="text-sm tablet:text-base mt-3">
-              &bull; Developed a robust, end-to-end MVP mobile app with
+              &bull; Developed a robust, end-to-end mobile app with
               distinct, humanized AI personalities using React Native,
               JavaScript, Redux, Express, Firebase, Heroku, and OpenAI API
               integration, resulting in an intuitive, seamless user experience
