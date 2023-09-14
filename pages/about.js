@@ -63,15 +63,7 @@ export default function About() {
           {/* Right Side */}
           <div className="w-full tablet:w-2/3">
             <p className="text-sm tablet:text-base">
-              &bull; Developed an end-to-end mobile app using React Native,
-              TypeScript, Next.js, and Nest.js to facilitate seamless purchases
-              of digital items using fiat money, create a bridge between
-              traditional online shopping and digital assets, and deliver a
-              user-friendly checkout experience.
-            </p>
-
-            <p className="text-sm tablet:text-base mt-3">
-              &bull; Spearheaded various engineering initiatives within{" "}
+              &bull; Currently building and designing Prisim,{" "}
               <a
                 href="https://www.noramp.io/"
                 target="_blank"
@@ -80,10 +72,9 @@ export default function About() {
               >
                 NoRamp
               </a>
-              , such as optimizing payment processing, enhancing security
-              measures, and improving platform performance to ensure a robust
-              and reliable digital asset marketplace and social network between
-              buyers and sellers.
+              &apos;s premier mobile app and a social wallet marketplace for NFT
+              buyers and sellers, using React Native, TypeScript, Expo, Next,
+              and Nest.
             </p>
           </div>
         </div>
@@ -98,7 +89,7 @@ export default function About() {
                 theme === "dark" ? "opacity-50" : ""
               }`}
             >
-              Technical Product Manager
+              Software Engineer Intern
             </p>
             <p
               className={`text-sm tablet:text-base ${
@@ -120,16 +111,16 @@ export default function About() {
               >
                 Wagyu.ai
               </a>
-              , a pre-seed generative AI SaaS start-up, as the Founding
-              Technical Product Manager (SWE + PM), directly contributing to its
-              13k+ downloads, 6k+ MAUs, and 550k+ session screens.
+              , a pre-seed generative AI SaaS start-up, directly contributing to
+              its 13k+ downloads, 6k+ MAUs, and 550k+ session screens.
             </p>
 
             <p className="text-sm tablet:text-base mt-3">
-              &bull; Developed a robust, end-to-end MVP mobile application using
-              React Native, JavaScript, Redux, Express, Firebase, Heroku, and
-              OpenAI API integration, resulting in an intuitive, seamless user
-              experience and positive feedback from users.
+              &bull; Developed a robust, end-to-end MVP mobile app with
+              distinct, humanized AI personalities using React Native,
+              JavaScript, Redux, Express, Firebase, Heroku, and OpenAI API
+              integration, resulting in an intuitive, seamless user experience
+              and positive feedback from users.
             </p>
 
             <p className="text-sm tablet:text-base mt-3">
