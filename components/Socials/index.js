@@ -22,7 +22,7 @@ const Socials = ({ className }) => {
     {
       title: "Resume",
       icon: <AiFillFilePdf style={{ fontSize: "24px" }} />,
-      link: "/Aaron_Jin_Resume_A.pdf",
+      link: "/Aaron_Jin_Resume_App.pdf",
     },
     {
       title: "Email",
