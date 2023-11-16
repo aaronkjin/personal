@@ -96,7 +96,7 @@ export default function About() {
                 theme === "dark" ? "opacity-50" : ""
               }`}
             >
-              May 2023 &mdash; Sep 2023
+              Jun 2023 &mdash; Aug 2023
             </p>
           </div>
           {/* Right Side */}
