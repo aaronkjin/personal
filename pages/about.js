@@ -116,11 +116,11 @@ export default function About() {
             </p>
 
             <p className="text-sm tablet:text-base mt-3">
-              &bull; Developed a robust, end-to-end mobile app with
-              distinct, humanized AI personalities using React Native,
-              JavaScript, Redux, Express, Firebase, Heroku, and OpenAI API
-              integration, resulting in an intuitive, seamless user experience
-              and positive feedback from users.
+              &bull; Developed a robust, end-to-end mobile app with distinct,
+              humanized AI personalities using React Native, JavaScript, Redux,
+              Express, Firebase, Heroku, and OpenAI API integration, resulting
+              in an intuitive, seamless user experience and positive feedback
+              from users.
             </p>
 
             <p className="text-sm tablet:text-base mt-3">
@@ -410,30 +410,30 @@ export default function About() {
 
           <div className="text-sm tablet:text-base mt-1 laptop:mt-3">
             <div>
-              CS 221
+              CS 111
               <span className={theme === "dark" ? "opacity-50" : ""}>
-                : Artificial Intelligence
+                : Operating Systems
               </span>
             </div>
 
             <div>
-              CS 148
+              CS 270
               <span className={theme === "dark" ? "opacity-50" : ""}>
-                : Computer Graphics and Imaging
+                : Biomedical Systems
               </span>
             </div>
 
             <div>
-              CS 279
+              STATS 211
               <span className={theme === "dark" ? "opacity-50" : ""}>
-                : Computational Biology
+                : Statistical Meta-Research
               </span>
             </div>
 
             <div>
-              SYMSYS 1
+              COMM 172
               <span className={theme === "dark" ? "opacity-50" : ""}>
-                : Minds & Machines
+                : Media Psychology
               </span>
             </div>
           </div>
@@ -443,6 +443,13 @@ export default function About() {
           </div>
 
           <div className="text-sm tablet:text-base mt-1 laptop:mt-3">
+            <div>
+              CS 221
+              <span className={theme === "dark" ? "opacity-50" : ""}>
+                : Artificial Intelligence
+              </span>
+            </div>
+
             <div>
               CS 124
               <span className={theme === "dark" ? "opacity-50" : ""}>
@@ -454,6 +461,13 @@ export default function About() {
               CS 193X
               <span className={theme === "dark" ? "opacity-50" : ""}>
                 : Web Programming Fundamentals
+              </span>
+            </div>
+
+            <div>
+              CS 148
+              <span className={theme === "dark" ? "opacity-50" : ""}>
+                : Computer Graphics and Imaging
               </span>
             </div>
 
@@ -489,6 +503,13 @@ export default function About() {
               CS 103
               <span className={theme === "dark" ? "opacity-50" : ""}>
                 : Discrete Mathematics Theory
+              </span>
+            </div>
+
+            <div>
+              CS 279
+              <span className={theme === "dark" ? "opacity-50" : ""}>
+                : Computational Biology
               </span>
             </div>
 
