@@ -19,11 +19,11 @@ const Socials = ({ className }) => {
       icon: <AiFillGithub style={{ fontSize: "24px" }} />,
       link: "https://www.github.com/aaronkjin",
     },
-    {
-      title: "Resume",
-      icon: <AiFillFilePdf style={{ fontSize: "24px" }} />,
-      link: "/Aaron_Jin_Resume_App.pdf",
-    },
+    // {
+    //   title: "Resume",
+    //   icon: <AiFillFilePdf style={{ fontSize: "24px" }} />,
+    //   link: "/Aaron_Jin_Resume_App.pdf",
+    // },
     {
       title: "Email",
       icon: <AiFillMail style={{ fontSize: "24px" }} />,
