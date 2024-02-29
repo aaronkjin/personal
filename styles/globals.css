@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Open+Sans:wght@300;400;500;600;700;800&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "./markdown.css";
+
+* {
+  font-family: "Open Sans";
+}
+
+body {
+  @apply dark:bg-black dark:text-white;
+}
+
+/* Gradient circle - top variants */
+
+.gradient-circle {
+  position: absolute;
+  pointer-events: none;
+  /* z-index: 100; */
+  top: -40px;
+  height: 300px;
+  width: 100vw;
+  opacity: 0.35;
+  filter: blur(40px);
+  background: conic-gradient(
+    from 0deg,
+    rgba(124, 0, 255, 1),
+    rgba(88, 186, 239, 1),
+    rgba(230, 226, 168, 1),
+    rgba(230, 168, 218, 1),
+    rgba(124, 0, 255, 1)
+  );
+}
+
+.gradient-shadow:hover::before {
+  content: "";
+  /* z-index: -1; */
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(-45deg, #45caff 0%, #ff1b6b 100%);
+  transform: translate3d(0px, 20px, 0) scale(0.95);
+  filter: blur(20px);
+  opacity: var(0.7);
+  transition: opacity 0.3s;
+  border-radius: inherit;
+}
+
+/* 
+* Prevents issues when the parent creates a 
+* stacking context. (For example, using the transform
+* property )
+*/
+.gradient-shadow:hover::after {
+  content: "";
+  /* z-index: -1; */
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: inherit;
+  border-radius: inherit;
+}
+
+.gradient-strip {
+  top: 0;
+  position: fixed;
+  pointer-events: none;
+  /* z-index: 1; */
+  height: 40px;
+  width: 100vw;
+  background: rgba(18, 18, 18, 255);
+}
+
+.gradient-border {
+  border-radius: 15px;
+  border: 5px solid transparent;
+  background-clip: padding-box;
+  background-image: radial-gradient(
+    circle,
+    rgba(107, 248, 175, 0.2) 0%,
+    rgba(107, 107, 248, 0.2) 100%
+  );
+  padding: 2px;
+}
