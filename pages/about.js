@@ -40,6 +40,68 @@ export default function About() {
       </div>
 
       <div className="grid tablet:grid-cols-1 p-2 gap-4">
+        {/* Apple Safari */}
+        <div className="flex flex-col tablet:flex-row">
+          {/* Left Side */}
+          <div className="w-full tablet:w-1/3">
+            <p className="font-bold text-lg tablet:text-2xl">Apple</p>
+            <p
+              className={`text-sm tablet:text-base ${
+                theme === "dark" ? "opacity-50" : ""
+              }`}
+            >
+              Incoming Software Engineer Intern
+            </p>
+            <p
+              className={`text-sm tablet:text-base ${
+                theme === "dark" ? "opacity-50" : ""
+              }`}
+            >
+              Summer 2024
+            </p>
+          </div>
+          {/* Right Side */}
+          <div className="w-full tablet:w-2/3">
+            <p className="text-sm tablet:text-base">
+              &bull; Developing and enhancing Safari's search algorithm and UI,
+              utilizing Objective-C, C++, and Swift/SwiftUI components to
+              significantly improve search efficiency, accuracy, and UX.
+            </p>
+          </div>
+        </div>
+
+        {/* Apple Battery */}
+        <div className="flex flex-col tablet:flex-row">
+          {/* Left Side */}
+          <div className="w-full tablet:w-1/3">
+            <p className="font-bold text-lg tablet:text-2xl">Apple</p>
+            <p
+              className={`text-sm tablet:text-base ${
+                theme === "dark" ? "opacity-50" : ""
+              }`}
+            >
+              Incoming Software Engineer Intern
+            </p>
+            <p
+              className={`text-sm tablet:text-base ${
+                theme === "dark" ? "opacity-50" : ""
+              }`}
+            >
+              Spring 2024
+            </p>
+          </div>
+          {/* Right Side */}
+          <div className="w-full tablet:w-2/3">
+            <p className="text-sm tablet:text-base">
+              &bull; Designing and building key Battery Systems applications,
+              enhancing battery qualification processes across all Apple
+              products by using React, JavaScript, PHP, Django, and integrating
+              with MySQL databases to reinforce data integrity, scalability, and
+              maintainability.
+            </p>
+          </div>
+        </div>
+
         {/* NoRamp */}
         <div className="flex flex-col tablet:flex-row">
           {/* Left Side */}
@@ -182,61 +244,6 @@ export default function About() {
               systems to a unified, cloud-based system; reduced more than 50%
               company-wide paper use and improved overall workflow/efficiency by
               16%.
-            </p>
-          </div>
-        </div>
-
-        {/* Typed */}
-        <div className="flex flex-col tablet:flex-row mt-3 tablet:mt-5">
-          {/* Left Side */}
-          <div className="w-full tablet:w-1/3">
-            <p className="font-bold text-lg tablet:text-2xl">Typed</p>
-            <p
-              className={`text-sm tablet:text-base ${
-                theme === "dark" ? "opacity-50" : ""
-              }`}
-            >
-              Product Strategy Intern
-            </p>
-            <p
-              className={`text-sm tablet:text-base ${
-                theme === "dark" ? "opacity-50" : ""
-              }`}
-            >
-              Mar 2022 &mdash; Jun 2022
-            </p>
-          </div>
-          {/* Right Side */}
-          <div className="w-full tablet:w-2/3">
-            <p className="text-sm tablet:text-base">
-              &bull; Advised{" "}
-              <a
-                href="https://typed.do/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline hover:no-underline"
-              >
-                Typed
-              </a>
-              , a Series A document-based SaaS start-up, on entering the U.S.
-              market by conducting comprehensive market sizing, profitability,
-              and CRM analytics, leading to the development of a targeted,
-              bottoms-up GTM strategy.
-            </p>
-
-            <p className="text-sm tablet:text-base mt-3">
-              &bull; Spearheaded product strategy for Typed&apos;s U.S. market
-              team by identifying and addressing user pain points related to
-              mobile-to-web sign-ups, collaborating closely with its engineering
-              and design teams, and achieving a significant 40% decrease in
-              drop-off rates.
-            </p>
-
-            <p className="text-sm tablet:text-base mt-3">
-              &bull; Developed a comprehensive product-marketing roadmap that
-              boosted user acquisition through promotional events by 120%,
-              increased MAU retention turnover by 25%, and decreased churn rate
-              to 1.7%.
             </p>
           </div>
         </div>
