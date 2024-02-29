@@ -63,8 +63,8 @@ export default function About() {
           {/* Right Side */}
           <div className="w-full tablet:w-2/3">
             <p className="text-sm tablet:text-base">
-              &bull; Developing and enhancing Safari's search algorithm and UI,
-              utilizing Objective-C, C++, and Swift/SwiftUI components to
+              &bull; Developing and enhancing Safari&apos;s search algorithm and
+              UI, utilizing Objective-C, C++, and Swift/SwiftUI components to
               significantly improve search efficiency, accuracy, and UX.
             </p>
           </div>
