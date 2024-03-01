@@ -175,17 +175,9 @@ export default function About() {
           {/* Right Side */}
           <div className="w-full tablet:w-2/3">
             <p className="text-sm tablet:text-base">
-              &bull; Launched{" "}
-              <a
-                href="https://www.wagyu.ai/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline hover:no-underline"
-              >
-                Wagyu.ai
-              </a>
-              , a pre-seed generative AI SaaS start-up, directly contributing to
-              its 13k+ downloads, 6k+ MAUs, and 550k+ session screens.
+              &bull; Launched Wagyu.ai (now acquired), a pre-seed generative AI
+              SaaS start-up, directly contributing to its 13k+ downloads, 6k+
+              MAUs, and 550k+ session screens.
             </p>
 
             <p className="text-sm tablet:text-base mt-3">
