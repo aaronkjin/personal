@@ -406,6 +406,26 @@ export default function About() {
               </span>
             </p>
           </div>
+
+          <div className="text-sm tablet:text-base mt-3 laptop:mt-5">
+            <p>
+              <span className="font-bold">
+                a member of{" "}
+                <a
+                  href="https://www.stanfordacm.org/pokerTournament"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline hover:no-underline"
+                >
+                  Stanford Poker
+                </a>
+              </span>
+              <span className={theme === "dark" ? "opacity-50" : ""}>
+                , where I&apos;ve been intellectually stimulated by both
+                psychology and probability.
+              </span>
+            </p>
+          </div>
         </div>
 
         {/* Coursework - Right Column */}
