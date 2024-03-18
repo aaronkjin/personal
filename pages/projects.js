@@ -22,6 +22,7 @@ export default function Projects() {
         </div>
       </div>
 
+      {/* Einstein.ai */}
       <div className="mt-6 tablet:mt-10 laptop:mt-15 p-2 tablet:p-0">
         <div className="mt-6 tablet:mt-10 laptop:mt-15 pb-16 grid grid-cols-1 tablet:grid-cols-2">
           <div>
@@ -36,6 +37,33 @@ export default function Projects() {
             />
           </div>
 
+          {/* Mentore */}
+          <div>
+            <WorkCard
+              key="Mentore"
+              img="/images/mentore.png"
+              name="Mentore"
+              description="An LLM-integrated mentor-matching platform. Built with JavaScript, React, HTML/CSS, OpenAI, Firebase, Flask, and Python's various ML libraries."
+              onClick={() =>
+                window.open("https://github.com/aaronkjin/mentore")
+              }
+            />
+          </div>
+
+          {/* Longevity */}
+          <div>
+            <WorkCard
+              key="Longevity"
+              img="/images/longevity.png"
+              name="Longevity"
+              description="A system that suggests lifestyle habits for longer life, powered by OpenAI and trained on custom-made ontology. Built with TypeScript, React, Next, Tailwind, Python, and its various ML libraries."
+              onClick={() =>
+                window.open("https://github.com/aaronkjin/longevity")
+              }
+            />
+          </div>
+
+          {/* Modify */}
           <div>
             <WorkCard
               key="Modify"
@@ -46,6 +74,18 @@ export default function Projects() {
             />
           </div>
 
+          {/* Bonsai */}
+          <div>
+            <WorkCard
+              key="Bonsai"
+              img="/images/bonsai.png"
+              name="Bonsai"
+              description="An iOS app for personal expense management. Built with Swift and SwiftUI."
+              onClick={() => window.open("https://github.com/aaronkjin/bonsai")}
+            />
+          </div>
+
+          {/* Sumz.ai */}
           <div>
             <WorkCard
               key="Sumz"
@@ -58,16 +98,7 @@ export default function Projects() {
             />
           </div>
 
-          <div>
-            <WorkCard
-              key="Bonsai"
-              img="/images/bonsai.png"
-              name="Bonsai"
-              description="An iOS app for personal expense management. Built with Swift and SwiftUI."
-              onClick={() => window.open("https://github.com/aaronkjin/bonsai")}
-            />
-          </div>
-
+          {/* PlaceX */}
           <div>
             <WorkCard
               key="PlaceX"
@@ -80,6 +111,7 @@ export default function Projects() {
             />
           </div>
 
+          {/* Movie Recommender Chatbot */}
           <div>
             <WorkCard
               key="Movie Recommender Chatbot"
