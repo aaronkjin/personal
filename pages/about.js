@@ -57,7 +57,7 @@ export default function About() {
                 theme === "dark" ? "opacity-50" : ""
               }`}
             >
-              Summer 2024
+              Jun 2024 &mdash; Aug 2024
             </p>
           </div>
           {/* Right Side */}
@@ -71,7 +71,7 @@ export default function About() {
         </div>
 
         {/* Apple Battery */}
-        <div className="flex flex-col tablet:flex-row">
+        <div className="flex flex-col tablet:flex-row mt-3 tablet:mt-5">
           {/* Left Side */}
           <div className="w-full tablet:w-1/3">
             <p className="font-bold text-lg tablet:text-2xl">Apple</p>
@@ -80,30 +80,38 @@ export default function About() {
                 theme === "dark" ? "opacity-50" : ""
               }`}
             >
-              Incoming Software Engineer Intern
+              Software Engineer Intern
             </p>
             <p
               className={`text-sm tablet:text-base ${
                 theme === "dark" ? "opacity-50" : ""
               }`}
             >
-              Spring 2024
+              Mar 2024 &mdash; May 2024
             </p>
           </div>
           {/* Right Side */}
           <div className="w-full tablet:w-2/3">
             <p className="text-sm tablet:text-base">
-              &bull; Designing and building key Battery Systems applications,
-              enhancing battery qualification processes across all Apple
-              products by using React, JavaScript, PHP, Django, and integrating
-              with MySQL databases to reinforce data integrity, scalability, and
+              &bull; Built team&apos;s 1st API gateway using Kong for an
+              internal web app to test Battery Systems in Mac models, shifting
+              team&apos;s architecture to microservices, enhancing security with
+              JWTs, managing API traffic with rate limiting/load balancing, and
+              refining logging with Splunk.
+            </p>
+
+            <p className="text-sm tablet:text-base mt-3">
+              &bull; Enhanced the web app to support ETL feature extraction and
+              predictive modeling for battery performance forecasting, using
+              React, TypeScript, PHP, Python, and integrating with MySQL
+              databases to reinforce battery data integrity, scalability, and
               maintainability.
             </p>
           </div>
         </div>
 
         {/* NoRamp */}
-        <div className="flex flex-col tablet:flex-row">
+        <div className="flex flex-col tablet:flex-row mt-3 tablet:mt-5">
           {/* Left Side */}
           <div className="w-full tablet:w-1/3">
             <p className="font-bold text-lg tablet:text-2xl">NoRamp</p>
@@ -137,17 +145,13 @@ export default function About() {
               &apos;s new, rebranded landing page with React, TypeScript, and
               Tailwind, resulting in 380% more website traffic.
             </p>
+
             <p className="text-sm tablet:text-base mt-3">
-              &bull; Built Prisim, a unified mobile app and social wallet
-              marketplace for NFT buyers and sellers, using React Native,
-              TypeScript, Expo, Next, and Nest, to enable an instant, 1-click
-              checkout solution bridging traditional online shopping with
-              digital asset transactions.
-            </p>
-            <p className="text-sm tablet:text-base mt-3">
-              &bull; Spearheaded engineering initiatives within various teams,
-              such as optimizing payment processing and enhancing security
-              measures.
+              &bull; Built Prisim, a mobile app and social wallet marketplace
+              for NFT buyers and sellers, using React Native, TypeScript, Expo,
+              Next, and Nest, to enable an instant, 1-click checkout solution
+              for digital asset transactions, achieving 200+ beta users and 92%
+              positive reviews.
             </p>
           </div>
         </div>
@@ -184,16 +188,8 @@ export default function About() {
               &bull; Developed a robust, end-to-end mobile app with distinct,
               humanized AI personalities using React Native, JavaScript, Redux,
               Express, Firebase, Heroku, and OpenAI API integration, resulting
-              in an intuitive, seamless user experience and positive feedback
-              from users.
-            </p>
-
-            <p className="text-sm tablet:text-base mt-3">
-              &bull; Utilized R, Excel, and Google Analytics to construct
-              comprehensive financial models, facilitating cash flow analysis
-              and leading cross-functional teams in developing growth-hack
-              strategies, scaling measures, and organic marketing initiatives
-              for new user acquisition.
+              in an intuitive, seamless user experience and 225% increase in new
+              users.
             </p>
           </div>
         </div>
@@ -223,19 +219,19 @@ export default function About() {
           {/* Right Side */}
           <div className="w-full tablet:w-2/3">
             <p className="text-sm tablet:text-base">
-              &bull; Engineered an innovative audit-selecting program using
-              Python by leveraging data analysis techniques to optimize auditor
-              selection for pharmaceutical suppliers, resulting in the
-              significant streamlining of internal processes and the reduction
-              of operational costs by 12%.
+              &bull; Developed an effective audit-selecting program with Python,
+              leveraging data analysis techniques to optimize auditor selection
+              for pharmaceutical suppliers, which led to the significant
+              streamlining of internal processes and the reduction of
+              operational costs by 12%.
             </p>
 
             <p className="text-sm tablet:text-base mt-3">
               &bull; Streamlined AWS-driven data migration projects,
               transitioning 2k+ essential documents from outdated, separate
               systems to a unified, cloud-based system; reduced more than 50%
-              company-wide paper use and improved overall workflow/efficiency by
-              16%.
+              company-wide paper use, thereby improving overall
+              workflow/efficiency by 16%.
             </p>
           </div>
         </div>
