@@ -436,37 +436,10 @@ export default function About() {
 
           <div className="text-sm tablet:text-base mt-1 laptop:mt-3">
             <div>
-              CS 111
+              A gap quarter to work at Apple.
+              {/* CS 111 */}
               <span className={theme === "dark" ? "opacity-50" : ""}>
-                : Operating Systems
-              </span>
-            </div>
-
-            <div>
-              CS 224G
-              <span className={theme === "dark" ? "opacity-50" : ""}>
-                : LLM Applications
-              </span>
-            </div>
-
-            <div>
-              CS 270
-              <span className={theme === "dark" ? "opacity-50" : ""}>
-                : Biomedical Systems
-              </span>
-            </div>
-
-            <div>
-              STATS 211
-              <span className={theme === "dark" ? "opacity-50" : ""}>
-                : Statistical Meta-Research
-              </span>
-            </div>
-
-            <div>
-              COMM 172
-              <span className={theme === "dark" ? "opacity-50" : ""}>
-                : Media Psychology
+                {/* : Operating Systems */}
               </span>
             </div>
           </div>
@@ -480,6 +453,13 @@ export default function About() {
               CS 221
               <span className={theme === "dark" ? "opacity-50" : ""}>
                 : Artificial Intelligence
+              </span>
+            </div>
+
+            <div>
+              CS 224G
+              <span className={theme === "dark" ? "opacity-50" : ""}>
+                : LLM Applications
               </span>
             </div>
 
@@ -501,6 +481,13 @@ export default function About() {
               CS 148
               <span className={theme === "dark" ? "opacity-50" : ""}>
                 : Computer Graphics and Imaging
+              </span>
+            </div>
+
+            <div>
+              CS 111
+              <span className={theme === "dark" ? "opacity-50" : ""}>
+                : Operating Systems
               </span>
             </div>
 
@@ -547,9 +534,23 @@ export default function About() {
             </div>
 
             <div>
+              CS 270
+              <span className={theme === "dark" ? "opacity-50" : ""}>
+                : Biomedical Systems
+              </span>
+            </div>
+
+            <div>
               MATH 51
               <span className={theme === "dark" ? "opacity-50" : ""}>
                 : Linear Algebra & Multivariable Calculus
+              </span>
+            </div>
+
+            <div>
+              STATS 211
+              <span className={theme === "dark" ? "opacity-50" : ""}>
+                : Statistical Meta-Research
               </span>
             </div>
 
