@@ -436,9 +436,9 @@ export default function About() {
 
           <div className="text-sm tablet:text-base mt-1 laptop:mt-3">
             <div>
-              A gap quarter to work at Apple.
               {/* CS 111 */}
               <span className={theme === "dark" ? "opacity-50" : ""}>
+                A gap quarter to work at Apple.
                 {/* : Operating Systems */}
               </span>
             </div>
