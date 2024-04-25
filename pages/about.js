@@ -57,7 +57,7 @@ export default function About() {
                 theme === "dark" ? "opacity-50" : ""
               }`}
             >
-              Jun 2024 &mdash; Aug 2024
+              Summer 2024
             </p>
           </div>
           {/* Right Side */}
@@ -87,7 +87,7 @@ export default function About() {
                 theme === "dark" ? "opacity-50" : ""
               }`}
             >
-              Mar 2024 &mdash; May 2024
+              Mar 2024 &mdash; Present
             </p>
           </div>
           {/* Right Side */}
@@ -127,7 +127,7 @@ export default function About() {
                 theme === "dark" ? "opacity-50" : ""
               }`}
             >
-              Sep 2023 &mdash; Present
+              Sep 2023 &mdash; Feb 2024
             </p>
           </div>
           {/* Right Side */}
