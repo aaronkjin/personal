@@ -613,11 +613,10 @@ export default function About() {
               and performing solos at concert halls.
             </p>
             <p className="pt-2">
-              More recently, I&apos;ve been having fun building personal web and
-              mobile applications. I&apos;m always intrigued by the latest
-              breakthroughs in life sciences and biotech. To keep things
-              balanced and energized, I make it a point to hit the gym every
-              day.
+              More recently, I&apos;ve been having fun building web and native
+              apps. I&apos;m always intrigued by the latest breakthroughs in the
+              life sciences and biotech. To keep things balanced and energized,
+              I make it a point to hit the gym every day.
             </p>
           </p>
         </div>
