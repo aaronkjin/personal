@@ -19,7 +19,7 @@ export default function Home() {
         </h1>
         <h1 className="text-sm tablet:text-base p-1 tablet:p-2 w-full">
           I&apos;m an undergrad at Stanford studying Computer Science and
-          Applied Statistics. I&apos;m passionate about product engineering and growth engineering.
+          Applied Statistics. I&apos;m passionate about product engineering as well as growth engineering.
         </h1>
       </div>
       <div className="tablet:flex hidden">
