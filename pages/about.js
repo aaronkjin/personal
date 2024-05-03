@@ -63,10 +63,11 @@ export default function About() {
           {/* Right Side */}
           <div className="w-full tablet:w-2/3">
             <p className="text-sm tablet:text-base">
-              &bull; Will develop and enhance Safari&apos;s search algorithm and
-              UI, utilizing C++, Objective-C, iOS SDK, and Swift/SwiftUI
-              components to significantly improve search efficiency, accuracy,
-              and UX.
+              Will refine Safari&apos;s search algorithm and UI.
+            </p>
+
+            <p className="text-sm tablet:text-base mt-3">
+              C++, Objective-C, iOS SDK, Swift/SwiftUI components.
             </p>
           </div>
         </div>
@@ -94,19 +95,13 @@ export default function About() {
           {/* Right Side */}
           <div className="w-full tablet:w-2/3">
             <p className="text-sm tablet:text-base">
-              &bull; Built team&apos;s 1st API gateway using Kong for an
-              internal web app to test Battery Systems in Mac models, shifting
-              team&apos;s architecture to microservices, enhancing security with
-              JWTs, managing API traffic with rate limiting/load balancing, and
-              refining logging with Splunk.
+              Built the team&apos;s first API gateway for an internal web app
+              used to test battery systems in Macs. Enhanced the web app to
+              support ETL feature extraction.
             </p>
 
             <p className="text-sm tablet:text-base mt-3">
-              &bull; Enhanced the web app to support ETL feature extraction and
-              predictive modeling for battery performance forecasting, using
-              React, TypeScript, PHP, Python, and integrating with MySQL
-              databases to reinforce battery data integrity, scalability, and
-              maintainability.
+              React, TypeScript, PHP, Python, MySQL, Kong, Splunk.
             </p>
           </div>
         </div>
@@ -134,7 +129,7 @@ export default function About() {
           {/* Right Side */}
           <div className="w-full tablet:w-2/3">
             <p className="text-sm tablet:text-base">
-              &bull; Designed and developed{" "}
+              Developed{" "}
               <a
                 href="https://www.noramp.io/"
                 target="_blank"
@@ -143,16 +138,12 @@ export default function About() {
               >
                 NoRamp
               </a>
-              &apos;s new, rebranded landing page with React, TypeScript, and
-              Tailwind, resulting in 380% more website traffic.
+              &apos;s new, rebranded landing page. Built Prisim, a social wallet
+              marketplace for NFT buyers and sellers.
             </p>
 
             <p className="text-sm tablet:text-base mt-3">
-              &bull; Built Prisim, a mobile app and social wallet marketplace
-              for NFT buyers and sellers, using React Native, TypeScript, Expo,
-              Next, and Nest, to enable an instant, 1-click checkout solution
-              for digital asset transactions, achieving 200+ beta users and 92%
-              positive reviews.
+              React/React Native, TypeScript, Tailwind, Expo, Next.js, Nest.js.
             </p>
           </div>
         </div>
@@ -180,17 +171,13 @@ export default function About() {
           {/* Right Side */}
           <div className="w-full tablet:w-2/3">
             <p className="text-sm tablet:text-base">
-              &bull; Launched Wagyu.ai (now acquired), a pre-seed generative AI
-              SaaS start-up, directly contributing to its 13k+ downloads, 6k+
-              MAUs, and 550k+ session screens.
+              Launched Wagyu.ai (now acquired), a generative AI SaaS start-up.
+              Built a mobile app with distinct, humanized AI personalities.
             </p>
 
             <p className="text-sm tablet:text-base mt-3">
-              &bull; Developed a robust, end-to-end mobile app with distinct,
-              humanized AI personalities using React Native, JavaScript, Redux,
-              Express, Firebase, Heroku, and OpenAI API integration, resulting
-              in an intuitive, seamless user experience and 225% increase in new
-              users.
+              React Native, JavaScript, Redux, Express.js, Firebase, Heroku,
+              OpenAI API.
             </p>
           </div>
         </div>
@@ -220,19 +207,12 @@ export default function About() {
           {/* Right Side */}
           <div className="w-full tablet:w-2/3">
             <p className="text-sm tablet:text-base">
-              &bull; Developed an effective audit-selecting program with Python,
-              leveraging data analysis techniques to optimize auditor selection
-              for pharmaceutical suppliers, which led to the significant
-              streamlining of internal processes and the reduction of
-              operational costs by 12%.
+              Developed an audit-selecting program for pharmaceutical suppliers.
+              Streamlined legacy data migration projects.
             </p>
 
             <p className="text-sm tablet:text-base mt-3">
-              &bull; Streamlined AWS-driven data migration projects,
-              transitioning 2k+ essential documents from outdated, separate
-              systems to a unified, cloud-based system; reduced more than 50%
-              company-wide paper use, thereby improving overall
-              workflow/efficiency by 16%.
+              Python, AWS DataSync.
             </p>
           </div>
         </div>
