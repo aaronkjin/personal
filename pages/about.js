@@ -260,34 +260,6 @@ export default function About() {
           <div className="text-sm tablet:text-base mt-3 laptop:mt-5">
             <p>
               <span className="font-bold">
-                the Operations and Development Officer at{" "}
-                <a
-                  href="http://stanfordstudentsbiodesign.squarespace.com/#intro"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="underline hover:no-underline"
-                >
-                  Stanford Students in Biodesign
-                </a>
-              </span>
-              <span className={theme === "dark" ? "opacity-50" : ""}>
-                , where I&apos;ve organized and facilitated{" "}
-                <a
-                  href="https://shift.stanford.edu/healthai/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="underline hover:no-underline"
-                >
-                  CS 522
-                </a>
-                : AI in Healthcare.
-              </span>
-            </p>
-          </div>
-
-          <div className="text-sm tablet:text-base mt-3 laptop:mt-5">
-            <p>
-              <span className="font-bold">
                 a consultant at{" "}
                 <a
                   href="https://spba.sites.stanford.edu/"
@@ -299,8 +271,8 @@ export default function About() {
                 </a>
               </span>
               <span className={theme === "dark" ? "opacity-50" : ""}>
-                , where I&apos;ve served clients like Microsoft and Typed for
-                M&amp;A and GTM strategy.
+                , where I&apos;ve strategized M&amp;A and GTM cases for clients
+                like Microsoft and Typed.
               </span>
             </p>
           </div>
@@ -335,7 +307,7 @@ export default function About() {
                   rel="noopener noreferrer"
                   className="underline hover:no-underline"
                 >
-                  Sigma Chi
+                  Stanford Sigma Chi
                 </a>
               </span>
               <span className={theme === "dark" ? "opacity-50" : ""}>
@@ -432,57 +404,53 @@ export default function About() {
           <div className="text-sm tablet:text-base mt-1 laptop:mt-3">
             <div>
               CS 221
-              <span className={theme === "dark" ? "opacity-50" : ""}>
-                : Artificial Intelligence
-              </span>
+              <span className={theme === "dark" ? "opacity-50" : ""}>: AI</span>
             </div>
 
             <div>
               CS 224G
               <span className={theme === "dark" ? "opacity-50" : ""}>
-                : LLM Applications
+                : LLM Apps
               </span>
             </div>
 
             <div>
               CS 124
               <span className={theme === "dark" ? "opacity-50" : ""}>
-                : Natural Language Processing
+                : NLP
               </span>
             </div>
 
             <div>
               CS 193X
               <span className={theme === "dark" ? "opacity-50" : ""}>
-                : Web Programming Fundamentals
+                : Web Programming
               </span>
             </div>
 
             <div>
               CS 148
               <span className={theme === "dark" ? "opacity-50" : ""}>
-                : Computer Graphics and Imaging
+                : Computer Graphics
               </span>
             </div>
 
             <div>
               CS 111
-              <span className={theme === "dark" ? "opacity-50" : ""}>
-                : Operating Systems
-              </span>
+              <span className={theme === "dark" ? "opacity-50" : ""}>: OS</span>
             </div>
 
             <div>
               CS 107
               <span className={theme === "dark" ? "opacity-50" : ""}>
-                : Computer Systems & Organization
+                : Computer Systems
               </span>
             </div>
 
             <div>
               CS 106B
               <span className={theme === "dark" ? "opacity-50" : ""}>
-                : Data Structures & Algorithms
+                : DS&A
               </span>
             </div>
 
@@ -496,14 +464,14 @@ export default function About() {
             <div>
               CS 109
               <span className={theme === "dark" ? "opacity-50" : ""}>
-                : Probability Theory
+                : Probability
               </span>
             </div>
 
             <div>
               CS 103
               <span className={theme === "dark" ? "opacity-50" : ""}>
-                : Discrete Mathematics Theory
+                : Discrete Math
               </span>
             </div>
 
