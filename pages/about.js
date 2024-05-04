@@ -61,7 +61,7 @@ export default function About() {
             </p>
           </div>
           {/* Right Side */}
-          <div className="w-full tablet:w-2/3">
+          <div className="w-full tablet:w-2/3 mt-1.5">
             <p className="text-sm tablet:text-base">
               Will refine Safari&apos;s search algorithm and UI.
             </p>
@@ -93,7 +93,7 @@ export default function About() {
             </p>
           </div>
           {/* Right Side */}
-          <div className="w-full tablet:w-2/3">
+          <div className="w-full tablet:w-2/3 mt-1.5">
             <p className="text-sm tablet:text-base">
               Built the team&apos;s first API gateway for an internal web app
               used to test battery systems in Macs. Enhanced the web app to
@@ -127,7 +127,7 @@ export default function About() {
             </p>
           </div>
           {/* Right Side */}
-          <div className="w-full tablet:w-2/3">
+          <div className="w-full tablet:w-2/3 mt-1.5">
             <p className="text-sm tablet:text-base">
               Developed{" "}
               <a
@@ -169,7 +169,7 @@ export default function About() {
             </p>
           </div>
           {/* Right Side */}
-          <div className="w-full tablet:w-2/3">
+          <div className="w-full tablet:w-2/3 mt-1.5">
             <p className="text-sm tablet:text-base">
               Launched Wagyu.ai (now acquired), a generative AI SaaS start-up.
               Built a mobile app with distinct, humanized AI personalities.
@@ -205,7 +205,7 @@ export default function About() {
             </p>
           </div>
           {/* Right Side */}
-          <div className="w-full tablet:w-2/3">
+          <div className="w-full tablet:w-2/3 mt-1.5">
             <p className="text-sm tablet:text-base">
               Developed an audit-selecting program for pharmaceutical suppliers.
               Streamlined legacy data migration projects.
@@ -528,7 +528,7 @@ export default function About() {
       </div>
 
       {/* Home */}
-      <div className="mt-10 laptop:mt-15">
+      <div className="mt-6 tablet:mt-10 laptop:mt-15">
         <div className="w-full p-2">
           <h1 className="font-bold text-xs tablet:text-sm">@ Home</h1>
           <div
