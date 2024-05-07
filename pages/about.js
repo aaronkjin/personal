@@ -143,7 +143,7 @@ export default function About() {
             </p>
 
             <p className="text-sm tablet:text-base mt-3">
-              React/React Native, TypeScript, Tailwind, Expo, Next.js, Nest.js.
+              React/React Native, TypeScript, Tailwind, Expo, Web3.js, Next.js, Nest.js.
             </p>
           </div>
         </div>
