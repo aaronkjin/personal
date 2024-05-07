@@ -212,7 +212,7 @@ export default function About() {
             </p>
 
             <p className="text-sm tablet:text-base mt-3">
-              Python, SQL, AWS DataSync.
+              Python, SQL, AWS Lambda, AWS DataSync.
             </p>
           </div>
         </div>
