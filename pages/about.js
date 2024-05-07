@@ -101,7 +101,7 @@ export default function About() {
             </p>
 
             <p className="text-sm tablet:text-base mt-3">
-              React, TypeScript, PHP, Python, MySQL, Kong, Splunk.
+              React, TypeScript, PHP, Python, MySQL, Kong, Docker, Splunk.
             </p>
           </div>
         </div>
@@ -212,7 +212,7 @@ export default function About() {
             </p>
 
             <p className="text-sm tablet:text-base mt-3">
-              Python, AWS DataSync.
+              Python, SQL, AWS DataSync.
             </p>
           </div>
         </div>
