@@ -66,7 +66,7 @@ export default function About() {
               Will refine Safari&apos;s search algorithm and UI.
             </p>
 
-            <p className="text-sm tablet:text-base mt-3">
+            <p className="text-sm mt-3">
               C++, Objective-C, iOS SDK, Swift/SwiftUI components.
             </p>
           </div>
@@ -100,7 +100,7 @@ export default function About() {
               support ETL feature extraction.
             </p>
 
-            <p className="text-sm tablet:text-base mt-3">
+            <p className="text-sm mt-3">
               React, TypeScript, PHP, Python, MySQL, Nginx, Kong, Docker, Splunk.
             </p>
           </div>
@@ -142,7 +142,7 @@ export default function About() {
               marketplace for NFT buyers and sellers.
             </p>
 
-            <p className="text-sm tablet:text-base mt-3">
+            <p className="text-sm mt-3">
               React/React Native, TypeScript, Tailwind, Expo, Next.js, Nest.js.
             </p>
           </div>
@@ -175,7 +175,7 @@ export default function About() {
               Built a mobile app with distinct, humanized AI personalities.
             </p>
 
-            <p className="text-sm tablet:text-base mt-3">
+            <p className="text-sm mt-3">
               React Native, JavaScript, Redux, Express.js, Firebase, Heroku,
               OpenAI API.
             </p>
@@ -211,7 +211,7 @@ export default function About() {
               Streamlined legacy data migration projects.
             </p>
 
-            <p className="text-sm tablet:text-base mt-3">
+            <p className="text-sm mt-3">
               Python, SQL, AWS Lambda, AWS DataSync.
             </p>
           </div>
