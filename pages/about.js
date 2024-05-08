@@ -235,7 +235,7 @@ export default function About() {
       <div className="grid tablet:grid-cols-2 mt-2 p-2 w-full">
         {/* Extracurriculars - Left Column */}
         <div className="tablet:pr-10">
-          <div className="tablet:font-normal text-sm tablet:text-base">
+          <div className="text-sm tablet:text-base">
             Outside of the classroom, I&apos;m...
           </div>
 
@@ -381,7 +381,7 @@ export default function About() {
 
         {/* Coursework - Right Column */}
         <div className="tablet:pl-10">
-          <div className=" tablet:font-normal text-sm tablet:text-base mt-8 tablet:mt-0">
+          <div className="text-sm tablet:text-base mt-8 tablet:mt-0">
             In the classroom, I...
           </div>
 
