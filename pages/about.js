@@ -101,7 +101,8 @@ export default function About() {
             </p>
 
             <p className="text-sm tablet:text-base mt-3">
-              React, TypeScript, PHP, Python, MySQL, Nginx, Kong, Docker, Splunk.
+              React, TypeScript, PHP, Python, MySQL, Nginx, Kong, Docker,
+              Splunk.
             </p>
           </div>
         </div>
@@ -143,7 +144,8 @@ export default function About() {
             </p>
 
             <p className="text-sm tablet:text-base mt-3">
-              React/React Native, TypeScript, Tailwind, Expo, Web3.js, Next.js, Nest.js.
+              React/React Native, TypeScript, Tailwind, Expo, Web3.js, Next.js,
+              Nest.js.
             </p>
           </div>
         </div>
@@ -219,7 +221,7 @@ export default function About() {
       </div>
 
       {/* School */}
-      <div className="mt-6 tablet:mt-10 laptop:mt-15">
+      <div className="mt-8 tablet:mt-10 laptop:mt-15">
         <div className="w-full p-2">
           <h1 className="font-bold text-xs tablet:text-sm">@ School</h1>
           <div
@@ -233,7 +235,7 @@ export default function About() {
       <div className="grid tablet:grid-cols-2 mt-2 p-2 w-full">
         {/* Extracurriculars - Left Column */}
         <div className="tablet:pr-10">
-          <div className="font-bold tablet:font-normal text-sm tablet:text-base">
+          <div className="tablet:font-normal text-sm tablet:text-base">
             Outside of the classroom, I&apos;m...
           </div>
 
@@ -379,7 +381,7 @@ export default function About() {
 
         {/* Coursework - Right Column */}
         <div className="tablet:pl-10">
-          <div className="font-bold tablet:font-normal text-sm tablet:text-base mt-8 tablet:mt-0">
+          <div className=" tablet:font-normal text-sm tablet:text-base mt-8 tablet:mt-0">
             In the classroom, I...
           </div>
 
@@ -528,7 +530,7 @@ export default function About() {
       </div>
 
       {/* Home */}
-      <div className="mt-6 tablet:mt-10 laptop:mt-15">
+      <div className="mt-8 tablet:mt-10 laptop:mt-15">
         <div className="w-full p-2">
           <h1 className="font-bold text-xs tablet:text-sm">@ Home</h1>
           <div
