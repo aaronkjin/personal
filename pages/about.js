@@ -433,7 +433,7 @@ export default function About() {
             <div>
               CS 148
               <span className={theme === "dark" ? "opacity-50" : ""}>
-                : Computer Graphics
+                : Graphics
               </span>
             </div>
 
@@ -445,7 +445,7 @@ export default function About() {
             <div>
               CS 107
               <span className={theme === "dark" ? "opacity-50" : ""}>
-                : Computer Systems
+                : Systems
               </span>
             </div>
 
@@ -459,7 +459,7 @@ export default function About() {
             <div>
               CS 161
               <span className={theme === "dark" ? "opacity-50" : ""}>
-                : Advanced Algorithms
+                : Algorithm Design
               </span>
             </div>
 
@@ -480,7 +480,7 @@ export default function About() {
             <div>
               CS 279
               <span className={theme === "dark" ? "opacity-50" : ""}>
-                : Computational Biology
+                : Biocomputation
               </span>
             </div>
 
