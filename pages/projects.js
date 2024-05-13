@@ -99,7 +99,7 @@ export default function Projects() {
           </div>
 
           {/* PlaceX */}
-          <div>
+          {/* <div>
             <WorkCard
               key="PlaceX"
               img="/images/placex.png"
@@ -109,7 +109,7 @@ export default function Projects() {
                 window.open("https://github.com/aaronkjin/place-x")
               }
             />
-          </div>
+          </div> */}
 
           {/* Movie Recommender Chatbot */}
           <div>
