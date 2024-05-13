@@ -78,7 +78,7 @@ export default function Projects() {
               key="Longevity"
               img="/images/longevity.png"
               name="Longevity"
-              description="A system that suggests lifestyle habits for longer life, powered by OpenAI and trained on custom-made ontology. Built with TypeScript, React, Next, Tailwind, Python, and its various ML libraries."
+              description="A system that suggests lifestyle habits for longer life, powered by OpenAI and trained on custom ontology. Built with TypeScript, React, Next, Tailwind, Python, and its various ML libraries."
               onClick={() =>
                 window.open("https://github.com/aaronkjin/longevity")
               }
