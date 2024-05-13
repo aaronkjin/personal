@@ -172,8 +172,8 @@ export default function About() {
           {/* Right Side */}
           <div className="w-full tablet:w-2/3 mt-1.5">
             <p className="text-sm tablet:text-base">
-              Launched Wagyu.ai (now acquired), a generative AI SaaS start-up.
-              Built a mobile app with distinct, humanized AI personalities.
+              Launched Wagyu.ai, a generative AI SaaS start-up. Built a mobile
+              app with distinct, humanized AI personalities.
             </p>
 
             <p className="text-sm tablet:text-base mt-3">
