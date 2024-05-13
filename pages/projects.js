@@ -22,9 +22,31 @@ export default function Projects() {
         </div>
       </div>
 
-      {/* Einstein.ai */}
       <div className="mt-6 tablet:mt-10 laptop:mt-15 p-2 tablet:p-0">
         <div className="mt-6 tablet:mt-10 laptop:mt-15 pb-16 grid grid-cols-1 tablet:grid-cols-2">
+          {/* Lumen */}
+          <div>
+            <WorkCard
+              key="Lumen"
+              img="/images/temp.png"
+              name="Lumen"
+              description="Currently building 👷‍♂️. Your go-to LMS platform. Built with TypeScript, React, Next, Tailwind, Stripe, Mux, Prisma, and PostgreSQL."
+              onClick={() => window.open("https://github.com/aaronkjin/lumen")}
+            />
+          </div>
+
+          {/* Jonin */}
+          <div>
+            <WorkCard
+              key="Jonin"
+              img="/images/temp.png"
+              name="Jonin"
+              description="Currently building 👷‍♂️. A Python-based ninja platform game. Built with Python, PyGame, and more."
+              onClick={() => window.open("https://github.com/aaronkjin/jonin")}
+            />
+          </div>
+
+          {/* Einstein.ai */}
           <div>
             <WorkCard
               key="Einstein"
