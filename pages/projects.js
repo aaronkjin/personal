@@ -41,7 +41,7 @@ export default function Projects() {
               key="Jonin"
               img="/images/temp.png"
               name="Jonin"
-              description="Currently building 👷‍♂️. A Python-based ninja platform game. Built with Python, PyGame, and more."
+              description="Currently building 👷‍♂️. A Python-based ninja platformer game. Built with Python, PyGame, and more."
               onClick={() => window.open("https://github.com/aaronkjin/jonin")}
             />
           </div>
