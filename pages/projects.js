@@ -86,7 +86,7 @@ export default function Projects() {
           </div>
 
           {/* Sumz.ai */}
-          <div>
+          {/* <div>
             <WorkCard
               key="Sumz"
               img="/images/sumz.png"
@@ -96,7 +96,7 @@ export default function Projects() {
                 window.open("https://github.com/aaronkjin/sumz-ai")
               }
             />
-          </div>
+          </div> */}
 
           {/* PlaceX */}
           {/* <div>
