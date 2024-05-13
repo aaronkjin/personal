@@ -18,11 +18,10 @@ export default function About() {
             About Me
           </h1>
           <h2 className="text-sm tablet:text-base p-1 tablet:p-2 text-bold w-full">
-            I love building and delivering products that are user-focused. In
-            the past, I&apos;ve created user-facing products solo, with lean
-            start-ups, and in big corporations. I&apos;m also passionate about
-            the research between ML and human biology, dissecting large data,
-            and playing the oboe.
+            I love building products that are user-focused. In the past,
+            I&apos;ve created user-facing products solo, with lean start-ups,
+            and in big corporations. I&apos;m also passionate about fintech, the
+            research between ML and human biology, and playing the oboe.
           </h2>
         </div>
       </div>
@@ -253,13 +252,13 @@ export default function About() {
                 </a>
               </span>
               <span className={theme === "dark" ? "opacity-50" : ""}>
-                , where I&apos;ve analyzed, visualized, and deconvoluted complex
-                RNA datasets to effectively treat chemo-resistant cancers.
+                , where I&apos;ve worked with RNA datasets to treat
+                chemo-resistant cancers.
               </span>
             </p>
           </div>
 
-          <div className="text-sm tablet:text-base mt-3 laptop:mt-5">
+          <div className="text-sm tablet:text-base mt-3 laptop:mt-8">
             <p>
               <span className="font-bold">
                 a consultant at{" "}
@@ -273,13 +272,13 @@ export default function About() {
                 </a>
               </span>
               <span className={theme === "dark" ? "opacity-50" : ""}>
-                , where I&apos;ve strategized M&amp;A and GTM cases for clients
-                like Microsoft and Typed.
+                , where I&apos;ve strategized M&amp;A and GTM cases for
+                Microsoft and Typed.
               </span>
             </p>
           </div>
 
-          <div className="text-sm tablet:text-base mt-3 laptop:mt-5">
+          <div className="text-sm tablet:text-base mt-3 laptop:mt-8">
             <p>
               <span className="font-bold">
                 the Social Chair of{" "}
@@ -293,13 +292,13 @@ export default function About() {
                 </a>
               </span>
               <span className={theme === "dark" ? "opacity-50" : ""}>
-                , where I&apos;ve united the Korean student community and
-                showcased Korean culture to Stanford through dynamic events.
+                , where I&apos;ve united the Korean student community with
+                awesome events.
               </span>
             </p>
           </div>
 
-          <div className="text-sm tablet:text-base mt-3 laptop:mt-5">
+          <div className="text-sm tablet:text-base mt-3 laptop:mt-8">
             <p>
               <span className="font-bold">
                 the PR Chair of{" "}
@@ -319,7 +318,7 @@ export default function About() {
             </p>
           </div>
 
-          <div className="text-sm tablet:text-base mt-3 laptop:mt-5">
+          <div className="text-sm tablet:text-base mt-3 laptop:mt-8">
             <p>
               <span className="font-bold">
                 an oboist in{" "}
@@ -333,13 +332,13 @@ export default function About() {
                 </a>
               </span>
               <span className={theme === "dark" ? "opacity-50" : ""}>
-                , where I&apos;ve been able to step back from academics and tap
-                into what brings me the most joy.
+                , where I&apos;ve been able to step back from academics and
+                enjoy my #1 hobby.
               </span>
             </p>
           </div>
 
-          <div className="text-sm tablet:text-base mt-3 laptop:mt-5">
+          <div className="text-sm tablet:text-base mt-3 laptop:mt-8">
             <p>
               <span className="font-bold">
                 a member of{" "}
@@ -358,7 +357,7 @@ export default function About() {
             </p>
           </div>
 
-          <div className="text-sm tablet:text-base mt-3 laptop:mt-5">
+          <div className="text-sm tablet:text-base mt-3 laptop:mt-8">
             <p>
               <span className="font-bold">
                 a member of{" "}
@@ -372,8 +371,7 @@ export default function About() {
                 </a>
               </span>
               <span className={theme === "dark" ? "opacity-50" : ""}>
-                , where I&apos;ve been intellectually stimulated by both
-                psychology and probability.
+                , where I&apos;ve been playing and studying some card games.
               </span>
             </p>
           </div>
