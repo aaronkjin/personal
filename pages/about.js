@@ -100,7 +100,7 @@ export default function About() {
             </p>
 
             <p className="text-sm tablet:text-base mt-3">
-              React, TypeScript, PHP, Python, MySQL, Nginx, Kong, Docker,
+              React, TypeScript, PHP, Python, Lua, MySQL, Nginx, Kong, Docker,
               Splunk.
             </p>
           </div>
