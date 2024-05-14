@@ -30,7 +30,7 @@ export default function Projects() {
               key="Lumen"
               img="/images/temp.png"
               name="Lumen"
-              description="Currently building 👷‍♂️. Your go-to LMS platform. Built with TypeScript, React, Next, Tailwind, Stripe, Mux, Prisma, and PostgreSQL."
+              description="Currently building 👷‍♂️. Your go-to LMS platform. Built with TypeScript, React, Next.js, Stripe, Mux, Prisma, and PostgreSQL."
               onClick={() => window.open("https://github.com/aaronkjin/lumen")}
             />
           </div>
@@ -65,7 +65,7 @@ export default function Projects() {
               key="Einstein"
               img="/images/einstein.png"
               name="Einstein.ai"
-              description="An all-in-one AI content generation website powered by OpenAI and ReplicateAI. Built with TypeScript, React, Next, Tailwind, Stripe, Crisp, Prisma, and MySQL."
+              description="An all-in-one AI content generation website powered by OpenAI and ReplicateAI. Built with TypeScript, React, Next.js, Stripe, Crisp, Prisma, and MySQL."
               onClick={() =>
                 window.open("https://github.com/aaronkjin/einstein")
               }
@@ -91,7 +91,7 @@ export default function Projects() {
               key="Longevity"
               img="/images/longevity.png"
               name="Longevity"
-              description="A GPT system to suggest lifestyle habits for longer life, trained on custom ontology. Built with TypeScript, React, Next, Tailwind, Python, and its various ML libraries."
+              description="A GPT system to suggest lifestyle habits for longer life, trained on custom ontology. Built with TypeScript, React, Next.js, Python, and its various ML libraries."
               onClick={() =>
                 window.open("https://github.com/aaronkjin/longevity")
               }
@@ -104,7 +104,7 @@ export default function Projects() {
               key="Modify"
               img="/images/modify.png"
               name="Modify"
-              description="A full-stack Spotify Clone website. Built with TypeScript, React, Next, Tailwind, Stripe, Supabase, and PostgreSQL."
+              description="A full-stack Spotify Clone website. Built with TypeScript, React, Next.js, Stripe, Supabase, and PostgreSQL."
               onClick={() => window.open("https://github.com/aaronkjin/modify")}
             />
           </div>
@@ -126,7 +126,7 @@ export default function Projects() {
               key="Sumz"
               img="/images/sumz.png"
               name="Sumz.ai"
-              description="A GPT-powered article-summarizing website. Built with JavaScript, React, Tailwind, Redux, Vite, and RapidAPI."
+              description="A GPT-powered article-summarizing website. Built with JavaScript, React, Redux, Vite, and RapidAPI."
               onClick={() =>
                 window.open("https://github.com/aaronkjin/sumz-ai")
               }
@@ -146,13 +146,13 @@ export default function Projects() {
             />
           </div> */}
 
-          {/* Avatar */}
+          {/* Cass */}
           <div>
             <WorkCard
-              key="Avatar"
+              key="Cass"
               img="/images/chatbot.png"
-              name="Avatar"
-              description="A chatbot that uses NLP to deliver personalized movie recommendations. Built with Python and its various libraries."
+              name="Cass"
+              description="An NLP chatbot that delivers personalized movie recommendations. Built with Python and its various ML libraries."
               onClick={() =>
                 window.open(
                   "https://gitfront.io/r/aaronkjin/3RJWBDccpb3M/chatbot-project/"
