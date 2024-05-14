@@ -46,19 +46,6 @@ export default function Projects() {
             />
           </div>
 
-          {/* Einstein.ai */}
-          <div>
-            <WorkCard
-              key="Einstein"
-              img="/images/einstein.png"
-              name="Einstein.ai"
-              description="An all-in-one AI content generation website powered by OpenAI and ReplicateAI. Built with TypeScript, React, Next, Tailwind, Stripe, Crisp, Prisma, and MySQL."
-              onClick={() =>
-                window.open("https://github.com/aaronkjin/einstein")
-              }
-            />
-          </div>
-
           {/* Mentore */}
           <div>
             <WorkCard
@@ -68,6 +55,19 @@ export default function Projects() {
               description="An LLM-integrated mentor-matching platform. Built with JavaScript, React, HTML/CSS, OpenAI, Firebase, Flask, and Python's various ML libraries."
               onClick={() =>
                 window.open("https://github.com/aaronkjin/mentore")
+              }
+            />
+          </div>
+
+          {/* Einstein.ai */}
+          <div>
+            <WorkCard
+              key="Einstein"
+              img="/images/einstein.png"
+              name="Einstein.ai"
+              description="An all-in-one AI content generation website powered by OpenAI and ReplicateAI. Built with TypeScript, React, Next, Tailwind, Stripe, Crisp, Prisma, and MySQL."
+              onClick={() =>
+                window.open("https://github.com/aaronkjin/einstein")
               }
             />
           </div>
