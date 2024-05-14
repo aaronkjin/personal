@@ -72,13 +72,26 @@ export default function Projects() {
             />
           </div>
 
+          {/* Authorship */}
+          <div>
+            <WorkCard
+              key="Authorship"
+              img="/images/star_wars.png"
+              name="Authorship"
+              description="An ML algorithm for author attribution based on dialogue. Trained on Star Wars scripts. Built with Python and its various ML libraries."
+              onClick={() =>
+                window.open("https://github.com/aaronkjin/authorship")
+              }
+            />
+          </div>
+
           {/* Longevity */}
           <div>
             <WorkCard
               key="Longevity"
               img="/images/longevity.png"
               name="Longevity"
-              description="A system that suggests lifestyle habits for longer life, powered by OpenAI and trained on custom ontology. Built with TypeScript, React, Next, Tailwind, Python, and its various ML libraries."
+              description="A GPT system to suggest lifestyle habits for longer life, trained on custom ontology. Built with TypeScript, React, Next, Tailwind, Python, and its various ML libraries."
               onClick={() =>
                 window.open("https://github.com/aaronkjin/longevity")
               }
@@ -133,13 +146,13 @@ export default function Projects() {
             />
           </div> */}
 
-          {/* Movie Recommender Chatbot */}
+          {/* Avatar */}
           <div>
             <WorkCard
-              key="Movie Recommender Chatbot"
+              key="Avatar"
               img="/images/chatbot.png"
-              name="Movie Recommender Chatbot"
-              description="A dynamic chatbot that utilizes NLP techniques and advanced dialogue strategies to deliver personalized movie recommendations. Built with Python and its various libraries."
+              name="Avatar"
+              description="A chatbot that uses NLP to deliver personalized movie recommendations. Built with Python and its various libraries."
               onClick={() =>
                 window.open(
                   "https://gitfront.io/r/aaronkjin/3RJWBDccpb3M/chatbot-project/"
