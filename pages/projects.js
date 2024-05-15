@@ -72,16 +72,14 @@ export default function Projects() {
             />
           </div>
 
-          {/* Authorship */}
+          {/* Quill */}
           <div>
             <WorkCard
-              key="Authorship"
+              key="Quill"
               img="/images/star_wars.png"
-              name="Authorship"
+              name="Quill"
               description="An ML algorithm for author attribution based on dialogue. Trained on Star Wars scripts. Built with Python and its various ML libraries."
-              onClick={() =>
-                window.open("https://github.com/aaronkjin/authorship")
-              }
+              onClick={() => window.open("https://github.com/aaronkjin/quill")}
             />
           </div>
 
