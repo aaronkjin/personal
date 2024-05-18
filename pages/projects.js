@@ -24,17 +24,6 @@ export default function Projects() {
 
       <div className="mt-6 tablet:mt-10 laptop:mt-15 p-2 tablet:p-0">
         <div className="mt-6 tablet:mt-10 laptop:mt-15 pb-16 grid grid-cols-1 tablet:grid-cols-2">
-          {/* Lumen */}
-          <div>
-            <WorkCard
-              key="Lumen"
-              img="/images/temp.png"
-              name="Lumen"
-              description="Currently building 👷‍♂️. Your go-to LMS platform. Built with TypeScript, React, Next.js, Stripe, Mux, Prisma, and PostgreSQL."
-              onClick={() => window.open("https://github.com/aaronkjin/lumen")}
-            />
-          </div>
-
           {/* Jonin */}
           <div>
             <WorkCard
@@ -43,6 +32,30 @@ export default function Projects() {
               name="Jonin"
               description="Currently building 👷‍♂️. A Python-based ninja platformer game. Built with Python, PyGame, and more."
               onClick={() => window.open("https://github.com/aaronkjin/jonin")}
+            />
+          </div>
+
+          {/* Physi.cs */}
+          <div>
+            <WorkCard
+              key="Physics"
+              img="/images/temp.png"
+              name="Physi.cs"
+              description="Currently building 👷‍♂️. A 2D physics engine built from scratch with no libraries. Built with C#."
+              onClick={() =>
+                window.open("https://github.com/aaronkjin/physics")
+              }
+            />
+          </div>
+
+          {/* Lumen */}
+          <div>
+            <WorkCard
+              key="Lumen"
+              img="/images/temp.png"
+              name="Lumen"
+              description="Currently building 👷‍♂️. Your go-to LMS platform. Built with TypeScript, React, Next.js, Stripe, Mux, Prisma, and PostgreSQL."
+              onClick={() => window.open("https://github.com/aaronkjin/lumen")}
             />
           </div>
 
