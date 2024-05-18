@@ -24,41 +24,6 @@ export default function Projects() {
 
       <div className="mt-6 tablet:mt-10 laptop:mt-15 p-2 tablet:p-0">
         <div className="mt-6 tablet:mt-10 laptop:mt-15 pb-16 grid grid-cols-1 tablet:grid-cols-2">
-          {/* Jonin */}
-          <div>
-            <WorkCard
-              key="Jonin"
-              img="/images/temp.png"
-              name="Jonin"
-              description="Currently building 👷‍♂️. A Python-based ninja platformer game. Built with Python, PyGame, and more."
-              onClick={() => window.open("https://github.com/aaronkjin/jonin")}
-            />
-          </div>
-
-          {/* Physi.cs */}
-          <div>
-            <WorkCard
-              key="Physics"
-              img="/images/temp.png"
-              name="Physi.cs"
-              description="Currently building 👷‍♂️. A 2D physics engine built from scratch with no libraries. Built with C#."
-              onClick={() =>
-                window.open("https://github.com/aaronkjin/physics")
-              }
-            />
-          </div>
-
-          {/* Lumen */}
-          <div>
-            <WorkCard
-              key="Lumen"
-              img="/images/temp.png"
-              name="Lumen"
-              description="Currently building 👷‍♂️. Your go-to LMS platform. Built with TypeScript, React, Next.js, Stripe, Mux, Prisma, and PostgreSQL."
-              onClick={() => window.open("https://github.com/aaronkjin/lumen")}
-            />
-          </div>
-
           {/* Mentore */}
           <div>
             <WorkCard
@@ -131,32 +96,6 @@ export default function Projects() {
             />
           </div>
 
-          {/* Sumz.ai */}
-          {/* <div>
-            <WorkCard
-              key="Sumz"
-              img="/images/sumz.png"
-              name="Sumz.ai"
-              description="A GPT-powered article-summarizing website. Built with JavaScript, React, Redux, Vite, and RapidAPI."
-              onClick={() =>
-                window.open("https://github.com/aaronkjin/sumz-ai")
-              }
-            />
-          </div> */}
-
-          {/* PlaceX */}
-          {/* <div>
-            <WorkCard
-              key="PlaceX"
-              img="/images/placex.png"
-              name="PlaceX"
-              description="A front-end travel website providing users with an immersive platform for exploring their dream destinations. Built with vanilla JavaScript, HTML, and CSS."
-              onClick={() =>
-                window.open("https://github.com/aaronkjin/place-x")
-              }
-            />
-          </div> */}
-
           {/* Cass */}
           <div>
             <WorkCard
@@ -169,6 +108,41 @@ export default function Projects() {
                   "https://gitfront.io/r/aaronkjin/3RJWBDccpb3M/chatbot-project/"
                 )
               }
+            />
+          </div>
+
+          {/* Jonin */}
+          <div>
+            <WorkCard
+              key="Jonin"
+              img="/images/temp.png"
+              name="Jonin"
+              description="Currently building 👷‍♂️. A Python-based ninja platformer game. Built with Python, PyGame, and more."
+              onClick={() => window.open("https://github.com/aaronkjin/jonin")}
+            />
+          </div>
+
+          {/* Physi.cs */}
+          <div>
+            <WorkCard
+              key="Physics"
+              img="/images/temp.png"
+              name="Physi.cs"
+              description="Currently building 👷‍♂️. A 2D physics engine built from scratch with no libraries. Built with C#."
+              onClick={() =>
+                window.open("https://github.com/aaronkjin/physics")
+              }
+            />
+          </div>
+
+          {/* Lumen */}
+          <div>
+            <WorkCard
+              key="Lumen"
+              img="/images/temp.png"
+              name="Lumen"
+              description="Currently building 👷‍♂️. Your go-to LMS platform. Built with TypeScript, React, Next.js, Stripe, Mux, Prisma, and PostgreSQL."
+              onClick={() => window.open("https://github.com/aaronkjin/lumen")}
             />
           </div>
         </div>
