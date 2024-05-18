@@ -37,7 +37,7 @@ export default function Projects() {
         </div>
       </div>
 
-      <div className="mt-2 tablet:mt-4 laptop:mt-6 pb-8 grid grid-cols-1 tablet:grid-cols-2">
+      <div className="mt-2 tablet:mt-4  pb-8 grid grid-cols-1 tablet:grid-cols-2">
         {/* Mentore */}
         <div>
           <WorkCard
@@ -132,7 +132,7 @@ export default function Projects() {
         ></div>
       </div>
 
-      <div className="mt-2 tablet:mt-4 laptop:mt-6 pb-16 grid grid-cols-1 tablet:grid-cols-2">
+      <div className="mt-2 tablet:mt-4 pb-16 grid grid-cols-1 tablet:grid-cols-2">
         {/* Jonin */}
         <div>
           <WorkCard
