@@ -28,13 +28,58 @@ export default function Projects() {
       {/* Featured */}
       <div className="mt-6 tablet:mt-10 laptop:mt-15">
         <div className="w-full p-2">
-          <h1 className="font-bold text-xs tablet:text-sm">Featured</h1>
+          <h1 className="font-bold text-xs tablet:text-sm"> Currently</h1>
           <div
             className={`flex-grow border-b ${
               theme === "dark" ? "border-white" : "border-black"
             } mt-2 laptop:mr-16`}
           ></div>
         </div>
+      </div>
+
+      <div className="mt-2 tablet:mt-4 pb-16 grid grid-cols-1 tablet:grid-cols-2">
+        {/* Jonin */}
+        <div>
+          <WorkCard
+            key="Jonin"
+            img="/images/temp.png"
+            name="Jonin"
+            description="A Python-based ninja platformer game. Built with Python, PyGame, and more."
+            onClick={() => window.open("https://github.com/aaronkjin/jonin")}
+          />
+        </div>
+
+        {/* Physi.cs */}
+        <div>
+          <WorkCard
+            key="Physics"
+            img="/images/temp.png"
+            name="Physi.cs"
+            description="A 2D physics engine built from scratch with no libraries. Built with C#, the MonoGame framework, and more."
+            onClick={() => window.open("https://github.com/aaronkjin/physics")}
+          />
+        </div>
+
+        {/* Lumen */}
+        <div>
+          <WorkCard
+            key="Lumen"
+            img="/images/temp.png"
+            name="Lumen"
+            description="Your go-to LMS platform. Built with TypeScript, React, Next.js, Stripe, Mux, Prisma, and PostgreSQL."
+            onClick={() => window.open("https://github.com/aaronkjin/lumen")}
+          />
+        </div>
+      </div>
+
+      {/* Building */}
+      <div className="w-full p-2">
+        <h1 className="font-bold text-xs tablet:text-sm">Featured</h1>
+        <div
+          className={`flex-grow border-b ${
+            theme === "dark" ? "border-white" : "border-black"
+          } mt-2 laptop:mr-16`}
+        ></div>
       </div>
 
       <div className="mt-2 tablet:mt-4  pb-8 grid grid-cols-1 tablet:grid-cols-2">
@@ -118,51 +163,6 @@ export default function Projects() {
                 "https://gitfront.io/r/aaronkjin/3RJWBDccpb3M/chatbot-project/"
               )
             }
-          />
-        </div>
-      </div>
-
-      {/* Building */}
-      <div className="w-full p-2">
-        <h1 className="font-bold text-xs tablet:text-sm">Building</h1>
-        <div
-          className={`flex-grow border-b ${
-            theme === "dark" ? "border-white" : "border-black"
-          } mt-2 laptop:mr-16`}
-        ></div>
-      </div>
-
-      <div className="mt-2 tablet:mt-4 pb-16 grid grid-cols-1 tablet:grid-cols-2">
-        {/* Jonin */}
-        <div>
-          <WorkCard
-            key="Jonin"
-            img="/images/temp.png"
-            name="Jonin"
-            description="A Python-based ninja platformer game. Built with Python, PyGame, and more."
-            onClick={() => window.open("https://github.com/aaronkjin/jonin")}
-          />
-        </div>
-
-        {/* Physi.cs */}
-        <div>
-          <WorkCard
-            key="Physics"
-            img="/images/temp.png"
-            name="Physi.cs"
-            description="A 2D physics engine built from scratch with no libraries. Built with C#."
-            onClick={() => window.open("https://github.com/aaronkjin/physics")}
-          />
-        </div>
-
-        {/* Lumen */}
-        <div>
-          <WorkCard
-            key="Lumen"
-            img="/images/temp.png"
-            name="Lumen"
-            description="Your go-to LMS platform. Built with TypeScript, React, Next.js, Stripe, Mux, Prisma, and PostgreSQL."
-            onClick={() => window.open("https://github.com/aaronkjin/lumen")}
           />
         </div>
       </div>
