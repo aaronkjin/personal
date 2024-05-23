@@ -94,9 +94,9 @@ export default function About() {
           {/* Right Side */}
           <div className="w-full tablet:w-2/3 mt-1.5">
             <p className="text-sm tablet:text-base">
-              Built team&apos;s first API gateway for an internal web app used
+              Built team&apos;s first API gateway for an internal web app 
               to test battery systems in Macs. Enhanced the web app with
-              ETL feature extraction and predictive modeling.
+              ETL feature extraction.
             </p>
 
             <p className="text-sm tablet:text-base mt-3">
