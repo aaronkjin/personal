@@ -352,7 +352,7 @@ export default function About() {
                 </a>
               </span>
               <span className={theme === "dark" ? "opacity-50" : ""}>
-                , where I&apos;ve been dabbling with entrepreneurship.
+                , where I&apos;ve been dipping into entrepreneurship.
               </span>
             </p>
           </div>
