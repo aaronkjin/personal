@@ -44,7 +44,7 @@ export default function Projects() {
             key="Jonin"
             img="/images/temp.png"
             name="Jonin"
-            description="A Python-based ninja platformer game. Built with Python, PyGame, and more."
+            description="A pixel ninja platformer game. Built with Python and PyGame."
             onClick={() => window.open("https://github.com/aaronkjin/jonin")}
           />
         </div>
@@ -60,6 +60,17 @@ export default function Projects() {
           />
         </div>
 
+       {/* Tungsten */}
+        <div>
+          <WorkCard
+            key="Tungsten"
+            img="/images/temp.png"
+            name="Tungsten"
+            description="An inventory of compiler tooling. Built with Rust, Cargo, and more."
+            onClick={() => window.open("https://github.com/aaronkjin/tungsten")}
+          />
+        </div>
+
         {/* Lumen */}
         <div>
           <WorkCard
@@ -70,6 +81,7 @@ export default function Projects() {
             onClick={() => window.open("https://github.com/aaronkjin/lumen")}
           />
         </div>
+
       </div>
 
       {/* Building */}
@@ -100,7 +112,7 @@ export default function Projects() {
             key="Einstein"
             img="/images/einstein.png"
             name="Einstein.ai"
-            description="An all-in-one AI content generation website powered by OpenAI and ReplicateAI. Built with TypeScript, React, Next.js, Stripe, Crisp, Prisma, and MySQL."
+            description="An all-in-one AI content generation web app powered by OpenAI and ReplicateAI. Built with TypeScript, React, Next.js, Stripe, Crisp, Prisma, and MySQL."
             onClick={() => window.open("https://github.com/aaronkjin/einstein")}
           />
         </div>
@@ -135,7 +147,7 @@ export default function Projects() {
             key="Modify"
             img="/images/modify.png"
             name="Modify"
-            description="A full-stack Spotify Clone website. Built with TypeScript, React, Next.js, Stripe, Supabase, and PostgreSQL."
+            description="A Spotify Clone web app. Built with TypeScript, React, Next.js, Stripe, Supabase, and PostgreSQL."
             onClick={() => window.open("https://github.com/aaronkjin/modify")}
           />
         </div>
