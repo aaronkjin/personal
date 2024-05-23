@@ -95,8 +95,8 @@ export default function About() {
           <div className="w-full tablet:w-2/3 mt-1.5">
             <p className="text-sm tablet:text-base">
               Built team&apos;s first API gateway for an internal web app used
-              to test battery systems in Macs. Enhanced the web app to support
-              ETL feature extraction.
+              to test battery systems in Macs. Enhanced the web app with
+              ETL feature extraction and predictive modeling.
             </p>
 
             <p className="text-sm tablet:text-base mt-3">
@@ -178,7 +178,7 @@ export default function About() {
 
             <p className="text-sm tablet:text-base mt-3">
               React Native, JavaScript, Redux, Express.js, Firebase, Heroku,
-              OpenAI API.
+              OpenAI.
             </p>
           </div>
         </div>
@@ -563,8 +563,7 @@ export default function About() {
             </p>
             <p className="pt-2">
               More recently, I&apos;ve been having fun building web and native
-              apps. I&apos;m always intrigued by the latest breakthroughs in the
-              life sciences and biotech. To keep things balanced and energized,
+              apps. I also enjoy dabbling with new, unfamiliar technologies. To keep things balanced and energized,
               I make it a point to hit the gym every day.
             </p>
           </p>
