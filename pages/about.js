@@ -20,8 +20,8 @@ export default function About() {
           <h2 className="text-sm tablet:text-base p-1 tablet:p-2 text-bold w-full">
             I love building products that are user-focused. In the past,
             I&apos;ve created user-facing products solo, with lean start-ups,
-            and in big corporations. I&apos;m also passionate about fintech, the
-            research between ML and human biology, and playing the oboe.
+            and in big corporations. I&apos;m also passionate about fintech, ML
+            research in human biology, and playing the oboe.
           </h2>
         </div>
       </div>
