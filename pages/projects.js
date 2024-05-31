@@ -66,7 +66,7 @@ export default function Projects() {
             key="Physics"
             img="/images/temp.png"
             name="Physi.cs"
-            description="A 2D real-time physics engine to simulate physical systems in digital environments. Built with C#, the MonoGame framework, and more."
+            description="A 2D real-time physics engine, simulating physical systems in digital environments. Built with C#, the MonoGame framework, and more."
             onClick={() => window.open("https://github.com/aaronkjin/physics")}
           />
         </div>
