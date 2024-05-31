@@ -55,7 +55,7 @@ export default function Projects() {
             key="Tungsten"
             img="/images/temp.png"
             name="Tungsten"
-            description="A compiler built from scratch with no libraries. Built with Rust, Cargo, and more."
+            description="A compiler built from scratch with no libraries. Built with Rust, and Cargo."
             onClick={() => window.open("https://github.com/aaronkjin/tungsten")}
           />
         </div>
@@ -66,7 +66,7 @@ export default function Projects() {
             key="Physics"
             img="/images/temp.png"
             name="Physi.cs"
-            description="A 2D real-time physics engine, simulating physical systems in digital environments. Built with C#, the MonoGame framework, and more."
+            description="A 2D real-time physics engine, simulating physical systems in digital environments. Built with C#, and MonoGame."
             onClick={() => window.open("https://github.com/aaronkjin/physics")}
           />
         </div>
