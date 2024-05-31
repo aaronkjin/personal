@@ -49,25 +49,25 @@ export default function Projects() {
           />
         </div>
 
+        {/* Tungsten */}
+        <div>
+          <WorkCard
+            key="Tungsten"
+            img="/images/temp.png"
+            name="Tungsten"
+            description="A compiler built from scratch with no libraries. Built with Rust, Cargo, and more."
+            onClick={() => window.open("https://github.com/aaronkjin/tungsten")}
+          />
+        </div>
+
         {/* Physi.cs */}
         <div>
           <WorkCard
             key="Physics"
             img="/images/temp.png"
             name="Physi.cs"
-            description="A 2D physics engine built from scratch with no libraries. Built with C#, the MonoGame framework, and more."
+            description="A 2D real-time physics engine to simulate physical systems in digital environments. Built with C#, the MonoGame framework, and more."
             onClick={() => window.open("https://github.com/aaronkjin/physics")}
-          />
-        </div>
-
-       {/* Tungsten */}
-        <div>
-          <WorkCard
-            key="Tungsten"
-            img="/images/temp.png"
-            name="Tungsten"
-            description="An inventory of compiler tooling. Built with Rust, Cargo, and more."
-            onClick={() => window.open("https://github.com/aaronkjin/tungsten")}
           />
         </div>
 
@@ -81,7 +81,6 @@ export default function Projects() {
             onClick={() => window.open("https://github.com/aaronkjin/lumen")}
           />
         </div>
-
       </div>
 
       {/* Building */}
