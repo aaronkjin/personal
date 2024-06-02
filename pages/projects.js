@@ -100,7 +100,7 @@ export default function Projects() {
             key="Mentore"
             img="/images/mentore.png"
             name="Mentore"
-            description="An LLM-integrated mentor-matching platform. Built with JavaScript, React, HTML/CSS, OpenAI, Firebase, Flask, and Python's various ML libraries."
+            description="An AI search platform for mentors. Built with JavaScript, React, HTML/CSS, OpenAI, Firebase, Flask, and Python's various ML libraries."
             onClick={() => window.open("https://github.com/aaronkjin/mentore")}
           />
         </div>
