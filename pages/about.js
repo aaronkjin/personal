@@ -88,15 +88,15 @@ export default function About() {
                 theme === "dark" ? "opacity-50" : ""
               }`}
             >
-              Mar 2024 &mdash; Present
+              Spring 2024
             </p>
           </div>
           {/* Right Side */}
           <div className="w-full tablet:w-2/3 mt-1.5">
             <p className="text-sm tablet:text-base">
-              Built team&apos;s first API gateway for an internal web app 
-              used to test battery systems in iPhones. Enhanced the web app with
-              ETL feature extraction.
+              Built team&apos;s first API gateway for an internal web app used
+              to test battery systems in iPhones. Enhanced the web app with ETL
+              feature extraction.
             </p>
 
             <p className="text-sm tablet:text-base mt-3">
@@ -123,7 +123,7 @@ export default function About() {
                 theme === "dark" ? "opacity-50" : ""
               }`}
             >
-              Sep 2023 &mdash; Feb 2024
+              Fall, Winter 2023
             </p>
           </div>
           {/* Right Side */}
@@ -166,7 +166,7 @@ export default function About() {
                 theme === "dark" ? "opacity-50" : ""
               }`}
             >
-              Jun 2023 &mdash; Aug 2023
+              Summer 2023
             </p>
           </div>
           {/* Right Side */}
@@ -202,7 +202,7 @@ export default function About() {
                 theme === "dark" ? "opacity-50" : ""
               }`}
             >
-              Jun 2022 &mdash; Aug 2022
+              Summer 2022
             </p>
           </div>
           {/* Right Side */}
@@ -563,8 +563,9 @@ export default function About() {
             </p>
             <p className="pt-2">
               More recently, I&apos;ve been having fun building web and native
-              apps. I also enjoy dabbling with new, unfamiliar technologies. To keep things balanced and energized,
-              I make it a point to hit the gym every day.
+              apps. I also enjoy dabbling with new, unfamiliar technologies. To
+              keep things balanced and energized, I make it a point to hit the
+              gym every day.
             </p>
           </p>
         </div>
