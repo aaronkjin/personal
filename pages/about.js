@@ -14,7 +14,7 @@ export default function About() {
 
       <div className="mt-10 laptop:mt-20">
         <div className="mt-5">
-          <h1 className="font-medium text-4xl tablet:text-5xl p-1 tablet:p-2 text-bold w-full">
+          <h1 className="font-medium text-3xl tablet:text-4xl p-1 tablet:p-2 text-bold w-full">
             About Me
           </h1>
           <h2 className="text-sm tablet:text-base p-1 tablet:p-2 text-bold w-full">
@@ -43,7 +43,7 @@ export default function About() {
         <div className="flex flex-col tablet:flex-row">
           {/* Left Side */}
           <div className="w-full tablet:w-1/3">
-            <p className="font-bold text-lg tablet:text-2xl">Apple</p>
+            <p className="font-bold text-lg">Apple</p>
             <p
               className={`text-sm tablet:text-base ${
                 theme === "dark" ? "opacity-50" : ""
@@ -75,7 +75,7 @@ export default function About() {
         <div className="flex flex-col tablet:flex-row mt-3 tablet:mt-5">
           {/* Left Side */}
           <div className="w-full tablet:w-1/3">
-            <p className="font-bold text-lg tablet:text-2xl">Apple</p>
+            <p className="font-bold text-lg">Apple</p>
             <p
               className={`text-sm tablet:text-base ${
                 theme === "dark" ? "opacity-50" : ""
@@ -110,7 +110,7 @@ export default function About() {
         <div className="flex flex-col tablet:flex-row mt-3 tablet:mt-5">
           {/* Left Side */}
           <div className="w-full tablet:w-1/3">
-            <p className="font-bold text-lg tablet:text-2xl">NoRamp</p>
+            <p className="font-bold text-lg">NoRamp</p>
             <p
               className={`text-sm tablet:text-base ${
                 theme === "dark" ? "opacity-50" : ""
@@ -153,7 +153,7 @@ export default function About() {
         <div className="flex flex-col tablet:flex-row mt-3 tablet:mt-5">
           {/* Left Side */}
           <div className="w-full tablet:w-1/3">
-            <p className="font-bold text-lg tablet:text-2xl">Wagyu.ai</p>
+            <p className="font-bold text-lg">Wagyu.ai</p>
             <p
               className={`text-sm tablet:text-base ${
                 theme === "dark" ? "opacity-50" : ""
@@ -187,7 +187,7 @@ export default function About() {
         <div className="flex flex-col tablet:flex-row mt-3 tablet:mt-5">
           {/* Left Side */}
           <div className="w-full tablet:w-1/3">
-            <p className="font-bold text-lg tablet:text-2xl">
+            <p className="font-bold text-lg">
               Samsung Biologics
             </p>
             <p
