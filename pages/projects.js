@@ -15,7 +15,7 @@ export default function Projects() {
 
       <div className="mt-10 tablet:mt-20">
         <div className="mt-5">
-          <h1 className="font-medium text-4xl tablet:text-5xl p-1 tablet:p-2 text-bold w-full laptop:w-4/5">
+          <h1 className="font-medium text-3xl tablet:text-4xl p-1 tablet:p-2 text-bold w-full laptop:w-4/5">
             Projects
           </h1>
           <h1 className="text-sm tablet:text-base p-1 tablet:p-2 text-bold w-full">
