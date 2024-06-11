@@ -14,12 +14,11 @@ export default function Home() {
       </Head>
 
       <div className="mt-32 p-2 laptop:p-0">
-        <h1 className="font-medium text-4xl tablet:text-5xl p-1 tablet:p-2 w-full">
+        <h1 className="font-medium text-3xl tablet:text-4xl p-1 tablet:p-2 w-full">
           {theme === "dark" ? "Hi, I'm Aaron 🌋" : "Hi, I'm Aaron 🏔️"}
         </h1>
         <h1 className="text-sm tablet:text-base p-1 tablet:p-2 w-full">
-          I&apos;m an undergrad at Stanford studying Computer Science. I&apos;m
-          passionate about product engineering and growth engineering.
+          I&apos;m a Stanford BS/MS student studying CS. I enjoy building with a focus on product and growth.
         </h1>
       </div>
       <div className="tablet:flex hidden">
