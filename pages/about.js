@@ -65,7 +65,7 @@ export default function About() {
               Will refine Safari&apos;s search algorithm and UI.
             </p>
 
-            <p className="text-sm tablet:text-base mt-3">
+            <p className="text-sm tablet:text-base mt-3 mob:hidden tablet:flex">
               C++, Objective-C, iOS SDK, Swift/SwiftUI components.
             </p>
           </div>
@@ -99,7 +99,7 @@ export default function About() {
               feature extraction.
             </p>
 
-            <p className="text-sm tablet:text-base mt-3">
+            <p className="text-sm tablet:text-base mt-3  mob:hidden tablet:flex">
               React, TypeScript, PHP, Python, Lua, MySQL, Nginx, Kong, Docker,
               Splunk.
             </p>
@@ -142,7 +142,7 @@ export default function About() {
               marketplace for NFT buyers and sellers.
             </p>
 
-            <p className="text-sm tablet:text-base mt-3">
+            <p className="text-sm tablet:text-base mt-3 mob:hidden tablet:flex">
               React/React Native, TypeScript, Tailwind, Expo, Web3.js, Next.js,
               Nest.js.
             </p>
@@ -176,7 +176,7 @@ export default function About() {
               app with distinct, humanized AI personalities.
             </p>
 
-            <p className="text-sm tablet:text-base mt-3">
+            <p className="text-sm tablet:text-base mt-3 mob:hidden tablet:flex">
               React Native, JavaScript, Redux, Express.js, Firebase, Heroku,
               OpenAI.
             </p>
@@ -212,7 +212,7 @@ export default function About() {
               Streamlined legacy data migration projects.
             </p>
 
-            <p className="text-sm tablet:text-base mt-3">
+            <p className="text-sm tablet:text-base mt-3 mob:hidden tablet:flex">
               Python, SQL, AWS Lambda, AWS DataSync.
             </p>
           </div>
@@ -541,7 +541,7 @@ export default function About() {
 
       <div className="grid tablet:grid-cols-8  p-2 w-full pb-16">
         {/* Left Column */}
-        <div className="tablet:col-span-1 hidden tablet:flex tablet:items-center">
+        <div className="tablet:col-span-1 mob:hidden tablet:flex tablet:items-center">
           <p className="font-bold text-sm tablet:text-base ">Hobbies</p>
         </div>
 
