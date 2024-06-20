@@ -141,7 +141,7 @@ export default function Projects() {
         </div>
 
         {/* Modify */}
-        <div>
+        {/* <div>
           <WorkCard
             key="Modify"
             img="/images/modify.png"
@@ -149,7 +149,7 @@ export default function Projects() {
             description="A Spotify Clone web app. Built with TypeScript, React, Next.js, Stripe, Supabase, and PostgreSQL."
             onClick={() => window.open("https://github.com/aaronkjin/modify")}
           />
-        </div>
+        </div> */}
 
         {/* Bonsai */}
         <div>
