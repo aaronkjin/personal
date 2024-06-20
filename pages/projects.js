@@ -38,17 +38,6 @@ export default function Projects() {
       </div>
 
       <div className="mt-2 tablet:mt-4 pb-8 grid grid-cols-1 tablet:grid-cols-2">
-        {/* Jonin */}
-        <div>
-          <WorkCard
-            key="Jonin"
-            img="/images/temp.png"
-            name="Jonin"
-            description="A pixel ninja platformer game. Built with Python and PyGame."
-            onClick={() => window.open("https://github.com/aaronkjin/jonin")}
-          />
-        </div>
-
         {/* Tungsten */}
         <div>
           <WorkCard
@@ -102,6 +91,17 @@ export default function Projects() {
             name="Mentore"
             description="An AI search platform for mentors. Built with JavaScript, React, HTML/CSS, OpenAI, Firebase, Flask, and Python's various ML libraries."
             onClick={() => window.open("https://github.com/aaronkjin/mentore")}
+          />
+        </div>
+
+        {/* Jonin */}
+        <div>
+          <WorkCard
+            key="Jonin"
+            img="/images/jonin.png"
+            name="Jonin"
+            description="A pixel ninja platformer game. Built with Python, PyGame, and various Python libraries for math and physics operations."
+            onClick={() => window.open("https://github.com/aaronkjin/jonin")}
           />
         </div>
 
