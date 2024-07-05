@@ -49,7 +49,7 @@ export default function About() {
                 theme === "dark" ? "opacity-50" : ""
               }`}
             >
-              Incoming Software Engineer Intern
+              Software Engineer Intern
             </p>
             <p
               className={`text-sm tablet:text-base ${
@@ -62,11 +62,13 @@ export default function About() {
           {/* Right Side */}
           <div className="w-full tablet:w-2/3 mt-1.5">
             <p className="text-sm tablet:text-base">
-              Will refine Safari&apos;s search algorithm and UI.
+              Building an iOS Search widget for quick, easy searches.
+              Integrating an AI model into Safari&apos;s search algorithm for
+              better search relevancy.
             </p>
 
             <p className="text-sm tablet:text-base mt-3 mob:hidden tablet:flex">
-              C++, Objective-C, iOS SDK, Swift/SwiftUI components.
+              C, C++, Objective-C, iOS SDK, Swift/SwiftUI components.
             </p>
           </div>
         </div>
@@ -94,9 +96,9 @@ export default function About() {
           {/* Right Side */}
           <div className="w-full tablet:w-2/3 mt-1.5">
             <p className="text-sm tablet:text-base">
-              Built team&apos;s first API gateway for an internal web app used
-              to test battery systems in iPhones. Enhanced the web app with ETL
-              feature extraction.
+              Built team&apos;s first API gateway for Apple&apos;s core
+              battery-testing web app. Enhanced the web app with ETL feature
+              extraction.
             </p>
 
             <p className="text-sm tablet:text-base mt-3  mob:hidden tablet:flex">
@@ -187,9 +189,7 @@ export default function About() {
         <div className="flex flex-col tablet:flex-row mt-3 tablet:mt-5">
           {/* Left Side */}
           <div className="w-full tablet:w-1/3">
-            <p className="font-bold text-lg">
-              Samsung Biologics
-            </p>
+            <p className="font-bold text-lg">Samsung Biologics</p>
             <p
               className={`text-sm tablet:text-base ${
                 theme === "dark" ? "opacity-50" : ""
