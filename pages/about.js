@@ -62,13 +62,13 @@ export default function About() {
           {/* Right Side */}
           <div className="w-full tablet:w-2/3 mt-1.5">
             <p className="text-sm tablet:text-base">
-              Building an iOS Search widget for quick, easy searches.
-              Integrating an AI model into Safari&apos;s search algorithm for
-              better search relevancy.
+              Integrating Apple Intelligence into Safari&apos;s search algorithm
+              for better search relevancy. Building zero-keyword search for
+              quick, easy searches.
             </p>
 
             <p className="text-sm tablet:text-base mt-3 mob:hidden tablet:flex">
-              C, C++, Objective-C, iOS SDK, Swift/SwiftUI components.
+              C, C++, Objective-C, iOS SDK, Swift, SwiftUI.
             </p>
           </div>
         </div>
