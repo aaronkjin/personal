@@ -558,7 +558,7 @@ export default function About() {
                 className="underline hover:no-underline"
               >
                 oboe
-              </a>{" "}
+              </a>
               .
             </p>
             <p className="pt-2">
