@@ -559,11 +559,11 @@ export default function About() {
               >
                 oboe
               </a>{" "}
-              and performing solos at concert halls.
+              .
             </p>
             <p className="pt-2">
               More recently, I&apos;ve been having fun building web and native
-              apps. I also enjoy dabbling with new, unfamiliar technologies. To
+              apps. But, I'm also excited by new, unfamiliar technologies. To
               keep things balanced and energized, I make it a point to hit the
               gym every day.
             </p>
