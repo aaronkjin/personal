@@ -563,9 +563,8 @@ export default function About() {
             </p>
             <p className="pt-2">
               More recently, I&apos;ve been having fun building web and native
-              apps. But, I'm also excited by new, unfamiliar technologies. To
-              keep things balanced and energized, I make it a point to hit the
-              gym every day.
+              apps. To keep things balanced and energized, I make it a point to
+              hit the gym every day.
             </p>
           </p>
         </div>
