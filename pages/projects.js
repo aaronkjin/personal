@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { useTheme } from "next-themes";
 
-import WorkCard from "../components/WorkCard";
+import Project from "../components/Project";
 import Layout from "../components/Layout";
 
 export default function Projects() {
@@ -40,7 +40,7 @@ export default function Projects() {
       <div className="mt-2 tablet:mt-4 pb-8 grid grid-cols-1 tablet:grid-cols-2">
         {/* Tungsten */}
         <div>
-          <WorkCard
+          <Project
             key="Tungsten"
             img="/images/temp.png"
             name="Tungsten"
@@ -51,7 +51,7 @@ export default function Projects() {
 
         {/* Physi.cs */}
         <div>
-          <WorkCard
+          <Project
             key="Physics"
             img="/images/temp.png"
             name="Physi.cs"
@@ -62,7 +62,7 @@ export default function Projects() {
 
         {/* Lumen */}
         <div>
-          <WorkCard
+          <Project
             key="Lumen"
             img="/images/temp.png"
             name="Lumen"
@@ -85,7 +85,7 @@ export default function Projects() {
       <div className="mt-2 tablet:mt-4  pb-16 grid grid-cols-1 tablet:grid-cols-2">
         {/* Mentore */}
         <div>
-          <WorkCard
+          <Project
             key="Mentore"
             img="/images/mentore.png"
             name="Mentore"
@@ -96,7 +96,7 @@ export default function Projects() {
 
         {/* Jonin */}
         <div>
-          <WorkCard
+          <Project
             key="Jonin"
             img="/images/jonin.png"
             name="Jonin"
@@ -107,7 +107,7 @@ export default function Projects() {
 
         {/* Einstein.ai */}
         <div>
-          <WorkCard
+          <Project
             key="Einstein"
             img="/images/einstein.png"
             name="Einstein.ai"
@@ -118,7 +118,7 @@ export default function Projects() {
 
         {/* Quill */}
         <div>
-          <WorkCard
+          <Project
             key="Quill"
             img="/images/star_wars.png"
             name="Quill"
@@ -129,7 +129,7 @@ export default function Projects() {
 
         {/* Longevity */}
         <div>
-          <WorkCard
+          <Project
             key="Longevity"
             img="/images/longevity.png"
             name="Longevity"
@@ -142,7 +142,7 @@ export default function Projects() {
 
         {/* Modify */}
         {/* <div>
-          <WorkCard
+          <Project
             key="Modify"
             img="/images/modify.png"
             name="Modify"
@@ -153,7 +153,7 @@ export default function Projects() {
 
         {/* Bonsai */}
         <div>
-          <WorkCard
+          <Project
             key="Bonsai"
             img="/images/bonsai.png"
             name="Bonsai"
@@ -164,7 +164,7 @@ export default function Projects() {
 
         {/* Cass */}
         <div>
-          <WorkCard
+          <Project
             key="Cass"
             img="/images/chatbot.png"
             name="Cass"

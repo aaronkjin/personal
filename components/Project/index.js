@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 
-const WorkCard = ({ img, name, description, onClick }) => {
+const Project = ({ img, name, description, onClick }) => {
   return (
     <div className="rounded-lg p-2 first:ml-0 link laptop:w-[85%]">
       <div className="flex flex-col laptop:mt-5">
@@ -28,4 +28,4 @@ const WorkCard = ({ img, name, description, onClick }) => {
   );
 };
 
-export default WorkCard;
+export default Project;
