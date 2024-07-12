@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react";
+
 import { useTheme } from "next-themes";
 import Head from "next/head";
 
@@ -6,6 +8,16 @@ import Socials from "../components/Socials";
 
 export default function Home() {
   const { theme } = useTheme();
+
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return null;
+  }
 
   return (
     <Layout footerType="fixed">
@@ -18,7 +30,8 @@ export default function Home() {
           {theme === "dark" ? "Hi, I'm Aaron 🌋" : "Hi, I'm Aaron 🏔️"}
         </h1>
         <h1 className="text-sm tablet:text-base p-1 tablet:p-2 w-full">
-          I&apos;m a Stanford BS/MS student studying CS. I enjoy building with a focus on product and growth.
+          I&apos;m a Stanford BS/MS student studying CS. I enjoy building with a
+          focus on product and growth.
         </h1>
       </div>
       <div className="tablet:flex hidden">

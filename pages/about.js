@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react";
+
 import Head from "next/head";
 import { useTheme } from "next-themes";
 
@@ -5,6 +7,16 @@ import Layout from "../components/Layout";
 
 export default function About() {
   const { theme } = useTheme();
+
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return null;
+  }
 
   return (
     <Layout footerType="normal">
