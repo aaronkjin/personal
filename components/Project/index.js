@@ -6,7 +6,7 @@ const Project = ({ img, name, description, onClick }) => {
     <div className="rounded-lg p-2 first:ml-0 link laptop:w-[85%]">
       <div className="flex flex-col laptop:mt-5">
         <div
-          className="relative rounded-lg transition-all ease-out duration-300 h-48 cursor-pointer overflow-hidden"
+          className="relative rounded-lg transition-all ease-out duration-300 h-56 cursor-pointer overflow-hidden"
           onClick={onClick}
         >
           <Image
