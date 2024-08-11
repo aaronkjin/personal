@@ -74,9 +74,9 @@ export default function About() {
           {/* Right Side */}
           <div className="w-full tablet:w-2/3 mt-1.5">
             <p className="text-sm tablet:text-base">
-              Integrating Apple Intelligence into Safari&apos;s search algorithm
-              for better search relevancy. Building zero-keyword search for
-              quick, easy searches.
+              Integrating Apple Intelligence into Safari Suggestions for better
+              search relevancy. Building zero-keyword search for quick, easy
+              searches.
             </p>
 
             <p className="text-sm tablet:text-base mt-3 mob:hidden tablet:flex">
