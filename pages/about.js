@@ -80,7 +80,7 @@ export default function About() {
             </p>
 
             <p className="text-sm tablet:text-base mt-3 mob:hidden tablet:flex">
-              C, C++, Objective-C, iOS SDK, Swift, SwiftUI.
+              C++, Objective-C, Swift.
             </p>
           </div>
         </div>
