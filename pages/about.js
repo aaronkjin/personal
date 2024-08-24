@@ -401,10 +401,28 @@ export default function About() {
 
           <div className="text-sm tablet:text-base mt-1 laptop:mt-3">
             <div>
-              {/* CS 111 */}
+              CS 229
+              <span className={theme === "dark" ? "opacity-50" : ""}>: ML</span>
+            </div>
+
+            <div>
+              CS 238
               <span className={theme === "dark" ? "opacity-50" : ""}>
-                A gap quarter to work at Apple.
-                {/* : Operating Systems */}
+                : Decision Under Uncertainty
+              </span>
+            </div>
+
+            <div>
+              CS 157
+              <span className={theme === "dark" ? "opacity-50" : ""}>
+                : Computational Logic
+              </span>
+            </div>
+
+            <div>
+              GERMAN 97
+              <span className={theme === "dark" ? "opacity-50" : ""}>
+                : Poems
               </span>
             </div>
           </div>
@@ -522,19 +540,19 @@ export default function About() {
               </span>
             </div>
 
-            <div>
+            {/* <div>
               Biology Sequence
               <span className={theme === "dark" ? "opacity-50" : ""}>
                 : Genetics, Physiology, Molecular Biology, Bioengineering
               </span>
-            </div>
+            </div> */}
 
-            <div>
+            {/* <div>
               Chemistry Sequence
               <span className={theme === "dark" ? "opacity-50" : ""}>
                 : General Chemistry, Organic Chemistry, Biochemistry
               </span>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
