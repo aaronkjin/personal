@@ -402,7 +402,9 @@ export default function About() {
           <div className="text-sm tablet:text-base mt-1 laptop:mt-3">
             <div>
               CS 229
-              <span className={theme === "dark" ? "opacity-50" : ""}>: ML</span>
+              <span className={theme === "dark" ? "opacity-50" : ""}>
+                : Machine Learning
+              </span>
             </div>
 
             <div>
@@ -434,20 +436,22 @@ export default function About() {
           <div className="text-sm tablet:text-base mt-1 laptop:mt-3">
             <div>
               CS 221
-              <span className={theme === "dark" ? "opacity-50" : ""}>: AI</span>
+              <span className={theme === "dark" ? "opacity-50" : ""}>
+                : Artificial Intelligence
+              </span>
             </div>
 
             <div>
               CS 224G
               <span className={theme === "dark" ? "opacity-50" : ""}>
-                : LLM Apps
+                : LLM Applications
               </span>
             </div>
 
             <div>
               CS 124
               <span className={theme === "dark" ? "opacity-50" : ""}>
-                : NLP
+                : Natural Language Processing
               </span>
             </div>
 
@@ -461,33 +465,35 @@ export default function About() {
             <div>
               CS 148
               <span className={theme === "dark" ? "opacity-50" : ""}>
-                : Graphics
+                : Computer Graphics
               </span>
             </div>
 
             <div>
               CS 111
-              <span className={theme === "dark" ? "opacity-50" : ""}>: OS</span>
+              <span className={theme === "dark" ? "opacity-50" : ""}>
+                : Operating Systems
+              </span>
             </div>
 
             <div>
               CS 107
               <span className={theme === "dark" ? "opacity-50" : ""}>
-                : Systems
+                : Computer Systems
               </span>
             </div>
 
             <div>
               CS 106B
               <span className={theme === "dark" ? "opacity-50" : ""}>
-                : DS&A
+                : Data Structures
               </span>
             </div>
 
             <div>
               CS 161
               <span className={theme === "dark" ? "opacity-50" : ""}>
-                : Algorithm Design
+                : Algorithms
               </span>
             </div>
 
