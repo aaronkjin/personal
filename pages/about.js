@@ -422,9 +422,9 @@ export default function About() {
             </div>
 
             <div>
-              GERMAN 97
+              CLASSICS 9N
               <span className={theme === "dark" ? "opacity-50" : ""}>
-                : Poems
+                : What Didn&apos;t Make the Bible
               </span>
             </div>
           </div>
