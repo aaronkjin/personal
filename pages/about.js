@@ -72,7 +72,7 @@ export default function About() {
             </p>
           </div>
           {/* Right Side */}
-          <div className="w-full tablet:w-2/3">
+          <div className="w-full tablet:w-2/3 mt-1.5">
             <p className="text-sm tablet:text-base">
               Integrated Apple Intelligence into Safari Suggestions to improve
               search relevancy. Built Intelligent Find for non-text web
@@ -106,7 +106,7 @@ export default function About() {
             </p>
           </div>
           {/* Right Side */}
-          <div className="w-full tablet:w-2/3">
+          <div className="w-full tablet:w-2/3 mt-1.5">
             <p className="text-sm tablet:text-base">
               Built team&apos;s first API gateway for Apple&apos;s core
               battery-testing web app. Enhanced the web app with ETL feature
@@ -141,7 +141,7 @@ export default function About() {
             </p>
           </div>
           {/* Right Side */}
-          <div className="w-full tablet:w-2/3">
+          <div className="w-full tablet:w-2/3 mt-1.5">
             <p className="text-sm tablet:text-base">
               Developed{" "}
               <a
@@ -184,7 +184,7 @@ export default function About() {
             </p>
           </div>
           {/* Right Side */}
-          <div className="w-full tablet:w-2/3">
+          <div className="w-full tablet:w-2/3 mt-1.5">
             <p className="text-sm tablet:text-base">
               Launched Wagyu.ai, a generative AI SaaS start-up. Built a mobile
               app with distinct, humanized AI personalities.
@@ -218,7 +218,7 @@ export default function About() {
             </p>
           </div>
           {/* Right Side */}
-          <div className="w-full tablet:w-2/3">
+          <div className="w-full tablet:w-2/3 mt-1.5">
             <p className="text-sm tablet:text-base">
               Developed an audit-selecting program for pharmaceutical suppliers.
               Streamlined legacy data migration projects.
