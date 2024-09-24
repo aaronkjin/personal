@@ -410,7 +410,7 @@ export default function About() {
             <div>
               CS 238
               <span className={theme === "dark" ? "opacity-50" : ""}>
-                : Decision Under Uncertainty
+                : Reinforcement Learning
               </span>
             </div>
 
