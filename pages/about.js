@@ -72,16 +72,16 @@ export default function About() {
             </p>
           </div>
           {/* Right Side */}
-          <div className="w-full tablet:w-2/3 mt-1.5">
+          <div className="w-full tablet:w-2/3">
             <p className="text-sm tablet:text-base">
               Integrated Apple Intelligence into Safari Suggestions to improve
               search relevancy. Built Intelligent Find for non-text web
               searches.
             </p>
 
-            <p className="text-sm tablet:text-base mt-3 mob:hidden tablet:flex">
+            {/* <p className="text-sm tablet:text-base mt-3 mob:hidden tablet:flex">
               C++, Objective-C, Swift.
-            </p>
+            </p> */}
           </div>
         </div>
 
@@ -106,17 +106,17 @@ export default function About() {
             </p>
           </div>
           {/* Right Side */}
-          <div className="w-full tablet:w-2/3 mt-1.5">
+          <div className="w-full tablet:w-2/3">
             <p className="text-sm tablet:text-base">
               Built team&apos;s first API gateway for Apple&apos;s core
               battery-testing web app. Enhanced the web app with ETL feature
               extraction.
             </p>
 
-            <p className="text-sm tablet:text-base mt-3  mob:hidden tablet:flex">
+            {/* <p className="text-sm tablet:text-base mt-3  mob:hidden tablet:flex">
               React, TypeScript, PHP, Python, Lua, MySQL, Nginx, Kong, Docker,
               Splunk.
-            </p>
+            </p> */}
           </div>
         </div>
 
@@ -141,7 +141,7 @@ export default function About() {
             </p>
           </div>
           {/* Right Side */}
-          <div className="w-full tablet:w-2/3 mt-1.5">
+          <div className="w-full tablet:w-2/3">
             <p className="text-sm tablet:text-base">
               Developed{" "}
               <a
@@ -156,10 +156,10 @@ export default function About() {
               marketplace for NFT buyers and sellers.
             </p>
 
-            <p className="text-sm tablet:text-base mt-3 mob:hidden tablet:flex">
+            {/* <p className="text-sm tablet:text-base mt-3 mob:hidden tablet:flex">
               React/React Native, TypeScript, Tailwind, Expo, Web3.js, Next.js,
               Nest.js.
-            </p>
+            </p> */}
           </div>
         </div>
 
@@ -184,16 +184,16 @@ export default function About() {
             </p>
           </div>
           {/* Right Side */}
-          <div className="w-full tablet:w-2/3 mt-1.5">
+          <div className="w-full tablet:w-2/3">
             <p className="text-sm tablet:text-base">
               Launched Wagyu.ai, a generative AI SaaS start-up. Built a mobile
               app with distinct, humanized AI personalities.
             </p>
 
-            <p className="text-sm tablet:text-base mt-3 mob:hidden tablet:flex">
+            {/* <p className="text-sm tablet:text-base mt-3 mob:hidden tablet:flex">
               React Native, JavaScript, Redux, Express.js, Firebase, Heroku,
               OpenAI.
-            </p>
+            </p> */}
           </div>
         </div>
 
@@ -218,15 +218,15 @@ export default function About() {
             </p>
           </div>
           {/* Right Side */}
-          <div className="w-full tablet:w-2/3 mt-1.5">
+          <div className="w-full tablet:w-2/3">
             <p className="text-sm tablet:text-base">
               Developed an audit-selecting program for pharmaceutical suppliers.
               Streamlined legacy data migration projects.
             </p>
 
-            <p className="text-sm tablet:text-base mt-3 mob:hidden tablet:flex">
+            {/* <p className="text-sm tablet:text-base mt-3 mob:hidden tablet:flex">
               Python, SQL, AWS Lambda, AWS DataSync.
-            </p>
+            </p> */}
           </div>
         </div>
       </div>
