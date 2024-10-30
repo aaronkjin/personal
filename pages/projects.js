@@ -25,7 +25,7 @@ export default function Projects() {
         </div>
       </div>
 
-      {/* Featured */}
+      {/* Currently */}
       <div className="mt-6 tablet:mt-10 laptop:mt-15">
         <div className="w-full p-2">
           <h1 className="font-bold text-xs tablet:text-sm"> Currently</h1>
@@ -46,6 +46,17 @@ export default function Projects() {
             name="Tungsten"
             description="A compiler, except it's built from scratch with no libraries. Built with Rust and Cargo."
             onClick={() => window.open("https://github.com/aaronkjin/tungsten")}
+          />
+        </div>
+
+        {/* Ivey */}
+        <div>
+          <Project
+            key="Ivey"
+            img="/images/temp.png"
+            name="Ivey"
+            description="An AI-powered poker engine with reinforcement learning techniques. Built with Python and its various ML libraries."
+            onClick={() => window.open("https://github.com/aaronkjin/ivey")}
           />
         </div>
 
@@ -72,7 +83,7 @@ export default function Projects() {
         </div>
       </div>
 
-      {/* Building */}
+      {/* Featured */}
       <div className="w-full p-2">
         <h1 className="font-bold text-xs tablet:text-sm">Featured</h1>
         <div
