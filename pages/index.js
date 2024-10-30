@@ -27,7 +27,7 @@ export default function Home() {
 
       <div className="mt-32 p-2 laptop:p-0">
         <h1 className="font-medium text-3xl tablet:text-4xl p-1 tablet:p-2 w-full">
-          {theme === "dark" ? "Hi, I'm Aaron 🌋" : "Hi, I'm Aaron 🏔️"}
+          {theme === "dark" ? "Hi, I'm Aaron" : "Hi, I'm Aaron"}
         </h1>
         <h1 className="text-sm tablet:text-base p-1 tablet:p-2 w-full">
           I&apos;m a Stanford BS/MS student studying CS. I enjoy building with a
