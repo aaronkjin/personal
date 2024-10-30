@@ -26,17 +26,6 @@ const Header = () => {
             <Button onClick={() => router.push("/")}>Home</Button>
             <Button onClick={() => router.push("/about")}>About</Button>
             <Button onClick={() => router.push("/projects")}>Projects</Button>
-            {mounted && (
-              <Button
-                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-              >
-                {mounted && theme === "dark" ? (
-                  <FiMoon size={20} />
-                ) : (
-                  <FiSun size={20} />
-                )}
-              </Button>
-            )}
           </div>
         </div>
       </div>
