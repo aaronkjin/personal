@@ -22,7 +22,7 @@ export default function Home() {
       </Head>
 
       {/* Intro */}
-      <div className="max-w-6xl mx-auto px-8">
+      <div className="w-full mx-auto px-4 sm:px-6 tablet:px-8 tablet:max-w-6xl">
         <div className="mt-24 p-2">
           <FadeIn delay={50}>
             <h1 className="font-medium text-3xl tablet:text-4xl p-1 tablet:p-2 w-full">
@@ -43,7 +43,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="mt-8 mb-16 max-w-6xl mx-auto px-8">
+      <div className="mt-8 mb-16 w-full mx-auto px-4 sm:px-6 tablet:px-8 tablet:max-w-6xl">
         <div className="grid grid-cols-1 tablet:grid-cols-2 gap-8">
           {/* Work */}
           <FadeIn delay={200}>
