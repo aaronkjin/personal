@@ -5,6 +5,8 @@ import Layout from "../components/Layout";
 import Socials from "../components/Socials";
 import FadeIn from "../components/FadeIn";
 
+import { ExternalLinkIcon } from "../components/ExternalLinkIcon";
+
 export default function Home() {
   const { theme } = useTheme();
   const [mounted, setMounted] = useState(false);
@@ -212,7 +214,7 @@ export default function Home() {
                         rel="noopener noreferrer"
                         className="text-sm text-gray-500 hover:underline"
                       >
-                        GitHub ↗
+                        GitHub <ExternalLinkIcon />
                       </a>
                     </div>
                     <p className="text-sm tablet:text-base text-gray-500">
@@ -233,7 +235,7 @@ export default function Home() {
                         rel="noopener noreferrer"
                         className="text-sm text-gray-500 hover:underline"
                       >
-                        GitHub ↗
+                        GitHub <ExternalLinkIcon />
                       </a>
                     </div>
                     <p className="text-sm tablet:text-base text-gray-500">
@@ -254,7 +256,7 @@ export default function Home() {
                         rel="noopener noreferrer"
                         className="text-sm text-gray-500 hover:underline"
                       >
-                        GitHub ↗
+                        GitHub <ExternalLinkIcon />
                       </a>
                     </div>
                     <p className="text-sm tablet:text-base text-gray-500">
@@ -275,7 +277,7 @@ export default function Home() {
                         rel="noopener noreferrer"
                         className="text-sm text-gray-500 hover:underline"
                       >
-                        GitHub ↗
+                        GitHub <ExternalLinkIcon />
                       </a>
                     </div>
                     <p className="text-sm tablet:text-base text-gray-500">
@@ -295,7 +297,7 @@ export default function Home() {
                         rel="noopener noreferrer"
                         className="text-sm text-gray-500 hover:underline"
                       >
-                        GitHub ↗
+                        GitHub <ExternalLinkIcon />
                       </a>
                     </div>
                     <p className="text-sm tablet:text-base text-gray-500">
@@ -315,7 +317,7 @@ export default function Home() {
                         rel="noopener noreferrer"
                         className="text-sm text-gray-500 hover:underline"
                       >
-                        GitHub ↗
+                        GitHub <ExternalLinkIcon />
                       </a>
                     </div>
                     <p className="text-sm tablet:text-base text-gray-500">
@@ -335,7 +337,7 @@ export default function Home() {
                         rel="noopener noreferrer"
                         className="text-sm text-gray-500 hover:underline"
                       >
-                        GitHub ↗
+                        GitHub <ExternalLinkIcon />
                       </a>
                     </div>
                     <p className="text-sm tablet:text-base text-gray-500">
@@ -356,7 +358,7 @@ export default function Home() {
                         rel="noopener noreferrer"
                         className="text-sm text-gray-500 hover:underline"
                       >
-                        GitHub ↗
+                        GitHub <ExternalLinkIcon />
                       </a>
                     </div>
                     <p className="text-sm tablet:text-base text-gray-500">
@@ -377,7 +379,7 @@ export default function Home() {
                         rel="noopener noreferrer"
                         className="text-sm text-gray-500 hover:underline"
                       >
-                        GitHub ↗
+                        GitHub <ExternalLinkIcon />
                       </a>
                     </div>
                     <p className="text-sm tablet:text-base text-gray-500">
