@@ -16,10 +16,7 @@ export default function Layout({ children, footerType = "default" }) {
       {/* Add the gradient-circle here */}
       <div className="gradient-circle"></div>
 
-      <div className="pt-2 pr-3">
-        <Header />
-      </div>
-      <div className="container mx-auto mb-10 tablet:w-[768px] laptop:w-[1024px]">
+      <div className="container mx-auto mb-16 tablet:w-[768px] laptop:w-[1024px]">
         {children}
         {footerType === "fixed" ? <FixedFooter /> : <Footer />}
       </div>

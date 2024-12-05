@@ -18,7 +18,7 @@ body {
   position: absolute;
   pointer-events: none;
   /* z-index: 100; */
-  top: -40px;
+  top: -120px;
   height: 300px;
   width: 100vw;
   opacity: 0.35;
