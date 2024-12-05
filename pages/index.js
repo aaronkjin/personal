@@ -31,8 +31,8 @@ export default function Home() {
           </FadeIn>
           <FadeIn delay={100}>
             <h1 className="text-sm tablet:text-base p-1 tablet:p-2 w-full">
-              I'm a Stanford BS/MS student studying CS. I enjoy building with a
-              focus on product and growth.
+              I&apos;m a Stanford BS/MS student studying CS. I enjoy building
+              with a focus on product and growth.
             </h1>
           </FadeIn>
           <FadeIn delay={150}>
@@ -114,9 +114,9 @@ export default function Home() {
                     </div>
                     <div className="w-full mt-1.5">
                       <p className="text-sm tablet:text-base text-gray-500">
-                        Built team's first API gateway for Apple's core
-                        battery-testing web app. Enhanced the web app with ETL
-                        feature extraction.
+                        Built team&apos;s first API gateway for Apple&apos;s
+                        core battery-testing web app. Enhanced the web app with
+                        ETL feature extraction.
                       </p>
                     </div>
                   </div>
@@ -146,9 +146,9 @@ export default function Home() {
                     </div>
                     <div className="w-full mt-1.5">
                       <p className="text-sm tablet:text-base text-gray-500">
-                        Developed NoRamp's new, rebranded landing page. Built
-                        Prisim, a social wallet marketplace for NFT buyers and
-                        sellers.
+                        Developed NoRamp&apos;s new, rebranded landing page.
+                        Built Prisim, a social wallet marketplace for NFT buyers
+                        and sellers.
                       </p>
                     </div>
                   </div>
@@ -216,7 +216,7 @@ export default function Home() {
                       </a>
                     </div>
                     <p className="text-sm tablet:text-base text-gray-500">
-                      A compiler, except it's built from scratch with no
+                      A compiler, except it&apos;s built from scratch with no
                       libraries.
                     </p>
                   </div>
