@@ -33,8 +33,8 @@ export default function Home() {
           </FadeIn>
           <FadeIn delay={100}>
             <h1 className="text-sm tablet:text-base p-1 tablet:p-2 w-full">
-              I&apos;m a Stanford BS/MS student studying CS. I enjoy building
-              with a focus on product and growth.
+              I&apos;m a Stanford BS/MS CS student. I enjoy building with a
+              focus on AI infrastructure and scalable ML systems.
             </h1>
           </FadeIn>
           <FadeIn delay={150}>
@@ -84,9 +84,8 @@ export default function Home() {
                     </div>
                     <div className="w-full mt-1.5">
                       <p className="text-sm tablet:text-base text-gray-500">
-                        Integrated Apple Intelligence into Safari Suggestions to
-                        improve search relevancy. Built Intelligent Find for
-                        non-text web searches.
+                        Integrated Apple Intelligence into Safari Suggestions
+                        for more relevant zero-keyword searches.
                       </p>
                     </div>
                   </div>
@@ -116,9 +115,8 @@ export default function Home() {
                     </div>
                     <div className="w-full mt-1.5">
                       <p className="text-sm tablet:text-base text-gray-500">
-                        Built team&apos;s first API gateway for Apple&apos;s
-                        core battery-testing web app. Enhanced the web app with
-                        ETL feature extraction.
+                        Developed team&apos;s first API gateway for Apple&apos;s
+                        battery-testing web app.
                       </p>
                     </div>
                   </div>
@@ -148,7 +146,6 @@ export default function Home() {
                     </div>
                     <div className="w-full mt-1.5">
                       <p className="text-sm tablet:text-base text-gray-500">
-                        Developed NoRamp&apos;s new, rebranded landing page.
                         Built Prisim, a social wallet marketplace for NFT buyers
                         and sellers.
                       </p>
@@ -181,7 +178,7 @@ export default function Home() {
                     <div className="w-full mt-1.5">
                       <p className="text-sm tablet:text-base text-gray-500">
                         Developed an audit-selecting program for pharmaceutical
-                        suppliers. Streamlined legacy data migration projects.
+                        suppliers.
                       </p>
                     </div>
                   </div>
@@ -218,8 +215,7 @@ export default function Home() {
                       </a>
                     </div>
                     <p className="text-sm tablet:text-base text-gray-500">
-                      A compiler, except it&apos;s built from scratch with no
-                      libraries.
+                      A compiler built from scratch with no libraries.
                     </p>
                   </div>
                 </FadeIn>
@@ -239,8 +235,7 @@ export default function Home() {
                       </a>
                     </div>
                     <p className="text-sm tablet:text-base text-gray-500">
-                      An AI-powered poker engine with reinforcement learning
-                      techniques.
+                      An RL poker engine.
                     </p>
                   </div>
                 </FadeIn>
@@ -260,34 +255,13 @@ export default function Home() {
                       </a>
                     </div>
                     <p className="text-sm tablet:text-base text-gray-500">
-                      A 2D physics engine, simulating physical systems in
-                      digital environments.
-                    </p>
-                  </div>
-                </FadeIn>
-
-                {/* Jonin */}
-                <FadeIn delay={400}>
-                  <div>
-                    <div className="flex items-center gap-2">
-                      <h3 className="font-bold">Jonin</h3>
-                      <a
-                        href="https://github.com/aaronkjin/jonin"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-sm text-gray-500 hover:underline"
-                      >
-                        GitHub <ExternalLinkIcon />
-                      </a>
-                    </div>
-                    <p className="text-sm tablet:text-base text-gray-500">
-                      A pixel ninja platformer game.
+                      A 2D physics engine.
                     </p>
                   </div>
                 </FadeIn>
 
                 {/* Mentore */}
-                <FadeIn delay={450}>
+                <FadeIn delay={400}>
                   <div>
                     <div className="flex items-center gap-2">
                       <h3 className="font-bold">Mentore</h3>
@@ -302,6 +276,26 @@ export default function Home() {
                     </div>
                     <p className="text-sm tablet:text-base text-gray-500">
                       An AI search platform for mentors.
+                    </p>
+                  </div>
+                </FadeIn>
+
+                {/* Jonin */}
+                <FadeIn delay={450}>
+                  <div>
+                    <div className="flex items-center gap-2">
+                      <h3 className="font-bold">Jonin</h3>
+                      <a
+                        href="https://github.com/aaronkjin/jonin"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-sm text-gray-500 hover:underline"
+                      >
+                        GitHub <ExternalLinkIcon />
+                      </a>
+                    </div>
+                    <p className="text-sm tablet:text-base text-gray-500">
+                      A pixel ninja platformer game.
                     </p>
                   </div>
                 </FadeIn>
@@ -341,13 +335,13 @@ export default function Home() {
                       </a>
                     </div>
                     <p className="text-sm tablet:text-base text-gray-500">
-                      An ML algorithm for author attribution based on dialogue.
-                      Trained on Star Wars scripts.
+                      An ML algorithm for author attribution. Trained on Star
+                      Wars scripts.
                     </p>
                   </div>
                 </FadeIn>
 
-                {/* Longevity */}
+                {/* Longevity
                 <FadeIn delay={600}>
                   <div>
                     <div className="flex items-center gap-2">
@@ -366,10 +360,10 @@ export default function Home() {
                       trained on custom ontology.
                     </p>
                   </div>
-                </FadeIn>
+                </FadeIn> */}
 
                 {/* Bonsai */}
-                <FadeIn delay={650}>
+                <FadeIn delay={600}>
                   <div>
                     <div className="flex items-center gap-2">
                       <h3 className="font-bold">Bonsai</h3>
