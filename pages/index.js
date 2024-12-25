@@ -33,7 +33,7 @@ export default function Home() {
           </FadeIn>
           <FadeIn delay={100}>
             <h1 className="text-sm tablet:text-base p-1 tablet:p-2 w-full">
-              I&apos;m a Stanford BS/MS CS student. I'm interested in AI
+              I&apos;m a Stanford BS/MS CS student. I&apos;m interested in AI
               infrastructure and scalable ML systems.
             </h1>
           </FadeIn>
