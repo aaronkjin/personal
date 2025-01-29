@@ -85,7 +85,7 @@ export default function Home() {
                     <div className="w-full mt-1.5">
                       <p className="text-sm tablet:text-base text-gray-500">
                         Integrated Apple Intelligence into Safari Suggestions
-                        for more relevant zero-keyword searches.
+                        for more relevant zero-keyword searches
                       </p>
                     </div>
                   </div>
@@ -116,7 +116,7 @@ export default function Home() {
                     <div className="w-full mt-1.5">
                       <p className="text-sm tablet:text-base text-gray-500">
                         Developed team&apos;s first API gateway for Apple&apos;s
-                        battery-testing web app.
+                        battery-testing web app
                       </p>
                     </div>
                   </div>
@@ -147,7 +147,7 @@ export default function Home() {
                     <div className="w-full mt-1.5">
                       <p className="text-sm tablet:text-base text-gray-500">
                         Built Prisim, a social wallet marketplace for NFT buyers
-                        and sellers.
+                        and sellers
                       </p>
                     </div>
                   </div>
@@ -178,7 +178,7 @@ export default function Home() {
                     <div className="w-full mt-1.5">
                       <p className="text-sm tablet:text-base text-gray-500">
                         Developed an audit-selecting program for pharmaceutical
-                        suppliers.
+                        suppliers
                       </p>
                     </div>
                   </div>
@@ -215,7 +215,7 @@ export default function Home() {
                       </a>
                     </div>
                     <p className="text-sm tablet:text-base text-gray-500">
-                      A compiler built from scratch with no libraries.
+                      A compiler built from scratch with no libraries
                     </p>
                   </div>
                 </FadeIn>
@@ -235,7 +235,7 @@ export default function Home() {
                       </a>
                     </div>
                     <p className="text-sm tablet:text-base text-gray-500">
-                      An RL poker engine.
+                      An RL poker engine
                     </p>
                   </div>
                 </FadeIn>
@@ -255,7 +255,7 @@ export default function Home() {
                       </a>
                     </div>
                     <p className="text-sm tablet:text-base text-gray-500">
-                      A 2D physics engine.
+                      A 2D physics engine
                     </p>
                   </div>
                 </FadeIn>
@@ -275,7 +275,7 @@ export default function Home() {
                       </a>
                     </div>
                     <p className="text-sm tablet:text-base text-gray-500">
-                      An AI search platform for mentors.
+                      An AI search platform for mentors
                     </p>
                   </div>
                 </FadeIn>
@@ -295,7 +295,7 @@ export default function Home() {
                       </a>
                     </div>
                     <p className="text-sm tablet:text-base text-gray-500">
-                      A pixel ninja platformer game.
+                      A pixel ninja platformer game
                     </p>
                   </div>
                 </FadeIn>
@@ -315,7 +315,7 @@ export default function Home() {
                       </a>
                     </div>
                     <p className="text-sm tablet:text-base text-gray-500">
-                      An all-in-one AI content generation web app.
+                      An all-in-one AI content generation web app
                     </p>
                   </div>
                 </FadeIn>
@@ -335,8 +335,8 @@ export default function Home() {
                       </a>
                     </div>
                     <p className="text-sm tablet:text-base text-gray-500">
-                      An ML algorithm for author attribution. Trained on Star
-                      Wars scripts.
+                      An ML algorithm for author attribution, trained on Star
+                      Wars scripts
                     </p>
                   </div>
                 </FadeIn>
@@ -357,7 +357,7 @@ export default function Home() {
                     </div>
                     <p className="text-sm tablet:text-base text-gray-500">
                       A GPT system to suggest lifestyle habits for longer life,
-                      trained on custom ontology.
+                      trained on custom ontology
                     </p>
                   </div>
                 </FadeIn> */}
@@ -377,7 +377,7 @@ export default function Home() {
                       </a>
                     </div>
                     <p className="text-sm tablet:text-base text-gray-500">
-                      An iOS app for personal expense management.
+                      An iOS app for personal expense management
                     </p>
                   </div>
                 </FadeIn>
