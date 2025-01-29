@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import Head from "next/head";
 import { useTheme } from "next-themes";
 
-import Layout from "../components/Layout";
+import Layout from "../../components/Layout";
 
 export default function About() {
   const { theme } = useTheme();

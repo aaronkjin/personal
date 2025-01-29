@@ -3,8 +3,8 @@ import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
 import Head from "next/head";
 
-import Layout from "../components/Layout";
-import Socials from "../components/Socials";
+import Layout from "../../components/Layout";
+import Socials from "../../components/Socials";
 
 export default function Home() {
   const { theme } = useTheme();

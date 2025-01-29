@@ -1,8 +1,8 @@
 import Head from "next/head";
 import { useTheme } from "next-themes";
 
-import Project from "../components/Project";
-import Layout from "../components/Layout";
+import Project from "../../components/Project";
+import Layout from "../../components/Layout";
 
 export default function Projects() {
   const { theme } = useTheme();
