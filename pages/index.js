@@ -220,8 +220,48 @@ export default function Home() {
                   </div>
                 </FadeIn>
 
-                {/* Ivey */}
+                {/* GPT2 */}
                 <FadeIn delay={300}>
+                  <div>
+                    <div className="flex items-center gap-2">
+                      <h3 className="font-bold">GPT2</h3>
+                      <a
+                        href="https://github.com/aaronkjin/gpt2"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-sm text-gray-500 hover:underline"
+                      >
+                        GitHub <ExternalLinkIcon />
+                      </a>
+                    </div>
+                    <p className="text-sm tablet:text-base text-gray-500">
+                      An decoder-only, autoregressive transformer
+                    </p>
+                  </div>
+                </FadeIn>
+
+                {/* Jaike */}
+                <FadeIn delay={350}>
+                  <div>
+                    <div className="flex items-center gap-2">
+                      <h3 className="font-bold">Jaike</h3>
+                      <a
+                        href="https://github.com/aaronkjin/jaike"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-sm text-gray-500 hover:underline"
+                      >
+                        GitHub <ExternalLinkIcon />
+                      </a>
+                    </div>
+                    <p className="text-sm tablet:text-base text-gray-500">
+                      A lecture-to-brainrot web app
+                    </p>
+                  </div>
+                </FadeIn>
+
+                {/* Ivey */}
+                <FadeIn delay={400}>
                   <div>
                     <div className="flex items-center gap-2">
                       <h3 className="font-bold">Ivey</h3>
@@ -241,7 +281,7 @@ export default function Home() {
                 </FadeIn>
 
                 {/* Physi.cs */}
-                <FadeIn delay={350}>
+                <FadeIn delay={450}>
                   <div>
                     <div className="flex items-center gap-2">
                       <h3 className="font-bold">Physi.cs</h3>
@@ -261,7 +301,7 @@ export default function Home() {
                 </FadeIn>
 
                 {/* Mentore */}
-                <FadeIn delay={400}>
+                <FadeIn delay={500}>
                   <div>
                     <div className="flex items-center gap-2">
                       <h3 className="font-bold">Mentore</h3>
@@ -281,7 +321,7 @@ export default function Home() {
                 </FadeIn>
 
                 {/* Jonin */}
-                <FadeIn delay={450}>
+                <FadeIn delay={550}>
                   <div>
                     <div className="flex items-center gap-2">
                       <h3 className="font-bold">Jonin</h3>
@@ -301,7 +341,7 @@ export default function Home() {
                 </FadeIn>
 
                 {/* Einstein.ai */}
-                <FadeIn delay={500}>
+                <FadeIn delay={600}>
                   <div>
                     <div className="flex items-center gap-2">
                       <h3 className="font-bold">Einstein.ai</h3>
@@ -320,8 +360,8 @@ export default function Home() {
                   </div>
                 </FadeIn>
 
-                {/* Quill */}
-                <FadeIn delay={550}>
+                {/* Quill
+                <FadeIn delay={650}>
                   <div>
                     <div className="flex items-center gap-2">
                       <h3 className="font-bold">Quill</h3>
@@ -339,10 +379,10 @@ export default function Home() {
                       Wars scripts
                     </p>
                   </div>
-                </FadeIn>
+                </FadeIn> */}
 
                 {/* Longevity
-                <FadeIn delay={600}>
+                <FadeIn delay={700}>
                   <div>
                     <div className="flex items-center gap-2">
                       <h3 className="font-bold">Longevity</h3>
@@ -363,7 +403,7 @@ export default function Home() {
                 </FadeIn> */}
 
                 {/* Bonsai */}
-                <FadeIn delay={600}>
+                <FadeIn delay={650}>
                   <div>
                     <div className="flex items-center gap-2">
                       <h3 className="font-bold">Bonsai</h3>
