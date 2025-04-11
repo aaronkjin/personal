@@ -235,7 +235,7 @@ export default function Home() {
                       </a>
                     </div>
                     <p className="text-sm tablet:text-base text-gray-500">
-                      An decoder-only, autoregressive transformer
+                      A decoder-only, autoregressive transformer
                     </p>
                   </div>
                 </FadeIn>
