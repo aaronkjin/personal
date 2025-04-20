@@ -340,7 +340,7 @@ export default function Home() {
                   </div>
                 </FadeIn>
 
-                {/* Einstein.ai */}
+                {/* Einstein.ai
                 <FadeIn delay={600}>
                   <div>
                     <div className="flex items-center gap-2">
@@ -358,7 +358,7 @@ export default function Home() {
                       An all-in-one AI content generation web app
                     </p>
                   </div>
-                </FadeIn>
+                </FadeIn> */}
 
                 {/* Quill
                 <FadeIn delay={650}>
@@ -402,7 +402,7 @@ export default function Home() {
                   </div>
                 </FadeIn> */}
 
-                {/* Bonsai */}
+                {/* Bonsai
                 <FadeIn delay={650}>
                   <div>
                     <div className="flex items-center gap-2">
@@ -420,7 +420,7 @@ export default function Home() {
                       An iOS app for personal expense management
                     </p>
                   </div>
-                </FadeIn>
+                </FadeIn> */}
               </div>
             </div>
           </FadeIn>
