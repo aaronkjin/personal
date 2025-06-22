@@ -60,8 +60,38 @@ export default function Home() {
               </div>
 
               <div className="grid tablet:grid-cols-1 p-2 gap-4">
-                {/* Apple Safari */}
+                {/* LinkedIn */}
                 <FadeIn delay={250}>
+                  <div className="flex flex-col">
+                    <div className="w-full">
+                      <p className="font-bold">LinkedIn</p>
+                      <div className="flex justify-between items-center">
+                        <p
+                          className={`text-sm tablet:text-base ${
+                            theme === "dark" ? "opacity-50" : ""
+                          }`}
+                        >
+                          ML Infra Engineer Intern
+                        </p>
+                        <p
+                          className={`text-sm tablet:text-base ${
+                            theme === "dark" ? "opacity-50" : ""
+                          }`}
+                        >
+                          Summer 2025
+                        </p>
+                      </div>
+                    </div>
+                    <div className="w-full mt-1.5">
+                      <p className="text-sm tablet:text-base text-gray-500">
+                        TBD
+                      </p>
+                    </div>
+                  </div>
+                </FadeIn>
+
+                {/* Apple Safari */}
+                <FadeIn delay={300}>
                   <div className="flex flex-col">
                     <div className="w-full">
                       <p className="font-bold">Apple</p>
@@ -92,7 +122,7 @@ export default function Home() {
                 </FadeIn>
 
                 {/* Apple Battery */}
-                <FadeIn delay={300}>
+                <FadeIn delay={350}>
                   <div className="flex flex-col mt-3">
                     <div className="w-full">
                       <p className="font-bold">Apple</p>
@@ -123,7 +153,7 @@ export default function Home() {
                 </FadeIn>
 
                 {/* NoRamp */}
-                <FadeIn delay={350}>
+                <FadeIn delay={400}>
                   <div className="flex flex-col mt-3">
                     <div className="w-full">
                       <p className="font-bold">NoRamp</p>
@@ -154,7 +184,7 @@ export default function Home() {
                 </FadeIn>
 
                 {/* Samsung Biologics */}
-                <FadeIn delay={400}>
+                <FadeIn delay={450}>
                   <div className="flex flex-col mt-3">
                     <div className="w-full">
                       <p className="font-bold">Samsung Biologics</p>
@@ -200,13 +230,13 @@ export default function Home() {
               </div>
 
               <div className="p-2 grid grid-cols-1 gap-6">
-                {/* Tungsten */}
+                {/* Ivey */}
                 <FadeIn delay={250}>
                   <div>
                     <div className="flex items-center gap-2">
-                      <h3 className="font-bold">Tungsten</h3>
+                      <h3 className="font-bold">Ivey</h3>
                       <a
-                        href="https://github.com/aaronkjin/tungsten"
+                        href="https://github.com/aaronkjin/ivey"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-sm text-gray-500 hover:underline"
@@ -215,7 +245,7 @@ export default function Home() {
                       </a>
                     </div>
                     <p className="text-sm tablet:text-base text-gray-500">
-                      A compiler built from scratch with no libraries
+                      An RL poker engine
                     </p>
                   </div>
                 </FadeIn>
@@ -240,13 +270,13 @@ export default function Home() {
                   </div>
                 </FadeIn>
 
-                {/* Jaike */}
+                {/* PocketNeRF */}
                 <FadeIn delay={350}>
                   <div>
                     <div className="flex items-center gap-2">
-                      <h3 className="font-bold">Jaike</h3>
+                      <h3 className="font-bold">PocketNeRF</h3>
                       <a
-                        href="https://github.com/aaronkjin/jaike"
+                        href="https://github.com/aaronkjin/pocketnerf"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-sm text-gray-500 hover:underline"
@@ -255,18 +285,18 @@ export default function Home() {
                       </a>
                     </div>
                     <p className="text-sm tablet:text-base text-gray-500">
-                      A lecture-to-brainrot web app
+                      A phone-to-3D indoor reconstruction pipeline
                     </p>
                   </div>
                 </FadeIn>
 
-                {/* Ivey */}
+                {/* Tungsten */}
                 <FadeIn delay={400}>
                   <div>
                     <div className="flex items-center gap-2">
-                      <h3 className="font-bold">Ivey</h3>
+                      <h3 className="font-bold">Tungsten</h3>
                       <a
-                        href="https://github.com/aaronkjin/ivey"
+                        href="https://github.com/aaronkjin/tungsten"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-sm text-gray-500 hover:underline"
@@ -275,7 +305,7 @@ export default function Home() {
                       </a>
                     </div>
                     <p className="text-sm tablet:text-base text-gray-500">
-                      An RL poker engine
+                      A compiler built from scratch with no libraries
                     </p>
                   </div>
                 </FadeIn>
@@ -300,8 +330,28 @@ export default function Home() {
                   </div>
                 </FadeIn>
 
-                {/* Mentore */}
+                {/* Jaike */}
                 <FadeIn delay={500}>
+                  <div>
+                    <div className="flex items-center gap-2">
+                      <h3 className="font-bold">Jaike</h3>
+                      <a
+                        href="https://github.com/aaronkjin/jaike"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-sm text-gray-500 hover:underline"
+                      >
+                        GitHub <ExternalLinkIcon />
+                      </a>
+                    </div>
+                    <p className="text-sm tablet:text-base text-gray-500">
+                      A lecture-to-brainrot web app
+                    </p>
+                  </div>
+                </FadeIn>
+
+                {/* Mentore */}
+                <FadeIn delay={550}>
                   <div>
                     <div className="flex items-center gap-2">
                       <h3 className="font-bold">Mentore</h3>
@@ -320,8 +370,28 @@ export default function Home() {
                   </div>
                 </FadeIn>
 
+                {/* Pullup */}
+                <FadeIn delay={600}>
+                  <div>
+                    <div className="flex items-center gap-2">
+                      <h3 className="font-bold">Pullup</h3>
+                      <a
+                        href="https://github.com/aaronkjin/pullup"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-sm text-gray-500 hover:underline"
+                      >
+                        GitHub <ExternalLinkIcon />
+                      </a>
+                    </div>
+                    <p className="text-sm tablet:text-base text-gray-500">
+                      A mobile bulletin to find campus events
+                    </p>
+                  </div>
+                </FadeIn>
+
                 {/* Jonin */}
-                <FadeIn delay={550}>
+                <FadeIn delay={650}>
                   <div>
                     <div className="flex items-center gap-2">
                       <h3 className="font-bold">Jonin</h3>
