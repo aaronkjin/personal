@@ -312,7 +312,7 @@ export default function Home() {
                 </FadeIn>
 
                 {/* Physi.cs */}
-                <FadeIn delay={450}>
+                {/* <FadeIn delay={450}>
                   <div>
                     <div className="flex items-center gap-2">
                       <h3 className="font-bold">Physi.cs</h3>
@@ -327,6 +327,26 @@ export default function Home() {
                     </div>
                     <p className="text-sm tablet:text-base text-gray-500">
                       A 2D physics engine
+                    </p>
+                  </div>
+                </FadeIn> */}
+
+                {/* Slop */}
+                <FadeIn delay={450}>
+                  <div>
+                    <div className="flex items-center gap-2">
+                      <h3 className="font-bold">Slop</h3>
+                      <a
+                        href="https://github.com/aaronkjin/slop"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-sm text-gray-500 hover:underline"
+                      >
+                        GitHub <ExternalLinkIcon />
+                      </a>
+                    </div>
+                    <p className="text-sm tablet:text-base text-gray-500">
+                      An AI video generator for viral TikToks
                     </p>
                   </div>
                 </FadeIn>
