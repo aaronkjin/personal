@@ -84,7 +84,8 @@ export default function Home() {
                     </div>
                     <div className="w-full mt-1.5">
                       <p className="text-sm tablet:text-base text-gray-500">
-                        TBD
+                        Building a model benchmarking platform for
+                        LinkedIn&apos;s AI models
                       </p>
                     </div>
                   </div>
