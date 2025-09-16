@@ -147,7 +147,7 @@ export default function Home() {
                     <div className="w-full mt-1.5">
                       <p className="text-sm tablet:text-base text-gray-500">
                         Developed team&apos;s first API gateway for Apple&apos;s
-                        battery-testing web app
+                        battery-testing platform
                       </p>
                     </div>
                   </div>
