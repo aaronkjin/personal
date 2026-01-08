@@ -271,6 +271,27 @@ export default function Home() {
                   </div>
                 </FadeIn>
 
+                {/* GPT2 */}
+                <FadeIn delay={300}>
+                  <div>
+                    <div className="flex items-center gap-2">
+                      <h3 className="font-bold">PolymarketFM</h3>
+                      <a
+                        href="https://github.com/aaronkjin/polymarketfm"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-sm text-gray-500 hover:underline"
+                      >
+                        GitHub <ExternalLinkIcon />
+                      </a>
+                    </div>
+                    <p className="text-sm tablet:text-base text-gray-500">
+                      A foundation model for zero-shot prediction market
+                      forecasting
+                    </p>
+                  </div>
+                </FadeIn>
+
                 {/* PocketNeRF */}
                 <FadeIn delay={350}>
                   <div>
@@ -310,26 +331,6 @@ export default function Home() {
                     </p>
                   </div>
                 </FadeIn>
-
-                {/* Physi.cs */}
-                {/* <FadeIn delay={450}>
-                  <div>
-                    <div className="flex items-center gap-2">
-                      <h3 className="font-bold">Physi.cs</h3>
-                      <a
-                        href="https://github.com/aaronkjin/physics"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-sm text-gray-500 hover:underline"
-                      >
-                        GitHub <ExternalLinkIcon />
-                      </a>
-                    </div>
-                    <p className="text-sm tablet:text-base text-gray-500">
-                      A 2D physics engine
-                    </p>
-                  </div>
-                </FadeIn> */}
 
                 {/* Slop */}
                 <FadeIn delay={450}>
@@ -411,7 +412,7 @@ export default function Home() {
                   </div>
                 </FadeIn>
 
-                {/* Jonin */}
+                {/* Jonin
                 <FadeIn delay={650}>
                   <div>
                     <div className="flex items-center gap-2">
@@ -427,88 +428,6 @@ export default function Home() {
                     </div>
                     <p className="text-sm tablet:text-base text-gray-500">
                       A pixel ninja platformer game
-                    </p>
-                  </div>
-                </FadeIn>
-
-                {/* Einstein.ai
-                <FadeIn delay={600}>
-                  <div>
-                    <div className="flex items-center gap-2">
-                      <h3 className="font-bold">Einstein.ai</h3>
-                      <a
-                        href="https://github.com/aaronkjin/einstein"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-sm text-gray-500 hover:underline"
-                      >
-                        GitHub <ExternalLinkIcon />
-                      </a>
-                    </div>
-                    <p className="text-sm tablet:text-base text-gray-500">
-                      An all-in-one AI content generation web app
-                    </p>
-                  </div>
-                </FadeIn> */}
-
-                {/* Quill
-                <FadeIn delay={650}>
-                  <div>
-                    <div className="flex items-center gap-2">
-                      <h3 className="font-bold">Quill</h3>
-                      <a
-                        href="https://github.com/aaronkjin/quill"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-sm text-gray-500 hover:underline"
-                      >
-                        GitHub <ExternalLinkIcon />
-                      </a>
-                    </div>
-                    <p className="text-sm tablet:text-base text-gray-500">
-                      An ML algorithm for author attribution, trained on Star
-                      Wars scripts
-                    </p>
-                  </div>
-                </FadeIn> */}
-
-                {/* Longevity
-                <FadeIn delay={700}>
-                  <div>
-                    <div className="flex items-center gap-2">
-                      <h3 className="font-bold">Longevity</h3>
-                      <a
-                        href="https://github.com/aaronkjin/longevity"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-sm text-gray-500 hover:underline"
-                      >
-                        GitHub <ExternalLinkIcon />
-                      </a>
-                    </div>
-                    <p className="text-sm tablet:text-base text-gray-500">
-                      A GPT system to suggest lifestyle habits for longer life,
-                      trained on custom ontology
-                    </p>
-                  </div>
-                </FadeIn> */}
-
-                {/* Bonsai
-                <FadeIn delay={650}>
-                  <div>
-                    <div className="flex items-center gap-2">
-                      <h3 className="font-bold">Bonsai</h3>
-                      <a
-                        href="https://github.com/aaronkjin/bonsai"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-sm text-gray-500 hover:underline"
-                      >
-                        GitHub <ExternalLinkIcon />
-                      </a>
-                    </div>
-                    <p className="text-sm tablet:text-base text-gray-500">
-                      An iOS app for personal expense management
                     </p>
                   </div>
                 </FadeIn> */}
