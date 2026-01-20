@@ -190,17 +190,31 @@ const AsciiArt = () => {
   const trimmedArt = art.trim();
   const trimmedWaves = waveArt.trim();
 
+  const artWidth = trimmedArt.split("\n")[0].length;
+
+  const paddedWaves = trimmedWaves
+    .split("\n")
+    .map((line) => line.padEnd(artWidth, " "))
+    .join("\n");
+
   const fullArt = useMemo(
     () =>
       [
-        trimmedWaves,
+        paddedWaves,
+        trimmedArt,
+        trimmedArt,
+        trimmedArt,
+        trimmedArt,
+        trimmedArt,
+        trimmedArt,
+        trimmedArt,
         trimmedArt,
         trimmedArt,
         trimmedArt,
         trimmedArt,
         trimmedArt,
       ].join("\n"),
-    [trimmedArt, trimmedWaves]
+    [paddedWaves, trimmedArt]
   );
 
   const charPositions = useMemo(() => {
