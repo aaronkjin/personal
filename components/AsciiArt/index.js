@@ -1,11 +1,8 @@
-import React, { useEffect, useRef, useMemo } from "react";
+import React, { useMemo } from "react";
 
 const AsciiArt = () => {
-  const canvasRef = useRef(null);
-  const containerRef = useRef(null);
-
-  // Galaxy
-  const art = `                                                                                                                  
+  // Galaxy 
+  const art = `
 +++-++++++++++++++++++++++++++++++++#++++++++++++++++++##+++++++++++++++++++++++++++++++++++++++++++++#+++++++++++++++++++++++++++++++++++++++++++++++#####++++++++++++++++#++#+++++++##++####++#+++++#+#++++##+++++###++++++++++#++++++###++++++##++##+++++#++#####+++##++###+++---+++++++++++##++#+++++++++++####++++-+++++++++++++++##++++++++++++#+###++++++###+++###++#####+######+++############+#########
 +++++++++++++++++++++++++++++++++++++++++#++++++++++++++++++++++++++++++++++#+++++++++++++++++++++#+++++++++#++++++++++++++#+++++#+###++++++++++++++++++###++++#+++++++#+++++++-+++++#++++####+++###+++#####+#+++++++#+++++#++++++++++++##+++++++##+++##+++#++######++++#++#+++++####+++###++++##++++##++++++++++++++++++++++++##+++++++++++++++++++++###+++##+++++++###+++++##+####++++##++########++++####++##
 +++++++++++++++++++++++++++++++++++++++++++++++++++++##++++++++++++++++#++++#++++++++++++++++#++++++-++++####++++++##++##++#+++++++++++++####+#++++++#++##++++++++++++++++++++#++#+++++++######++#++++++++++++++++++#+++#+#++++++-+#+##+++++++++++++++++###+#++++##++++++++++++######++++++++++###++#+++++++++++++++-+++++++++++++++++++++++++++++#++++++##+++++++++#####++##+++###+###+#+++##########+++++++###
@@ -168,39 +165,37 @@ const AsciiArt = () => {
 ++++++++++++++++++++++++++++++++++-++++++++++++++++-+++++++++++++++++++++++++++#++++++++++++++++++++++++++++#+#+++#+++#++++++++++++++++++##+++++#+#+++++++++++++++++++####+++-+#++#+#+#++++#####+########++++############################++#############++##################################################++#########+##########+###############################################################++############
 +++++++++++++++++++++++++-.-++++++++++++++++++++++++++-++++++++++++++++++++++++++++++++++++++++++++++++++++#++++++##+++++++++++++++##++++##++++++###++++++++++-+-++++#######++++++#++###++++#++#######+++++##+#####+++#+######++###++####+-+##+#++########++##############+###########################################+++##################################++###################################################`;
 
-  // Wave for top
-  const waveArt = `                                                                                                                                 #                                           +                                                       #      +                                   +                                                                                          #                                 
-                                                                                                                       +    #           +                                                  #                  +                                          #                     +                                                   +                                                                  +                  
-                                                                                                           #      +            #     +        #                        +                           #                      +                                      #        +                                        #                            +                          #                                              
-                                                                                              +   #     +      #         +           #      +        #      +                   #       +                 #        +             #      +                                   +       #        +                                          #         +                 #         +            #                               
-                                                                                   #    +        #    +     #        +         #    +      #       +      #      +        #    +       #       +                #       +      #       +      #     +                   #      +       #      +       #     +                                #        +       #        +       #       +       #                            
-                                                                        +   #   +      #    +      #     +      #    +      #     +     #     +     #    +      #    +      #     +      #   +       #    +      #     +     #     +     #    +      #    +                   #     +     #    +      #    +     #     +    #    +                #      +     #     +     #     +    #     +     #                         
-                                                             #   +    #    +    #    +    #    +    #   +    #    +   #    +    #   +    #   +    #   +    #   +    #   +    #   +    #   +   #   +    #   +   #   +   #   +   #   +   #  +   #   +                      #   +   #   +   #  +   #   +   #  +   #   +  #   +   #  +   #  +   #  +                 #  +   #  +   #  +  #  +   #  +  #  +   #                     
-                                                  +  #  +   #  +   #  +   #  +  #  +   #  +  #  +   #  +  #  +  #  +  #  +  #  +  #  +  #  +  # +  #  +  # +  #  +  # +  # +  #  +  # +  # +  # +  # +  # +  # +  # + # +  # +  # + # +  # + # +  # + # + # +              # + # + # + # + # + # + # + # + # + # + # + # + # + # +# + # +# + # +# +# + # +# +# +# +# +                # +# +# +# +# +# +# +#                  
-                                       +  # +  # +  # +  # + # +  # + # +  # + # + # + # + # + # + # + # + # + # + # + # + # + # + # + # + # +# + # +# + # +# +# + # +# +# +# +# +# +# +# +# +# +# +# +# +# +# +# +# +#+# +# +#+# +#+# +#+# +#+# +#+# +#+#+# +#+#+# +#+#+         +#+#+# +#+#++#+#++#+#++#+#++#+#++#++#+#++#+#++#+#++#                    +#++#+#++#+#++#+#++#+#++#+                                          
-                            #  + # + # + # + # +# + # +# + # +# +# + # +# +# +# +# +# +# +# +# +# +# +# +#+# +# +#+# +#+# +#+# +#+# +#+# +#+#+# +#+#+# +#+#++#+#++#+#++#+#++#++#+#++#+#++#+#++#+#++#+#++#+#++#+#++#++#+#++#++#++#++#++#++#++#++#++#++#++#+#+#+#+#+#+#+#+#+#                +#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+                                                                                               
-                 + # +# + # +# +# +# +# +# +# +# +# +#+# +#+# +#+# +#+#+# +#+#+# +#+#++#+#++#+#++#++#+#++#+#++#+#++#+#++#++#+#++#++#++#++#++#++#++#++#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#++##+#++##+#++##+#++##+##+##+##+##+##+##+##+##+##+##+###+###+###+###+###+###+####+####+####+####              +####+####+#####+#####+#####+#####+#+#####+                                                                               
-+# +# +# +#+# +#+#+# +#+#++#+#++#++#+#++#+#++#+#++#++#+#++#++#++#++#++#++#+#+#+#+#+#+#+#+#++##+#++##+#++##+##+##+##+##+###+###+###+###+####+####+#####+#####+#####+#+#####++#####++#####++######++######++######++#######++#######++########++########++#########++#########++##########++##########++##########++###########++###########++############++############++#############++#############++##############++######
-+#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#++#
-#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+#-+
-#+###+###+###+###+###+###+###+###+###+###+###+###+###+###+###+###+###+###+###+###+###+###+###+###+###+###+###+###+###+###+###+###+###+###+###+###+###+###+###+###+###+###+###+###+###+###+###+###+###+###+###+###+###+###+###+###+###+###+###+###+###+###+###+###+###+###+###+###+###+###+###+###+###+###+###+###+###+###+###+###+###+###+###+###+###+###+###+###+###+###+###+###+###+###+###+###+###+###+###+###+###+###+#
-+##++##++##+###++##++##++##+###++##++##++##+###++##++##++##+###++##++##++##+###++##++##++##+###++##++##++##+###++##++##++##+###++##++##++##+###++##++##++##+###++##++##++##+###++##++##++##+###++##++##++##+###++##++##++##+###++##++##++##+###++##++##++##+###++##++##++##+###++##++##++##+###++##++##++##+###++##++##++##+###++##++##++##+###++##++##++##+###++##++##++##+###++##++##++##+###++##++##++##+###++##++##++##
-##++###++###+##++###++###+##++###++###+##++###++###+##++###++###+##++###++###+##++###++###+##++###++###+##++###++###+##++###++###+##++###++###+##++###++###+##++###++###+##++###++###+##++###++###+##++###++###+##++###++###+##++###++###+##++###++###+##++###++###+##++###++###+##++###++###+##++###++###+##++###++###+##++###++###+##++###++###+##++###++###+##++###++###+##++###++###+##++###++###+##++###++###+##++###++#`;
 
   const trimmedArt = art.trim();
-  const trimmedWaves = waveArt.trim();
-
   const artWidth = trimmedArt.split("\n")[0].length;
 
-  const paddedWaves = trimmedWaves
-    .split("\n")
-    .map((line) => line.padEnd(artWidth, " "))
-    .join("\n");
+  // Wave generation for top
+  const generateWaves = (width) => {
+    const lines = [];
+    // Sparse at top, increase density
+    const densities = [0.01, 0.02, 0.03, 0.05, 0.08, 0.12, 0.18, 0.25, 0.35, 0.5, 0.7, 0.85, 0.95, 1.0];
+    
+    for (const density of densities) {
+      let line = '';
+      for (let i = 0; i < width; i++) {
+        const rand = Math.sin(i * 12.9898 + density * 78.233) * 43758.5453 % 1;
+        if (Math.abs(rand) < density) {
+          line += '+';
+        } else {
+          line += ' ';
+        }
+      }
+      lines.push(line);
+    }
+    return lines.join('\n');
+  };
+
+  const waves = useMemo(() => generateWaves(artWidth), [artWidth]);
 
   const fullArt = useMemo(
     () =>
       [
-        paddedWaves,
+        waves,
         trimmedArt,
         trimmedArt,
         trimmedArt,
@@ -214,170 +209,12 @@ const AsciiArt = () => {
         trimmedArt,
         trimmedArt,
       ].join("\n"),
-    [paddedWaves, trimmedArt]
+    [waves, trimmedArt]
   );
 
-  const charPositions = useMemo(() => {
-    const positions = [];
-    const lines = fullArt.split("\n");
-    lines.forEach((line, y) => {
-      for (let x = 0; x < line.length; x++) {
-        if (line[x] !== " ") {
-          positions.push({ x, y });
-        }
-      }
-    });
-    return positions;
-  }, [fullArt]);
-
-  // Shimmer animation
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    const container = containerRef.current;
-    if (!canvas || !container || charPositions.length === 0) return;
-
-    const ctx = canvas.getContext("2d");
-
-    // Shimmer state
-    const shimmers = [];
-    const maxShimmers = 500;
-    const shimmerLifetime = 3000;
-    let lastSpawn = 0;
-    const spawnInterval = 10;
-    let animationId;
-
-    // Resize handler
-    const updateSize = () => {
-      const rect = container.getBoundingClientRect();
-      canvas.width = rect.width;
-      canvas.height = rect.height;
-    };
-
-    updateSize();
-    window.addEventListener("resize", updateSize);
-
-    const preElement = container.querySelector(".ascii-art-text");
-
-    const animate = (timestamp) => {
-      if (!preElement) {
-        animationId = requestAnimationFrame(animate);
-        return;
-      }
-
-      // Spawn new shimmers
-      if (
-        timestamp - lastSpawn > spawnInterval &&
-        shimmers.length < maxShimmers
-      ) {
-        const pos =
-          charPositions[Math.floor(Math.random() * charPositions.length)];
-        shimmers.push({
-          x: pos.x,
-          y: pos.y,
-          startTime: timestamp,
-        });
-        lastSpawn = timestamp;
-      }
-
-      const computedStyle = window.getComputedStyle(preElement);
-      const fontSize = parseFloat(computedStyle.fontSize);
-      const lineHeight = fontSize;
-      const charWidth = fontSize * 0.6;
-
-      const preRect = preElement.getBoundingClientRect();
-      const containerRect = container.getBoundingClientRect();
-      const offsetX = preRect.left - containerRect.left;
-      const offsetY = preRect.top - containerRect.top;
-
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-      const gradientColors = [
-        { r: 160, g: 50, b: 255 }, // Purple
-        { r: 255, g: 150, b: 210 }, // Pink
-        { r: 255, g: 245, b: 170 }, // Yellow
-        { r: 120, g: 210, b: 255 }, // Light Blue
-        { r: 160, g: 50, b: 255 }, // Back to Purple
-      ];
-
-      const lerpColor = (c1, c2, t) => ({
-        r: Math.round(c1.r + (c2.r - c1.r) * t),
-        g: Math.round(c1.g + (c2.g - c1.g) * t),
-        b: Math.round(c1.b + (c2.b - c1.b) * t),
-      });
-
-      const getCyclingColor = (progress) => {
-        const numSegments = gradientColors.length - 1;
-        const scaledProgress = progress * numSegments;
-        const segment = Math.min(Math.floor(scaledProgress), numSegments - 1);
-        const segmentProgress = scaledProgress - segment;
-        return lerpColor(
-          gradientColors[segment],
-          gradientColors[segment + 1],
-          segmentProgress
-        );
-      };
-
-      for (let i = shimmers.length - 1; i >= 0; i--) {
-        const s = shimmers[i];
-        const age = timestamp - s.startTime;
-
-        if (age > shimmerLifetime) {
-          shimmers.splice(i, 1);
-          continue;
-        }
-
-        const progress = age / shimmerLifetime;
-        const intensity = Math.sin(progress * Math.PI);
-
-        const pixelX = offsetX + s.x * charWidth + charWidth / 2;
-        const pixelY = offsetY + s.y * lineHeight + lineHeight / 2;
-
-        const color = getCyclingColor(progress);
-
-        const radius = charWidth * 2.5;
-        const alpha = intensity * 0.3;
-
-        const gradient = ctx.createRadialGradient(
-          pixelX,
-          pixelY,
-          0,
-          pixelX,
-          pixelY,
-          radius
-        );
-        gradient.addColorStop(
-          0,
-          `rgba(${color.r}, ${color.g}, ${color.b}, ${alpha})`
-        );
-        gradient.addColorStop(
-          0.4,
-          `rgba(${color.r}, ${color.g}, ${color.b}, ${alpha * 0.4})`
-        );
-        gradient.addColorStop(
-          0.7,
-          `rgba(${color.r}, ${color.g}, ${color.b}, ${alpha * 0.1})`
-        );
-        gradient.addColorStop(1, `rgba(${color.r}, ${color.g}, ${color.b}, 0)`);
-
-        ctx.fillStyle = gradient;
-        ctx.fillRect(pixelX - radius, pixelY - radius, radius * 2, radius * 2);
-      }
-
-      animationId = requestAnimationFrame(animate);
-    };
-
-    animationId = requestAnimationFrame(animate);
-
-    return () => {
-      cancelAnimationFrame(animationId);
-      window.removeEventListener("resize", updateSize);
-    };
-  }, [charPositions]);
-
   return (
-    <div className="ascii-art-background" ref={containerRef}>
+    <div className="ascii-art-background">
       <pre className="ascii-art-text">{fullArt}</pre>
-      <canvas ref={canvasRef} className="ascii-shimmer-canvas" />
     </div>
   );
 };
