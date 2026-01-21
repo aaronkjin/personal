@@ -10,9 +10,7 @@ export default function Layout({ children, footerType = "default" }) {
         <title>Aaron Jin</title>
       </Head>
 
-      <div className="gradient-circle"></div>
-
-      {/* ASCII art bg */}
+      <div className="gradient-banner"></div>
       <AsciiArt />
 
       <div className="container mx-auto mb-16 tablet:w-[768px] laptop:w-[1024px] relative z-10">

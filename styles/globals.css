@@ -11,9 +11,7 @@ body {
   @apply bg-white text-black;
 }
 
-/* Gradient circle - top variants */
-
-.gradient-circle {
+.gradient-banner {
   position: absolute;
   pointer-events: none;
   /* z-index: 100; */
