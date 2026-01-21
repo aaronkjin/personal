@@ -1,6 +1,8 @@
-import React, { useMemo } from "react";
+import React, { useMemo, useRef, useEffect } from "react";
 
 const AsciiArt = () => {
+  const canvasRef = useRef(null);
+  
   // Galaxy 
   const art = `
 +++-++++++++++++++++++++++++++++++++#++++++++++++++++++##+++++++++++++++++++++++++++++++++++++++++++++#+++++++++++++++++++++++++++++++++++++++++++++++#####++++++++++++++++#++#+++++++##++####++#+++++#+#++++##+++++###++++++++++#++++++###++++++##++##+++++#++#####+++##++###+++---+++++++++++##++#+++++++++++####++++-+++++++++++++++##++++++++++++#+###++++++###+++###++#####+######+++############+#########
@@ -205,9 +207,136 @@ const AsciiArt = () => {
     [waves, trimmedArt]
   );
 
+  // Gradient color stops
+  const gradientStops = useMemo(() => [
+    { pos: 0, r: 195, g: 165, b: 235 },
+    { pos: 0.05, r: 200, g: 160, b: 240 },
+    { pos: 0.10, r: 210, g: 155, b: 240 },
+    { pos: 0.18, r: 230, g: 168, b: 218 },
+    { pos: 0.26, r: 230, g: 190, b: 200 },
+    { pos: 0.34, r: 230, g: 210, b: 185 },
+    { pos: 0.42, r: 235, g: 225, b: 160 },
+    { pos: 0.52, r: 235, g: 230, b: 150 },
+    { pos: 0.60, r: 210, g: 230, b: 140 },
+    { pos: 0.68, r: 180, g: 225, b: 160 },
+    { pos: 0.76, r: 150, g: 215, b: 190 },
+    { pos: 0.84, r: 140, g: 205, b: 215 },
+    { pos: 0.92, r: 145, g: 200, b: 225 },
+    { pos: 1.0, r: 150, g: 195, b: 220 },
+  ], []);
+
+  // Interpolate color at position t (0-1)
+  const getColorAtPosition = (t, stops) => {
+    // Find the two stops to interpolate between
+    let lower = stops[0];
+    let upper = stops[stops.length - 1];
+    
+    for (let i = 0; i < stops.length - 1; i++) {
+      if (t >= stops[i].pos && t <= stops[i + 1].pos) {
+        lower = stops[i];
+        upper = stops[i + 1];
+        break;
+      }
+    }
+    
+    // Calculate interpolation factor
+    const range = upper.pos - lower.pos;
+    const factor = range === 0 ? 0 : (t - lower.pos) / range;
+    
+    // Interpolate RGB values
+    const r = Math.round(lower.r + (upper.r - lower.r) * factor);
+    const g = Math.round(lower.g + (upper.g - lower.g) * factor);
+    const b = Math.round(lower.b + (upper.b - lower.b) * factor);
+    
+    return { r, g, b };
+  };
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+
+    const ctx = canvas.getContext("2d");
+    const lines = fullArt.split("\n");
+    
+    // Character dimensions
+    const fontSize = 7.2; // ~0.45rem
+    const charWidth = fontSize * 0.6; // Monospace ratio
+    const lineHeight = fontSize;
+    
+    // Calculate canvas size
+    const maxLineLength = Math.max(...lines.map(l => l.length));
+    const canvasWidth = maxLineLength * charWidth;
+    const canvasHeight = lines.length * lineHeight;
+    
+    // Set canvas size
+    const dpr = window.devicePixelRatio || 1;
+    canvas.width = canvasWidth * dpr;
+    canvas.height = canvasHeight * dpr;
+    canvas.style.width = `${canvasWidth}px`;
+    canvas.style.height = `${canvasHeight}px`;
+    ctx.scale(dpr, dpr);
+    
+    // Set font
+    ctx.font = `${fontSize}px "Courier New", Courier, monospace`;
+    ctx.textBaseline = "top";
+    
+    // Fixed breakpoints for gradient calculation
+    const viewportWidth = window.innerWidth;
+    const artCenterChar = maxLineLength / 2;
+    
+    // Fixed visible character ranges for each breakpoint
+    let visibleStartChar, visibleEndChar;
+    
+    if (viewportWidth >= 1024) {
+      // Laptop
+      visibleStartChar = 0;
+      visibleEndChar = maxLineLength - 1;
+    } else if (viewportWidth >= 768) {
+      // Tablet
+      const tabletVisibleChars = Math.floor(768 / charWidth);
+      visibleStartChar = Math.max(0, Math.floor(artCenterChar - tabletVisibleChars / 2));
+      visibleEndChar = Math.min(maxLineLength - 1, Math.ceil(artCenterChar + tabletVisibleChars / 2));
+    } else {
+      // Mobile
+      const mobileVisibleChars = Math.floor(viewportWidth / charWidth);
+      visibleStartChar = Math.max(0, Math.floor(artCenterChar - mobileVisibleChars / 2));
+      visibleEndChar = Math.min(maxLineLength - 1, Math.ceil(artCenterChar + mobileVisibleChars / 2));
+    }
+    
+    const visibleRange = visibleEndChar - visibleStartChar;
+    
+    const opacity = 0.52;
+    
+    lines.forEach((line, lineIndex) => {
+      const y = lineIndex * lineHeight;
+      
+      for (let charIndex = 0; charIndex < line.length; charIndex++) {
+        const char = line[charIndex];
+        if (char === " ") continue;
+        
+        const x = charIndex * charWidth;
+        
+        // Calculate t based on position within the visible range
+        let t;
+        if (charIndex <= visibleStartChar) {
+          t = 0; // Characters before visible range get first color
+        } else if (charIndex >= visibleEndChar) {
+          t = 1; // Characters after visible range get last color
+        } else {
+          t = visibleRange > 0 ? (charIndex - visibleStartChar) / visibleRange : 0;
+        }
+        
+        const color = getColorAtPosition(t, gradientStops);
+        
+        ctx.fillStyle = `rgba(${color.r}, ${color.g}, ${color.b}, ${opacity})`;
+        ctx.fillText(char, x, y);
+      }
+    });
+  }, [fullArt, gradientStops]);
+
   return (
     <div className="ascii-art-background">
-      <pre className="ascii-art-text">{fullArt}</pre>
+      <canvas ref={canvasRef} className="ascii-art-canvas" />
     </div>
   );
 };

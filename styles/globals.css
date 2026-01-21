@@ -101,48 +101,8 @@ body {
   align-items: flex-start;
 }
 
-.ascii-art-text {
-  font-family: "Courier New", Courier, monospace;
-  font-size: 0.45rem; 
-  line-height: 1;
-  letter-spacing: 0em;
-  white-space: pre;
-  text-align: left;
-  margin: 0;
-  padding: 0;
-  background: linear-gradient(
-    90deg,
-    rgba(180, 120, 255, 0.48) 0%,
-    rgba(190, 130, 255, 0.50) 5%,
-    rgba(200, 140, 245, 0.52) 10%,
-    rgba(230, 168, 218, 0.54) 18%,
-    rgba(230, 190, 200, 0.56) 26%,
-    rgba(230, 210, 185, 0.58) 34%,
-    rgba(235, 225, 160, 0.58) 42%,
-    rgba(235, 230, 150, 0.58) 52%,
-    rgba(210, 230, 140, 0.58) 60%,
-    rgba(180, 225, 160, 0.56) 68%,
-    rgba(150, 215, 190, 0.54) 76%,
-    rgba(120, 200, 220, 0.52) 84%,
-    rgba(88, 186, 239, 0.50) 92%,
-    rgba(88, 186, 239, 0.48) 100%
-  );
-  background-size: 100vw 100%; 
-  background-attachment: fixed; 
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  -webkit-text-fill-color: transparent;
-}
-
-.ascii-shimmer-canvas {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 5;
+.ascii-art-canvas {
+  display: block;
 }
 
 /* Mobile positioning adjustment */
