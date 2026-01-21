@@ -275,12 +275,22 @@ const AsciiArt = () => {
     canvas.style.height = `${canvasHeight}px`;
     ctx.scale(dpr, dpr);
     
+    const viewportWidth = window.innerWidth;
+
+    // XL screens
+    if (viewportWidth > canvasWidth) {
+      const scale = viewportWidth / canvasWidth;
+      canvas.style.transform = `scale(${scale})`;
+      canvas.style.transformOrigin = 'center top';
+    } else {
+      canvas.style.transform = 'none';
+    }
+    
     // Set font
     ctx.font = `${fontSize}px "Courier New", Courier, monospace`;
     ctx.textBaseline = "top";
     
     // Fixed breakpoints for gradient calculation
-    const viewportWidth = window.innerWidth;
     const artCenterChar = maxLineLength / 2;
     
     // Fixed visible character ranges for each breakpoint
