@@ -269,7 +269,7 @@ const AsciiArt = () => {
     const canvasHeight = lines.length * lineHeight;
     
     // Set canvas size
-    const dpr = window.devicePixelRatio || 1;
+    const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
     canvas.width = canvasWidth * dpr;
     canvas.height = canvasHeight * dpr;
     canvas.style.width = `${canvasWidth}px`;
