@@ -201,13 +201,6 @@ const AsciiArt = () => {
         trimmedArt,
         trimmedArt,
         trimmedArt,
-        trimmedArt,
-        trimmedArt,
-        trimmedArt,
-        trimmedArt,
-        trimmedArt,
-        trimmedArt,
-        trimmedArt,
       ].join("\n"),
     [waves, trimmedArt]
   );

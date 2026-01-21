@@ -106,7 +106,7 @@ body {
 
 .ascii-art-text {
   font-family: "Courier New", Courier, monospace;
-  font-size: clamp(0.35rem, 0.75vw, 0.6rem);
+  font-size: 0.45rem; 
   line-height: 1;
   letter-spacing: 0em;
   white-space: pre;
@@ -115,20 +115,23 @@ body {
   padding: 0;
   background: linear-gradient(
     90deg,
-    rgba(124, 0, 255, 0.48) 0%,
-    rgba(150, 60, 255, 0.50) 5%,
-    rgba(177, 84, 237, 0.51) 10%,
-    rgba(230, 168, 218, 0.52) 18%,
-    rgba(230, 190, 200, 0.50) 26%,
-    rgba(230, 210, 185, 0.48) 34%,
-    rgba(230, 226, 168, 0.46) 42%,
-    rgba(230, 226, 168, 0.46) 58%,
-    rgba(200, 220, 190, 0.47) 66%,
-    rgba(160, 210, 215, 0.48) 74%,
-    rgba(120, 200, 230, 0.50) 82%,
-    rgba(88, 186, 239, 0.52) 90%,
+    rgba(180, 120, 255, 0.48) 0%,
+    rgba(190, 130, 255, 0.50) 5%,
+    rgba(200, 140, 245, 0.52) 10%,
+    rgba(230, 168, 218, 0.54) 18%,
+    rgba(230, 190, 200, 0.56) 26%,
+    rgba(230, 210, 185, 0.58) 34%,
+    rgba(235, 225, 160, 0.58) 42%,
+    rgba(235, 230, 150, 0.58) 52%,
+    rgba(210, 230, 140, 0.58) 60%,
+    rgba(180, 225, 160, 0.56) 68%,
+    rgba(150, 215, 190, 0.54) 76%,
+    rgba(120, 200, 220, 0.52) 84%,
+    rgba(88, 186, 239, 0.50) 92%,
     rgba(88, 186, 239, 0.48) 100%
   );
+  background-size: 100vw 100%; 
+  background-attachment: fixed; 
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -145,41 +148,9 @@ body {
   z-index: 5;
 }
 
-/* Responsive scaling for ASCII art bg */
+/* Mobile positioning adjustment */
 @media (max-width: 480px) {
   .ascii-art-background {
     top: 10px;
-  }
-  .ascii-art-text {
-    font-size: clamp(0.12rem, 0.4vw, 0.2rem);
-    line-height: 0.9;
-  }
-}
-
-@media (min-width: 481px) and (max-width: 768px) {
-  .ascii-art-text {
-    font-size: clamp(0.18rem, 0.5vw, 0.3rem);
-    line-height: 0.95;
-  }
-}
-
-@media (min-width: 769px) and (max-width: 1024px) {
-  .ascii-art-text {
-    font-size: clamp(0.25rem, 0.6vw, 0.4rem);
-    line-height: 1;
-  }
-}
-
-@media (min-width: 1025px) and (max-width: 1440px) {
-  .ascii-art-text {
-    font-size: clamp(0.32rem, 0.7vw, 0.5rem);
-    line-height: 1;
-  }
-}
-
-@media (min-width: 1441px) {
-  .ascii-art-text {
-    font-size: clamp(0.4rem, 0.8vw, 0.65rem);
-    line-height: 1.05;
   }
 }
