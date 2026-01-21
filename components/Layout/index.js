@@ -1,13 +1,9 @@
-import Header from "../Header";
 import Footer from "../Footer";
 import FixedFooter from "../FixedFooter";
 import AsciiArt from "../AsciiArt";
-import { useTheme } from "next-themes";
 import Head from "next/head";
 
 export default function Layout({ children, footerType = "default" }) {
-  const { theme } = useTheme();
-
   return (
     <div className="relative overflow-hidden min-h-screen">
       <Head>

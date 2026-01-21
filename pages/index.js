@@ -1,5 +1,3 @@
-import { useEffect, useState } from "react";
-import { useTheme } from "next-themes";
 import Head from "next/head";
 import Layout from "../components/Layout";
 import Socials from "../components/Socials";
@@ -8,15 +6,6 @@ import FadeIn from "../components/FadeIn";
 import { ExternalLinkIcon } from "../components/ExternalLinkIcon";
 
 export default function Home() {
-  const { theme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) return null;
-
   return (
     <Layout footerType="normal">
       <Head>
@@ -53,9 +42,7 @@ export default function Home() {
               <div className="w-full p-2">
                 <h1 className="font-bold text-xs tablet:text-sm">Work</h1>
                 <div
-                  className={`flex-grow border-b ${
-                    theme === "dark" ? "border-white" : "border-black"
-                  } mt-2`}
+                  className="flex-grow border-b border-black mt-2"
                 ></div>
               </div>
 
@@ -67,16 +54,12 @@ export default function Home() {
                       <p className="font-bold">LinkedIn</p>
                       <div className="flex justify-between items-center">
                         <p
-                          className={`text-sm tablet:text-base ${
-                            theme === "dark" ? "opacity-50" : ""
-                          }`}
+                          className="text-sm tablet:text-base"
                         >
                           ML Infra Engineer Intern
                         </p>
                         <p
-                          className={`text-sm tablet:text-base ${
-                            theme === "dark" ? "opacity-50" : ""
-                          }`}
+                          className="text-sm tablet:text-base"
                         >
                           Summer 2025
                         </p>
@@ -98,16 +81,12 @@ export default function Home() {
                       <p className="font-bold">Apple</p>
                       <div className="flex justify-between items-center">
                         <p
-                          className={`text-sm tablet:text-base ${
-                            theme === "dark" ? "opacity-50" : ""
-                          }`}
+                          className="text-sm tablet:text-base"
                         >
                           Software Engineer Intern
                         </p>
                         <p
-                          className={`text-sm tablet:text-base ${
-                            theme === "dark" ? "opacity-50" : ""
-                          }`}
+                          className="text-sm tablet:text-base"
                         >
                           Summer 2024
                         </p>
@@ -129,16 +108,12 @@ export default function Home() {
                       <p className="font-bold">Apple</p>
                       <div className="flex justify-between items-center">
                         <p
-                          className={`text-sm tablet:text-base ${
-                            theme === "dark" ? "opacity-50" : ""
-                          }`}
+                          className="text-sm tablet:text-base"
                         >
                           Software Engineer Intern
                         </p>
                         <p
-                          className={`text-sm tablet:text-base ${
-                            theme === "dark" ? "opacity-50" : ""
-                          }`}
+                          className="text-sm tablet:text-base"
                         >
                           Spring 2024
                         </p>
@@ -160,16 +135,12 @@ export default function Home() {
                       <p className="font-bold">NoRamp</p>
                       <div className="flex justify-between items-center">
                         <p
-                          className={`text-sm tablet:text-base ${
-                            theme === "dark" ? "opacity-50" : ""
-                          }`}
+                          className="text-sm tablet:text-base"
                         >
                           Software Engineer Intern
                         </p>
                         <p
-                          className={`text-sm tablet:text-base ${
-                            theme === "dark" ? "opacity-50" : ""
-                          }`}
+                          className="text-sm tablet:text-base"
                         >
                           Fall, Winter 2023
                         </p>
@@ -191,16 +162,12 @@ export default function Home() {
                       <p className="font-bold">Samsung Biologics</p>
                       <div className="flex justify-between items-center">
                         <p
-                          className={`text-sm tablet:text-base ${
-                            theme === "dark" ? "opacity-50" : ""
-                          }`}
+                          className="text-sm tablet:text-base"
                         >
                           Software Engineer Intern
                         </p>
                         <p
-                          className={`text-sm tablet:text-base ${
-                            theme === "dark" ? "opacity-50" : ""
-                          }`}
+                          className="text-sm tablet:text-base"
                         >
                           Summer 2022
                         </p>
@@ -224,9 +191,7 @@ export default function Home() {
               <div className="w-full p-2">
                 <h1 className="font-bold text-xs tablet:text-sm">Projects</h1>
                 <div
-                  className={`flex-grow border-b ${
-                    theme === "dark" ? "border-white" : "border-black"
-                  } mt-2`}
+                  className="flex-grow border-b border-black mt-2"
                 ></div>
               </div>
 

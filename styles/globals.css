@@ -2,14 +2,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import "./markdown.css";
 
 * {
   font-family: "Open Sans";
 }
 
 body {
-  @apply dark:bg-black dark:text-white;
+  @apply bg-white text-black;
 }
 
 /* Gradient circle - top variants */
