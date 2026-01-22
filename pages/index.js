@@ -2,6 +2,7 @@ import Head from "next/head";
 import Layout from "../components/Layout";
 import Socials from "../components/Socials";
 import FadeIn from "../components/FadeIn";
+import TextScramble from "../components/TextScramble";
 
 import { ExternalLinkIcon } from "../components/ExternalLinkIcon";
 
@@ -20,12 +21,13 @@ export default function Home() {
               Aaron Jin
             </h1>
           </FadeIn>
-          <FadeIn delay={100}>
-            <h1 className="text-sm tablet:text-base p-1 tablet:p-2 w-full">
-              I&apos;m a Stanford BS/MS CS student. I&apos;m interested in AI
-              infrastructure and scalable ML systems.
+          <div className="p-1 tablet:p-2 w-full">
+            <h1 className="text-sm tablet:text-base">
+              <TextScramble delay={100} revealDuration={1400}>
+                I&apos;m a Stanford BS/MS CS student. I&apos;m interested in AI infrastructure and scalable ML systems.
+              </TextScramble>
             </h1>
-          </FadeIn>
+          </div>
           <FadeIn delay={150}>
             <div className="mt-5">
               <Socials />
