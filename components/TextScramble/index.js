@@ -1,119 +1,96 @@
-import React, { useEffect, useState, useRef, useCallback } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 
-const TextScramble = ({ 
-  children, 
-  delay = 0, 
+const GLITCH = "abcdefghijklmnopqrstuvwxyz!?:;@#$%&";
+
+const TextScramble = ({
+  children,
+  delay = 0,
   revealDuration = 800,
-  className = "" 
+  className = "",
 }) => {
-  const [displayChars, setDisplayChars] = useState([]);
+  const text = typeof children === "string" ? children : "";
   const [isStarted, setIsStarted] = useState(false);
   const [isComplete, setIsComplete] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
-  const frameRef = useRef(null);
-  const startTimeRef = useRef(null);
-  
-  const glitchChars = "abcdefghijklmnopqrstuvwxyz!?:;@#$%&";
-  
-  const text = typeof children === "string" ? children : "";
 
-  useEffect(() => {
-    const checkMobile = () => {
-      return window.innerWidth < 768 || 
-        /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-    };
-    setIsMobile(checkMobile());
+  const spanRefs = useRef([]);
+  const rafRef = useRef(null);
+  const startRef = useRef(null);
+
+  const isMobile = useMemo(() => {
+    if (typeof window === "undefined") return false;
+    return window.innerWidth < 768 || /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
   }, []);
 
-  const getRandomChar = useCallback(() => {
-    return glitchChars[Math.floor(Math.random() * glitchChars.length)];
-  }, [glitchChars]);
+  const actualDuration = isMobile ? revealDuration * 1.5 : revealDuration;
+  const tickMs = isMobile ? 66 : 33;
+
+  const chars = useMemo(() => text.split(""), [text]);
 
   useEffect(() => {
-    const startTimer = setTimeout(() => {
-      setIsStarted(true);
-    }, delay);
-
-    return () => clearTimeout(startTimer);
+    const t = setTimeout(() => setIsStarted(true), delay);
+    return () => clearTimeout(t);
   }, [delay]);
-
-  const actualRevealDuration = isMobile ? revealDuration * 1.5 : revealDuration;
-  const updateInterval = isMobile ? 66 : 33; // 15fps (mobile), 30fps (desktop)
 
   useEffect(() => {
     if (!isStarted || !text) return;
 
-    const textLength = text.length;
-    const charRevealDuration = actualRevealDuration / textLength;
-    
-    let lastUpdateTime = 0;
-    
-    const animate = (timestamp) => {
-      if (!startTimeRef.current) {
-        startTimeRef.current = timestamp;
-      }
-      
-      const elapsed = timestamp - startTimeRef.current;
-      
-      if (timestamp - lastUpdateTime < updateInterval) {
-        frameRef.current = requestAnimationFrame(animate);
+    setIsComplete(false);
+    startRef.current = null;
+
+    // Initialize spans with scrambled characters
+    for (let i = 0; i < chars.length; i++) {
+      const el = spanRefs.current[i];
+      if (!el) continue;
+      const isSpace = chars[i] === " ";
+      el.textContent = isSpace ? " " : GLITCH[(Math.random() * GLITCH.length) | 0];
+      el.classList.toggle("scramble-char", !isSpace);
+      el.classList.toggle("revealed", false);
+    }
+
+    let last = 0;
+    const perChar = actualDuration / Math.max(1, chars.length);
+
+    const animate = (ts) => {
+      if (!startRef.current) startRef.current = ts;
+      if (ts - last < tickMs) {
+        rafRef.current = requestAnimationFrame(animate);
         return;
       }
-      lastUpdateTime = timestamp;
-      
-      const revealedCount = Math.min(
-        textLength,
-        Math.floor(elapsed / charRevealDuration)
-      );
-      
-      const chars = [];
-      for (let i = 0; i < textLength; i++) {
-        const originalChar = text[i];
-        const isRevealed = i < revealedCount;
-        const isSpace = originalChar === " ";
-        
-        chars.push({
-          char: isRevealed || isSpace ? originalChar : getRandomChar(),
-          isRevealed,
-          isSpace,
-          index: i,
-        });
+      last = ts;
+
+      const elapsed = ts - startRef.current;
+      const revealedCount = Math.min(chars.length, (elapsed / perChar) | 0);
+
+      for (let i = 0; i < chars.length; i++) {
+        const el = spanRefs.current[i];
+        if (!el) continue;
+
+        const ch = chars[i];
+        const isSpace = ch === " ";
+        const revealed = i < revealedCount || isSpace;
+
+        if (revealed) {
+          if (el.textContent !== ch) el.textContent = ch;
+          el.classList.toggle("scramble-char", false);
+          el.classList.toggle("revealed", true);
+        } else {
+          el.textContent = GLITCH[(Math.random() * GLITCH.length) | 0];
+        }
       }
-      
-      setDisplayChars(chars);
-      
-      if (revealedCount < textLength) {
-        frameRef.current = requestAnimationFrame(animate);
+
+      if (revealedCount < chars.length) {
+        rafRef.current = requestAnimationFrame(animate);
       } else {
-        // Animation complete
         setIsComplete(true);
       }
     };
 
-    const initialChars = [];
-    for (let i = 0; i < textLength; i++) {
-      const char = text[i];
-      const isSpace = char === " ";
-      initialChars.push({
-        char: isSpace ? " " : getRandomChar(),
-        isRevealed: false,
-        isSpace,
-        index: i,
-      });
-    }
-    setDisplayChars(initialChars);
-    
-    const animationDelay = setTimeout(() => {
-      frameRef.current = requestAnimationFrame(animate);
-    }, 50);
+    rafRef.current = requestAnimationFrame(animate);
 
     return () => {
-      clearTimeout(animationDelay);
-      if (frameRef.current) {
-        cancelAnimationFrame(frameRef.current);
-      }
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
     };
-  }, [isStarted, text, actualRevealDuration, updateInterval, getRandomChar]);
+  }, [isStarted, text, actualDuration, tickMs, chars]);
 
   return (
     <>
@@ -135,25 +112,33 @@ const TextScramble = ({
         }
         .scramble-char {
           animation: colorCycle 0.5s linear infinite;
+          will-change: color;
+        }
+        .scramble-wrap {
+          contain: layout paint;
+        }
+        .revealed {
+          color: inherit;
+        }
+        @media (max-width: 768px) {
+          .scramble-char {
+            animation: none;
+            color: rgb(180, 160, 200);
+          }
         }
       `}</style>
-      <span 
-        className={className}
-        style={{
-          opacity: isStarted ? 1 : 0,
-          transition: "opacity 0.15s ease-out",
-        }}
+
+      <span
+        className={`scramble-wrap ${className}`}
+        style={{ opacity: isStarted ? 1 : 0, transition: "opacity 0.15s ease-out" }}
       >
-        {displayChars.map(({ char, isRevealed, isSpace, index }) => (
+        {chars.map((ch, i) => (
           <span
-            key={index}
-            className={!isRevealed && !isSpace && !isComplete ? "scramble-char" : ""}
-            style={{
-              animationDelay: `${-index * 0.05}s`,
-              color: isRevealed || isSpace || isComplete ? "inherit" : undefined,
-            }}
+            key={i}
+            ref={(el) => (spanRefs.current[i] = el)}
+            style={{ animationDelay: `${-i * 0.05}s` }}
           >
-            {char}
+            {ch === " " ? " " : ""}
           </span>
         ))}
       </span>
