@@ -123,7 +123,7 @@ const TextScramble = ({
         @media (max-width: 768px) {
           .scramble-char {
             animation: none;
-            color: rgb(180, 160, 200);
+            color: rgb(107, 114, 128);
           }
         }
       `}</style>
