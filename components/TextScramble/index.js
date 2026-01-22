@@ -9,12 +9,21 @@ const TextScramble = ({
   const [displayChars, setDisplayChars] = useState([]);
   const [isStarted, setIsStarted] = useState(false);
   const [isComplete, setIsComplete] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const frameRef = useRef(null);
   const startTimeRef = useRef(null);
   
   const glitchChars = "abcdefghijklmnopqrstuvwxyz!?:;@#$%&";
   
   const text = typeof children === "string" ? children : "";
+
+  useEffect(() => {
+    const checkMobile = () => {
+      return window.innerWidth < 768 || 
+        /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    };
+    setIsMobile(checkMobile());
+  }, []);
 
   const getRandomChar = useCallback(() => {
     return glitchChars[Math.floor(Math.random() * glitchChars.length)];
@@ -28,14 +37,16 @@ const TextScramble = ({
     return () => clearTimeout(startTimer);
   }, [delay]);
 
+  const actualRevealDuration = isMobile ? revealDuration * 1.5 : revealDuration;
+  const updateInterval = isMobile ? 66 : 33; // 15fps (mobile), 30fps (desktop)
+
   useEffect(() => {
     if (!isStarted || !text) return;
 
     const textLength = text.length;
-    const charRevealDuration = revealDuration / textLength;
+    const charRevealDuration = actualRevealDuration / textLength;
     
     let lastUpdateTime = 0;
-    const updateInterval = 33; // ~30fps
     
     const animate = (timestamp) => {
       if (!startTimeRef.current) {
@@ -102,7 +113,7 @@ const TextScramble = ({
         cancelAnimationFrame(frameRef.current);
       }
     };
-  }, [isStarted, text, revealDuration, getRandomChar]);
+  }, [isStarted, text, actualRevealDuration, updateInterval, getRandomChar]);
 
   return (
     <>
