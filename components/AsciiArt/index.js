@@ -1,7 +1,10 @@
-import React, { useMemo, useRef, useEffect } from "react";
+import React, { useMemo, useRef, useEffect, useState } from "react";
 
 const AsciiArt = () => {
   const canvasRef = useRef(null);
+  const [viewportWidth, setViewportWidth] = useState(
+    typeof window !== "undefined" ? window.innerWidth : 0
+  );
   
   // Galaxy 
   const art = `
@@ -252,8 +255,14 @@ const AsciiArt = () => {
   };
 
   useEffect(() => {
+    const handleResize = () => setViewportWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
     const canvas = canvasRef.current;
-    if (!canvas) return;
+    if (!canvas || viewportWidth === 0) return;
 
     const ctx = canvas.getContext("2d");
     const lines = fullArt.split("\n");
@@ -268,7 +277,6 @@ const AsciiArt = () => {
     const naturalWidth = maxLineLength * charWidth;
     const naturalHeight = lines.length * lineHeight;
 
-    const viewportWidth = window.innerWidth;
     const scale = Math.max(1, viewportWidth / naturalWidth);
 
     const displayWidth = naturalWidth * scale;
@@ -337,7 +345,7 @@ const AsciiArt = () => {
         ctx.fillText(char, x, y);
       }
     });
-  }, [fullArt, gradientStops]);
+  }, [fullArt, gradientStops, viewportWidth]);
 
   return (
     <div className="ascii-art-background">
