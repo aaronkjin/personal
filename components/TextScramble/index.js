@@ -5,7 +5,7 @@ const GLITCH = "abcdefghijklmnopqrstuvwxyz!?:;@#$%&";
 const TextScramble = ({
   children,
   delay = 0,
-  revealDuration = 800,
+  revealDuration = 600,
   className = "",
 }) => {
   const text = typeof children === "string" ? children : "";
@@ -21,8 +21,8 @@ const TextScramble = ({
     return window.innerWidth < 768 || /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
   }, []);
 
-  const actualDuration = isMobile ? revealDuration * 1.5 : revealDuration;
-  const tickMs = isMobile ? 66 : 33;
+  const actualDuration = revealDuration;
+  const tickMs = isMobile ? 50 : 33;
 
   const chars = useMemo(() => text.split(""), [text]);
 

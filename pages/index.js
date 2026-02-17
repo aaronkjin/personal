@@ -23,7 +23,7 @@ export default function Home() {
           </FadeIn>
           <div className="p-1 tablet:p-2 w-full">
             <h1 className="text-sm tablet:text-base">
-              <TextScramble delay={100} revealDuration={1400}>
+              <TextScramble delay={100} revealDuration={1000}>
                 I&apos;m a Stanford BS/MS CS student. I&apos;m interested in AI infrastructure and scalable ML systems.
               </TextScramble>
             </h1>

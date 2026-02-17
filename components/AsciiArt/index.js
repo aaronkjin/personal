@@ -265,26 +265,22 @@ const AsciiArt = () => {
     
     // Calculate canvas size
     const maxLineLength = Math.max(...lines.map(l => l.length));
-    const canvasWidth = maxLineLength * charWidth;
-    const canvasHeight = lines.length * lineHeight;
-    
-    const dpr = Math.min(window.devicePixelRatio || 1, 2);
-    canvas.width = canvasWidth * dpr;
-    canvas.height = canvasHeight * dpr;
-    canvas.style.width = `${canvasWidth}px`;
-    canvas.style.height = `${canvasHeight}px`;
-    ctx.scale(dpr, dpr);
-    
-    const viewportWidth = window.innerWidth;
+    const naturalWidth = maxLineLength * charWidth;
+    const naturalHeight = lines.length * lineHeight;
 
-    // XL screens
-    if (viewportWidth > canvasWidth) {
-      const scale = viewportWidth / canvasWidth;
-      canvas.style.transform = `scale(${scale})`;
-      canvas.style.transformOrigin = 'center top';
-    } else {
-      canvas.style.transform = 'none';
-    }
+    const viewportWidth = window.innerWidth;
+    const scale = Math.max(1, viewportWidth / naturalWidth);
+
+    const displayWidth = naturalWidth * scale;
+    const displayHeight = naturalHeight * scale;
+
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    canvas.width = displayWidth * dpr;
+    canvas.height = displayHeight * dpr;
+    canvas.style.width = `${displayWidth}px`;
+    canvas.style.height = `${displayHeight}px`;
+    canvas.style.transform = 'none';
+    ctx.scale(dpr * scale, dpr * scale);
     
     // Set font
     ctx.font = `${fontSize}px "Courier New", Courier, monospace`;
