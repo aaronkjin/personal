@@ -18,7 +18,7 @@ body {
   top: -120px;
   height: 300px;
   width: 100vw;
-  opacity: 0.35;
+  opacity: 0.5;
   filter: blur(40px);
   background: conic-gradient(
     from 0deg,

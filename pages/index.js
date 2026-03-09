@@ -8,7 +8,7 @@ import { ExternalLinkIcon } from "../components/ExternalLinkIcon";
 
 export default function Home() {
   return (
-    <Layout footerType="normal">
+    <Layout>
       <Head>
         <title>Aaron Jin</title>
       </Head>
