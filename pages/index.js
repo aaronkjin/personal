@@ -17,13 +17,13 @@ export default function Home() {
       <div className="w-full mx-auto px-0 tablet:px-8 tablet:max-w-6xl">
         <div className="mt-24 p-2">
           <FadeIn delay={50}>
-            <h1 className="font-medium text-3xl tablet:text-4xl p-1 tablet:p-2 w-full">
+            <h1 className="font-baskerville font-medium text-3xl tablet:text-4xl p-1 tablet:p-2 w-full">
               Aaron Jin
             </h1>
           </FadeIn>
           <div className="p-1 tablet:p-2 w-full">
             <h1 className="text-sm tablet:text-base">
-              <TextScramble delay={100} revealDuration={1000}>
+              <TextScramble delay={100} revealDuration={1000} rescrambleOnHover>
                 I&apos;m a Stanford BS/MS CS student. I&apos;m interested in AI infrastructure and scalable ML systems.
               </TextScramble>
             </h1>
@@ -42,7 +42,7 @@ export default function Home() {
           <FadeIn delay={200}>
             <div>
               <div className="w-full p-2">
-                <h1 className="font-bold text-xs tablet:text-sm">Work</h1>
+                <h1 className="font-baskerville font-bold text-xs tablet:text-sm">Previously</h1>
                 <div
                   className="flex-grow border-b border-black mt-2"
                 ></div>
@@ -53,7 +53,7 @@ export default function Home() {
                 <FadeIn delay={250}>
                   <div className="flex flex-col">
                     <div className="w-full">
-                      <p className="font-bold">LinkedIn</p>
+                      <p className="font-baskerville font-bold">LinkedIn</p>
                       <div className="flex justify-between items-center">
                         <p
                           className="text-sm tablet:text-base"
@@ -80,7 +80,7 @@ export default function Home() {
                 <FadeIn delay={300}>
                   <div className="flex flex-col">
                     <div className="w-full">
-                      <p className="font-bold">Apple</p>
+                      <p className="font-baskerville font-bold">Apple</p>
                       <div className="flex justify-between items-center">
                         <p
                           className="text-sm tablet:text-base"
@@ -107,7 +107,7 @@ export default function Home() {
                 <FadeIn delay={350}>
                   <div className="flex flex-col mt-3">
                     <div className="w-full">
-                      <p className="font-bold">Apple</p>
+                      <p className="font-baskerville font-bold">Apple</p>
                       <div className="flex justify-between items-center">
                         <p
                           className="text-sm tablet:text-base"
@@ -134,7 +134,7 @@ export default function Home() {
                 <FadeIn delay={400}>
                   <div className="flex flex-col mt-3">
                     <div className="w-full">
-                      <p className="font-bold">NoRamp</p>
+                      <p className="font-baskerville font-bold">NoRamp</p>
                       <div className="flex justify-between items-center">
                         <p
                           className="text-sm tablet:text-base"
@@ -161,7 +161,7 @@ export default function Home() {
                 <FadeIn delay={450}>
                   <div className="flex flex-col mt-3">
                     <div className="w-full">
-                      <p className="font-bold">Samsung Biologics</p>
+                      <p className="font-baskerville font-bold">Samsung Biologics</p>
                       <div className="flex justify-between items-center">
                         <p
                           className="text-sm tablet:text-base"
@@ -191,7 +191,7 @@ export default function Home() {
           <FadeIn delay={200}>
             <div>
               <div className="w-full p-2">
-                <h1 className="font-bold text-xs tablet:text-sm">Projects</h1>
+                <h1 className="font-baskerville font-bold text-xs tablet:text-sm">Projects</h1>
                 <div
                   className="flex-grow border-b border-black mt-2"
                 ></div>
@@ -202,7 +202,7 @@ export default function Home() {
                 <FadeIn delay={250}>
                   <div>
                     <div className="flex items-center gap-2">
-                      <h3 className="font-bold">Ivey</h3>
+                      <h3 className="font-baskerville font-bold">Ivey</h3>
                       <a
                         href="https://github.com/aaronkjin/ivey"
                         target="_blank"
@@ -222,7 +222,7 @@ export default function Home() {
                 <FadeIn delay={300}>
                   <div>
                     <div className="flex items-center gap-2">
-                      <h3 className="font-bold">GPT2</h3>
+                      <h3 className="font-baskerville font-bold">GPT2</h3>
                       <a
                         href="https://github.com/aaronkjin/gpt2"
                         target="_blank"
@@ -242,7 +242,7 @@ export default function Home() {
                 <FadeIn delay={300}>
                   <div>
                     <div className="flex items-center gap-2">
-                      <h3 className="font-bold">PolymarketFM</h3>
+                      <h3 className="font-baskerville font-bold">PolymarketFM</h3>
                       <a
                         href="https://github.com/aaronkjin/polymarketfm"
                         target="_blank"
@@ -263,7 +263,7 @@ export default function Home() {
                 <FadeIn delay={350}>
                   <div>
                     <div className="flex items-center gap-2">
-                      <h3 className="font-bold">PocketNeRF</h3>
+                      <h3 className="font-baskerville font-bold">PocketNeRF</h3>
                       <a
                         href="https://github.com/aaronkjin/pocketnerf"
                         target="_blank"
@@ -283,7 +283,7 @@ export default function Home() {
                 <FadeIn delay={400}>
                   <div>
                     <div className="flex items-center gap-2">
-                      <h3 className="font-bold">Tungsten</h3>
+                      <h3 className="font-baskerville font-bold">Tungsten</h3>
                       <a
                         href="https://github.com/aaronkjin/tungsten"
                         target="_blank"
@@ -303,7 +303,7 @@ export default function Home() {
                 <FadeIn delay={450}>
                   <div>
                     <div className="flex items-center gap-2">
-                      <h3 className="font-bold">Slop</h3>
+                      <h3 className="font-baskerville font-bold">Slop</h3>
                       <a
                         href="https://github.com/aaronkjin/slop"
                         target="_blank"
@@ -323,7 +323,7 @@ export default function Home() {
                 <FadeIn delay={500}>
                   <div>
                     <div className="flex items-center gap-2">
-                      <h3 className="font-bold">Jaike</h3>
+                      <h3 className="font-baskerville font-bold">Jaike</h3>
                       <a
                         href="https://github.com/aaronkjin/jaike"
                         target="_blank"
@@ -343,7 +343,7 @@ export default function Home() {
                 <FadeIn delay={550}>
                   <div>
                     <div className="flex items-center gap-2">
-                      <h3 className="font-bold">Mentore</h3>
+                      <h3 className="font-baskerville font-bold">Mentore</h3>
                       <a
                         href="https://github.com/aaronkjin/mentore"
                         target="_blank"
@@ -363,7 +363,7 @@ export default function Home() {
                 <FadeIn delay={600}>
                   <div>
                     <div className="flex items-center gap-2">
-                      <h3 className="font-bold">Pullup</h3>
+                      <h3 className="font-baskerville font-bold">Pullup</h3>
                       <a
                         href="https://github.com/aaronkjin/pullup"
                         target="_blank"
@@ -383,7 +383,7 @@ export default function Home() {
                 <FadeIn delay={650}>
                   <div>
                     <div className="flex items-center gap-2">
-                      <h3 className="font-bold">Jonin</h3>
+                      <h3 className="font-baskerville font-bold">Jonin</h3>
                       <a
                         href="https://github.com/aaronkjin/jonin"
                         target="_blank"

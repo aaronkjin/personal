@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
 const GLITCH = "abcdefghijklmnopqrstuvwxyz!?:;@#$%&";
 
@@ -7,10 +7,12 @@ const TextScramble = ({
   delay = 0,
   revealDuration = 600,
   className = "",
+  rescrambleOnHover = false,
 }) => {
   const text = typeof children === "string" ? children : "";
   const [isStarted, setIsStarted] = useState(false);
   const [isComplete, setIsComplete] = useState(false);
+  const [scrambleKey, setScrambleKey] = useState(0);
 
   const spanRefs = useRef([]);
   const rafRef = useRef(null);
@@ -25,6 +27,19 @@ const TextScramble = ({
   const tickMs = isMobile ? 50 : 33;
 
   const chars = useMemo(() => text.split(""), [text]);
+
+  const triggerScramble = useCallback(() => {
+    if (rafRef.current) cancelAnimationFrame(rafRef.current);
+    setIsComplete(false);
+    setScrambleKey((k) => k + 1);
+  }, []);
+
+  const handleMouseEnter = useCallback(() => {
+    if (isMobile || !rescrambleOnHover || !isComplete) return;
+    triggerScramble();
+  }, [isMobile, rescrambleOnHover, isComplete, triggerScramble]);
+
+  const handleMouseLeave = useCallback(() => {}, []);
 
   useEffect(() => {
     const t = setTimeout(() => setIsStarted(true), delay);
@@ -90,7 +105,7 @@ const TextScramble = ({
     return () => {
       if (rafRef.current) cancelAnimationFrame(rafRef.current);
     };
-  }, [isStarted, text, actualDuration, tickMs, chars]);
+  }, [isStarted, text, actualDuration, tickMs, chars, scrambleKey]);
 
   return (
     <>
@@ -122,8 +137,7 @@ const TextScramble = ({
         }
         @media (max-width: 768px) {
           .scramble-char {
-            animation: none;
-            color: rgb(107, 114, 128);
+            animation: colorCycle 0.5s linear infinite;
           }
         }
       `}</style>
@@ -131,6 +145,8 @@ const TextScramble = ({
       <span
         className={`scramble-wrap ${className}`}
         style={{ opacity: isStarted ? 1 : 0, transition: "opacity 0.15s ease-out" }}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
       >
         {chars.map((ch, i) => (
           <span

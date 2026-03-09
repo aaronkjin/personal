@@ -11,7 +11,11 @@ module.exports = {
       desktop: "1280px",
       laptopl: "1440px",
     },
-    extend: {},
+    extend: {
+      fontFamily: {
+        baskerville: ['"Libre Baskerville"', "Baskerville", "Georgia", "serif"],
+      },
+    },
   },
   plugins: [],
 };
