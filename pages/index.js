@@ -207,7 +207,7 @@ export default function Home() {
                         href="https://github.com/aaronkjin/ivey"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-sm text-gray-500 hover:underline"
+                        className="font-baskerville italic text-[10px] tablet:text-xs text-gray-500 hover:text-black transition-colors duration-200"
                       >
                         GitHub <ExternalLinkIcon />
                       </a>
@@ -227,7 +227,7 @@ export default function Home() {
                         href="https://github.com/aaronkjin/gpt2"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-sm text-gray-500 hover:underline"
+                        className="font-baskerville italic text-[10px] tablet:text-xs text-gray-500 hover:text-black transition-colors duration-200"
                       >
                         GitHub <ExternalLinkIcon />
                       </a>
@@ -247,7 +247,7 @@ export default function Home() {
                         href="https://github.com/aaronkjin/polymarketfm"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-sm text-gray-500 hover:underline"
+                        className="font-baskerville italic text-[10px] tablet:text-xs text-gray-500 hover:text-black transition-colors duration-200"
                       >
                         GitHub <ExternalLinkIcon />
                       </a>
@@ -268,7 +268,7 @@ export default function Home() {
                         href="https://github.com/aaronkjin/pocketnerf"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-sm text-gray-500 hover:underline"
+                        className="font-baskerville italic text-[10px] tablet:text-xs text-gray-500 hover:text-black transition-colors duration-200"
                       >
                         GitHub <ExternalLinkIcon />
                       </a>
@@ -288,7 +288,7 @@ export default function Home() {
                         href="https://github.com/aaronkjin/tungsten"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-sm text-gray-500 hover:underline"
+                        className="font-baskerville italic text-[10px] tablet:text-xs text-gray-500 hover:text-black transition-colors duration-200"
                       >
                         GitHub <ExternalLinkIcon />
                       </a>
@@ -308,7 +308,7 @@ export default function Home() {
                         href="https://github.com/aaronkjin/slop"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-sm text-gray-500 hover:underline"
+                        className="font-baskerville italic text-[10px] tablet:text-xs text-gray-500 hover:text-black transition-colors duration-200"
                       >
                         GitHub <ExternalLinkIcon />
                       </a>
@@ -328,7 +328,7 @@ export default function Home() {
                         href="https://github.com/aaronkjin/jaike"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-sm text-gray-500 hover:underline"
+                        className="font-baskerville italic text-[10px] tablet:text-xs text-gray-500 hover:text-black transition-colors duration-200"
                       >
                         GitHub <ExternalLinkIcon />
                       </a>
@@ -348,7 +348,7 @@ export default function Home() {
                         href="https://github.com/aaronkjin/mentore"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-sm text-gray-500 hover:underline"
+                        className="font-baskerville italic text-[10px] tablet:text-xs text-gray-500 hover:text-black transition-colors duration-200"
                       >
                         GitHub <ExternalLinkIcon />
                       </a>
@@ -368,7 +368,7 @@ export default function Home() {
                         href="https://github.com/aaronkjin/pullup"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-sm text-gray-500 hover:underline"
+                        className="font-baskerville italic text-[10px] tablet:text-xs text-gray-500 hover:text-black transition-colors duration-200"
                       >
                         GitHub <ExternalLinkIcon />
                       </a>
@@ -388,7 +388,7 @@ export default function Home() {
                         href="https://github.com/aaronkjin/jonin"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-sm text-gray-500 hover:underline"
+                        className="font-baskerville italic text-[10px] tablet:text-xs text-gray-500 hover:text-black transition-colors duration-200"
                       >
                         GitHub <ExternalLinkIcon />
                       </a>
