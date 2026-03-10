@@ -24,7 +24,9 @@ export default function Home() {
           <div className="p-1 tablet:p-2 w-full">
             <h1 className="text-sm tablet:text-base">
               <TextScramble delay={100} revealDuration={1000} rescrambleOnHover>
-                I&apos;m a Stanford BS/MS CS student. I&apos;m interested in AI infrastructure and scalable ML systems.
+                I&apos;m a Stanford BS/MS CS student. I&apos;m interested in AI
+                infrastructure, agent pipelines/harnesses, and pushing the
+                frontier of foundation model development.
               </TextScramble>
             </h1>
           </div>
@@ -42,10 +44,10 @@ export default function Home() {
           <FadeIn delay={200}>
             <div>
               <div className="w-full p-2">
-                <h1 className="font-baskerville font-bold text-xs tablet:text-sm">Previously</h1>
-                <div
-                  className="flex-grow border-b border-black mt-2"
-                ></div>
+                <h1 className="font-baskerville font-bold text-xs tablet:text-sm">
+                  Previously
+                </h1>
+                <div className="flex-grow border-b border-black mt-2"></div>
               </div>
 
               <div className="grid tablet:grid-cols-1 p-2 gap-4">
@@ -55,16 +57,10 @@ export default function Home() {
                     <div className="w-full">
                       <p className="font-baskerville font-bold">LinkedIn</p>
                       <div className="flex justify-between items-center">
-                        <p
-                          className="text-sm tablet:text-base"
-                        >
+                        <p className="text-sm tablet:text-base">
                           ML Infra Engineer Intern
                         </p>
-                        <p
-                          className="text-sm tablet:text-base"
-                        >
-                          Summer 2025
-                        </p>
+                        <p className="text-sm tablet:text-base">Summer 2025</p>
                       </div>
                     </div>
                     <div className="w-full mt-1.5">
@@ -82,16 +78,10 @@ export default function Home() {
                     <div className="w-full">
                       <p className="font-baskerville font-bold">Apple</p>
                       <div className="flex justify-between items-center">
-                        <p
-                          className="text-sm tablet:text-base"
-                        >
+                        <p className="text-sm tablet:text-base">
                           Software Engineer Intern
                         </p>
-                        <p
-                          className="text-sm tablet:text-base"
-                        >
-                          Summer 2024
-                        </p>
+                        <p className="text-sm tablet:text-base">Summer 2024</p>
                       </div>
                     </div>
                     <div className="w-full mt-1.5">
@@ -109,16 +99,10 @@ export default function Home() {
                     <div className="w-full">
                       <p className="font-baskerville font-bold">Apple</p>
                       <div className="flex justify-between items-center">
-                        <p
-                          className="text-sm tablet:text-base"
-                        >
+                        <p className="text-sm tablet:text-base">
                           Software Engineer Intern
                         </p>
-                        <p
-                          className="text-sm tablet:text-base"
-                        >
-                          Spring 2024
-                        </p>
+                        <p className="text-sm tablet:text-base">Spring 2024</p>
                       </div>
                     </div>
                     <div className="w-full mt-1.5">
@@ -136,14 +120,10 @@ export default function Home() {
                     <div className="w-full">
                       <p className="font-baskerville font-bold">NoRamp</p>
                       <div className="flex justify-between items-center">
-                        <p
-                          className="text-sm tablet:text-base"
-                        >
+                        <p className="text-sm tablet:text-base">
                           Software Engineer Intern
                         </p>
-                        <p
-                          className="text-sm tablet:text-base"
-                        >
+                        <p className="text-sm tablet:text-base">
                           Fall, Winter 2023
                         </p>
                       </div>
@@ -161,18 +141,14 @@ export default function Home() {
                 <FadeIn delay={450}>
                   <div className="flex flex-col mt-3">
                     <div className="w-full">
-                      <p className="font-baskerville font-bold">Samsung Biologics</p>
+                      <p className="font-baskerville font-bold">
+                        Samsung Biologics
+                      </p>
                       <div className="flex justify-between items-center">
-                        <p
-                          className="text-sm tablet:text-base"
-                        >
+                        <p className="text-sm tablet:text-base">
                           Software Engineer Intern
                         </p>
-                        <p
-                          className="text-sm tablet:text-base"
-                        >
-                          Summer 2022
-                        </p>
+                        <p className="text-sm tablet:text-base">Summer 2022</p>
                       </div>
                     </div>
                     <div className="w-full mt-1.5">
@@ -191,10 +167,10 @@ export default function Home() {
           <FadeIn delay={200}>
             <div>
               <div className="w-full p-2">
-                <h1 className="font-baskerville font-bold text-xs tablet:text-sm">Projects</h1>
-                <div
-                  className="flex-grow border-b border-black mt-2"
-                ></div>
+                <h1 className="font-baskerville font-bold text-xs tablet:text-sm">
+                  Projects
+                </h1>
+                <div className="flex-grow border-b border-black mt-2"></div>
               </div>
 
               <div className="p-2 grid grid-cols-1 gap-6">
@@ -242,7 +218,9 @@ export default function Home() {
                 <FadeIn delay={300}>
                   <div>
                     <div className="flex items-center gap-2">
-                      <h3 className="font-baskerville font-bold">PolymarketFM</h3>
+                      <h3 className="font-baskerville font-bold">
+                        PolymarketFM
+                      </h3>
                       <a
                         href="https://github.com/aaronkjin/polymarketfm"
                         target="_blank"
@@ -299,8 +277,28 @@ export default function Home() {
                   </div>
                 </FadeIn>
 
-                {/* Slop */}
+                {/* Flow */}
                 <FadeIn delay={450}>
+                  <div>
+                    <div className="flex items-center gap-2">
+                      <h3 className="font-baskerville font-bold">Flow</h3>
+                      <a
+                        href="https://github.com/aaronkjin/flow"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-baskerville italic text-[10px] tablet:text-xs text-gray-500 hover:text-black transition-colors duration-200"
+                      >
+                        GitHub <ExternalLinkIcon />
+                      </a>
+                    </div>
+                    <p className="text-sm tablet:text-base text-gray-500">
+                      A vibe-automation platform for knowledge work
+                    </p>
+                  </div>
+                </FadeIn>
+
+                {/* Slop */}
+                <FadeIn delay={500}>
                   <div>
                     <div className="flex items-center gap-2">
                       <h3 className="font-baskerville font-bold">Slop</h3>
@@ -320,7 +318,7 @@ export default function Home() {
                 </FadeIn>
 
                 {/* Jaike */}
-                <FadeIn delay={500}>
+                <FadeIn delay={550}>
                   <div>
                     <div className="flex items-center gap-2">
                       <h3 className="font-baskerville font-bold">Jaike</h3>
@@ -340,7 +338,7 @@ export default function Home() {
                 </FadeIn>
 
                 {/* Mentore */}
-                <FadeIn delay={550}>
+                <FadeIn delay={600}>
                   <div>
                     <div className="flex items-center gap-2">
                       <h3 className="font-baskerville font-bold">Mentore</h3>
@@ -359,8 +357,8 @@ export default function Home() {
                   </div>
                 </FadeIn>
 
-                {/* Pullup */}
-                <FadeIn delay={600}>
+                {/* Pullup
+                <FadeIn delay={650}>
                   <div>
                     <div className="flex items-center gap-2">
                       <h3 className="font-baskerville font-bold">Pullup</h3>
@@ -377,7 +375,7 @@ export default function Home() {
                       A mobile bulletin to find campus events
                     </p>
                   </div>
-                </FadeIn>
+                </FadeIn> */}
 
                 {/* Jonin
                 <FadeIn delay={650}>
