@@ -25,8 +25,8 @@ export default function Home() {
             <h1 className="text-sm tablet:text-base">
               <TextScramble delay={100} revealDuration={1000} rescrambleOnHover>
                 I&apos;m a Stanford BS/MS CS student. I&apos;m interested in AI
-                infrastructure, agent pipelines/harnesses, and pushing the
-                frontier of foundation model development.
+                infra, agent pipelines/harnesses, and pushing the frontier of
+                foundation model development.
               </TextScramble>
             </h1>
           </div>
