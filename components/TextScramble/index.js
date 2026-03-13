@@ -23,8 +23,8 @@ const TextScramble = ({
     return window.innerWidth < 768 || /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
   }, []);
 
-  const actualDuration = revealDuration;
-  const tickMs = isMobile ? 50 : 33;
+  const actualDuration = isMobile ? revealDuration * 1.5 : revealDuration;
+  const tickMs = isMobile ? 60 : 33;
 
   const chars = useMemo(() => text.split(""), [text]);
 
@@ -137,7 +137,7 @@ const TextScramble = ({
         }
         @media (max-width: 768px) {
           .scramble-char {
-            animation: colorCycle 0.5s linear infinite;
+            animation: colorCycle 0.8s linear infinite;
           }
         }
       `}</style>

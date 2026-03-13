@@ -297,8 +297,28 @@ export default function Home() {
                   </div>
                 </FadeIn>
 
-                {/* Slop */}
+                {/* Roam */}
                 <FadeIn delay={500}>
+                  <div>
+                    <div className="flex items-center gap-2">
+                      <h3 className="font-baskerville font-bold">Roam</h3>
+                      <a
+                        href="https://github.com/aaronkjin/roam"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-baskerville italic text-[10px] tablet:text-xs text-gray-500 hover:text-black transition-colors duration-200"
+                      >
+                        GitHub <ExternalLinkIcon />
+                      </a>
+                    </div>
+                    <p className="text-sm tablet:text-base text-gray-500">
+                      An AI platform that turns your inspos into curated trips
+                    </p>
+                  </div>
+                </FadeIn>
+
+                {/* Slop */}
+                <FadeIn delay={550}>
                   <div>
                     <div className="flex items-center gap-2">
                       <h3 className="font-baskerville font-bold">Slop</h3>
@@ -318,7 +338,7 @@ export default function Home() {
                 </FadeIn>
 
                 {/* Jaike */}
-                <FadeIn delay={550}>
+                <FadeIn delay={600}>
                   <div>
                     <div className="flex items-center gap-2">
                       <h3 className="font-baskerville font-bold">Jaike</h3>
@@ -337,8 +357,8 @@ export default function Home() {
                   </div>
                 </FadeIn>
 
-                {/* Mentore */}
-                <FadeIn delay={600}>
+                {/* Mentore
+                <FadeIn delay={650}>
                   <div>
                     <div className="flex items-center gap-2">
                       <h3 className="font-baskerville font-bold">Mentore</h3>
@@ -355,7 +375,7 @@ export default function Home() {
                       An AI search platform for mentors
                     </p>
                   </div>
-                </FadeIn>
+                </FadeIn> */}
 
                 {/* Pullup
                 <FadeIn delay={650}>
