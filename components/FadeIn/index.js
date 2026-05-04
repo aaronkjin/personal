@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-const getMotionTiming = (delay, duration) => {
+const getMotionTiming = (delay, duration, offset, mobileOffset) => {
   if (
     typeof window !== "undefined" &&
     window.matchMedia("(max-width: 767px)").matches
@@ -8,14 +8,14 @@ const getMotionTiming = (delay, duration) => {
     return {
       delay: Math.round(delay * 0.45),
       duration: Math.min(duration, 280),
-      offset: "0.5rem",
+      offset: mobileOffset || offset || "0.5rem",
     };
   }
 
   return {
     delay,
     duration,
-    offset: "0.75rem",
+    offset: offset || "0.75rem",
   };
 };
 
@@ -23,6 +23,8 @@ const FadeIn = ({
   children,
   delay = 0,
   duration = 500,
+  offset,
+  mobileOffset,
   className = "",
   as: Component = "div",
 }) => {
@@ -35,7 +37,7 @@ const FadeIn = ({
   const isInline = Component === "span";
 
   useEffect(() => {
-    const nextTiming = getMotionTiming(delay, duration);
+    const nextTiming = getMotionTiming(delay, duration, offset, mobileOffset);
     setTiming(nextTiming);
 
     const timer = setTimeout(() => {
@@ -43,16 +45,17 @@ const FadeIn = ({
     }, nextTiming.delay);
 
     return () => clearTimeout(timer);
-  }, [delay, duration]);
+  }, [delay, duration, offset, mobileOffset]);
 
   return (
     <Component
-      className={`${className} transition-all ease-out
-        ${
-          isVisible
-            ? "opacity-100 translate-y-0"
-            : "opacity-0 translate-y-4"
-        } ${isInline ? "" : "transform"}`}
+      className={`${className} transition-all ease-out ${
+        isVisible ? "opacity-100" : "opacity-0"
+      } ${
+        isInline
+          ? ""
+          : `transform ${isVisible ? "translate-y-0" : "translate-y-4"}`
+      }`}
       style={{
         position: isInline ? "relative" : undefined,
         top: isInline ? (isVisible ? "0" : timing.offset) : undefined,

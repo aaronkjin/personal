@@ -1,3 +1,4 @@
+import React from "react";
 import Head from "next/head";
 import Layout from "../components/Layout";
 import Socials from "../components/Socials";
@@ -13,6 +14,45 @@ const introSentenceFour =
   "Previously, I made a distributed benchmarking platform to orchestrate model evals at LinkedIn.";
 const introSentenceFive =
   "I also integrated Apple Intelligence into Safari Suggestions and built predictive battery performance models at Apple.";
+
+const INTRO_WORD_DELAY = 28;
+const INTRO_START_DELAY = 100;
+const splitIntroWords = (text) => text.trim().split(/\s+/).filter(Boolean);
+const getIntroWordDelay = (startDelay, index) =>
+  startDelay + index * INTRO_WORD_DELAY;
+const introSentenceOneDelay = INTRO_START_DELAY;
+const introSentenceThreeDelay =
+  introSentenceOneDelay +
+  splitIntroWords(introSentenceOne).length * INTRO_WORD_DELAY;
+const introAfterQueryDelay =
+  introSentenceThreeDelay +
+  splitIntroWords(introSentenceThreeBeforeAfterQuery).length * INTRO_WORD_DELAY;
+const introSentenceFourDelay = introAfterQueryDelay + INTRO_WORD_DELAY;
+const introSentenceFiveDelay =
+  introSentenceFourDelay +
+  splitIntroWords(introSentenceFour).length * INTRO_WORD_DELAY;
+
+const IntroWords = ({ text, startDelay }) => (
+  <>
+    {splitIntroWords(text).map((word, index, words) => (
+      <React.Fragment key={`${word}-${index}`}>
+        <FadeIn
+          as="span"
+          delay={getIntroWordDelay(startDelay, index)}
+          duration={240}
+          offset="0.18rem"
+          mobileOffset="0.12rem"
+          className="inline-block"
+        >
+          <TextScramble revealDuration={450} scrambleOnWordHover>
+            {word}
+          </TextScramble>
+        </FadeIn>
+        {index < words.length - 1 ? " " : ""}
+      </React.Fragment>
+    ))}
+  </>
+);
 
 export default function Home() {
   return (
@@ -39,35 +79,51 @@ export default function Home() {
           </FadeIn>
           <div className="p-1 tablet:p-2 w-full">
             <p className="text-sm tablet:text-base text-gray-500">
-              <FadeIn as="span" delay={100} className="inline">
-                <TextScramble revealDuration={450} scrambleOnWordHover>
-                  {introSentenceOne}
-                </TextScramble>{" "}
+              <IntroWords
+                text={introSentenceOne}
+                startDelay={introSentenceOneDelay}
+              />{" "}
+              <IntroWords
+                text={introSentenceThreeBeforeAfterQuery}
+                startDelay={introSentenceThreeDelay}
+              />{" "}
+              <FadeIn
+                as="span"
+                delay={introAfterQueryDelay}
+                duration={240}
+                offset="0.18rem"
+                mobileOffset="0.12rem"
+                className="inline-block"
+              >
+                <a
+                  href="https://www.afterquery.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline decoration-gray-400 underline-offset-2 transition-colors duration-200 hover:text-[#bea0dc] hover:decoration-[#bea0dc]"
+                >
+                  AfterQuery
+                </a>
               </FadeIn>
-              <FadeIn as="span" delay={175} className="inline">
-                <TextScramble revealDuration={450} scrambleOnWordHover>
-                  {introSentenceThreeBeforeAfterQuery}
-                  <a
-                    href="https://www.afterquery.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="underline decoration-gray-400 underline-offset-2 transition-colors duration-200 hover:text-[#bea0dc] hover:decoration-[#bea0dc]"
-                  >
-                    AfterQuery
-                  </a>
-                  .
-                </TextScramble>{" "}
-              </FadeIn>
-              <FadeIn as="span" delay={250} className="hidden tablet:inline">
-                <TextScramble revealDuration={450} scrambleOnWordHover>
-                  {introSentenceFour}
-                </TextScramble>{" "}
-              </FadeIn>
-              <FadeIn as="span" delay={325} className="hidden tablet:inline">
-                <TextScramble revealDuration={450} scrambleOnWordHover>
-                  {introSentenceFive}
-                </TextScramble>
-              </FadeIn>
+              <FadeIn
+                as="span"
+                delay={introAfterQueryDelay + INTRO_WORD_DELAY}
+                duration={240}
+                offset="0.18rem"
+                mobileOffset="0.12rem"
+                className="inline-block"
+              >
+                .
+              </FadeIn>{" "}
+              <span className="hidden tablet:inline">
+                <IntroWords
+                  text={introSentenceFour}
+                  startDelay={introSentenceFourDelay}
+                />{" "}
+                <IntroWords
+                  text={introSentenceFive}
+                  startDelay={introSentenceFiveDelay}
+                />
+              </span>
             </p>
           </div>
           <FadeIn delay={500}>
@@ -223,7 +279,6 @@ export default function Home() {
                       </p>
                     </div>
                   </FadeIn>
-
                 </div>
 
                 <div className="grid grid-cols-1 gap-4 tablet:contents">
