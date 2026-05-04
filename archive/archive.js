@@ -1,0 +1,426 @@
+import Head from "next/head";
+import Layout from "../components/Layout";
+import Socials from "../components/Socials";
+import FadeIn from "../components/FadeIn";
+import TextScramble from "../components/TextScramble";
+
+import { ExternalLinkIcon } from "../components/ExternalLinkIcon";
+
+export default function Home() {
+  return (
+    <Layout>
+      <Head>
+        <title>Aaron Jin</title>
+      </Head>
+
+      {/* Intro */}
+      <div className="w-full mx-auto px-0 tablet:px-8 tablet:max-w-6xl">
+        <div className="mt-24 p-2">
+          <FadeIn delay={50}>
+            <h1 className="font-baskerville font-medium text-3xl tablet:text-4xl p-1 tablet:p-2 w-full">
+              Aaron Jin
+            </h1>
+          </FadeIn>
+          <div className="p-1 tablet:p-2 w-full">
+            <h1 className="text-sm tablet:text-base">
+              <TextScramble delay={100} revealDuration={1000} rescrambleOnHover>
+                I&apos;m a Stanford BS/MS CS grad. I&apos;m interested in AI
+                infra, agent pipelines/harnesses, and pushing the frontier of
+                foundation models.
+              </TextScramble>
+            </h1>
+          </div>
+          <FadeIn delay={150}>
+            <div className="mt-5">
+              <Socials />
+            </div>
+          </FadeIn>
+        </div>
+      </div>
+
+      <div className="mt-8 mb-16 w-full mx-auto tablet:px-8 tablet:max-w-6xl">
+        <div className="grid grid-cols-1 tablet:grid-cols-2 gap-8">
+          {/* Work */}
+          <FadeIn delay={200}>
+            <div>
+              <div className="w-full p-2">
+                <h1 className="font-baskerville font-bold text-xs tablet:text-sm">
+                  Previously
+                </h1>
+                <div className="flex-grow border-b border-black mt-2"></div>
+              </div>
+
+              <div className="grid tablet:grid-cols-1 p-2 gap-4">
+                {/* LinkedIn */}
+                <FadeIn delay={250}>
+                  <div className="flex flex-col">
+                    <div className="w-full">
+                      <p className="font-baskerville font-bold">LinkedIn</p>
+                      <div className="flex justify-between items-center">
+                        <p className="text-sm tablet:text-base">
+                          ML Infra Engineer Intern
+                        </p>
+                        <p className="text-sm tablet:text-base">Summer 2025</p>
+                      </div>
+                    </div>
+                    <div className="w-full mt-1.5">
+                      <p className="text-sm tablet:text-base text-gray-500">
+                        Built LinkedIn&apos;s distributed benchmarking platform
+                        to orchestrate model evals
+                      </p>
+                    </div>
+                  </div>
+                </FadeIn>
+
+                {/* Apple Safari */}
+                <FadeIn delay={300}>
+                  <div className="flex flex-col">
+                    <div className="w-full">
+                      <p className="font-baskerville font-bold">Apple</p>
+                      <div className="flex justify-between items-center">
+                        <p className="text-sm tablet:text-base">
+                          Software Engineer Intern
+                        </p>
+                        <p className="text-sm tablet:text-base">Summer 2024</p>
+                      </div>
+                    </div>
+                    <div className="w-full mt-1.5">
+                      <p className="text-sm tablet:text-base text-gray-500">
+                        Integrated Apple Intelligence into Safari Suggestions
+                        for more relevant zero-keyword searches
+                      </p>
+                    </div>
+                  </div>
+                </FadeIn>
+
+                {/* Apple Battery */}
+                <FadeIn delay={350}>
+                  <div className="flex flex-col mt-3">
+                    <div className="w-full">
+                      <p className="font-baskerville font-bold">Apple</p>
+                      <div className="flex justify-between items-center">
+                        <p className="text-sm tablet:text-base">
+                          Software Engineer Intern
+                        </p>
+                        <p className="text-sm tablet:text-base">Spring 2024</p>
+                      </div>
+                    </div>
+                    <div className="w-full mt-1.5">
+                      <p className="text-sm tablet:text-base text-gray-500">
+                        Developed team&apos;s first API gateway for Apple&apos;s
+                        battery-testing platform
+                      </p>
+                    </div>
+                  </div>
+                </FadeIn>
+
+                {/* NoRamp */}
+                <FadeIn delay={400}>
+                  <div className="flex flex-col mt-3">
+                    <div className="w-full">
+                      <p className="font-baskerville font-bold">NoRamp</p>
+                      <div className="flex justify-between items-center">
+                        <p className="text-sm tablet:text-base">
+                          Software Engineer Intern
+                        </p>
+                        <p className="text-sm tablet:text-base">
+                          Fall, Winter 2023
+                        </p>
+                      </div>
+                    </div>
+                    <div className="w-full mt-1.5">
+                      <p className="text-sm tablet:text-base text-gray-500">
+                        Built Prisim, a social wallet marketplace for NFT buyers
+                        and sellers
+                      </p>
+                    </div>
+                  </div>
+                </FadeIn>
+
+                {/* Samsung Biologics */}
+                <FadeIn delay={450}>
+                  <div className="flex flex-col mt-3">
+                    <div className="w-full">
+                      <p className="font-baskerville font-bold">
+                        Samsung Biologics
+                      </p>
+                      <div className="flex justify-between items-center">
+                        <p className="text-sm tablet:text-base">
+                          Software Engineer Intern
+                        </p>
+                        <p className="text-sm tablet:text-base">Summer 2022</p>
+                      </div>
+                    </div>
+                    <div className="w-full mt-1.5">
+                      <p className="text-sm tablet:text-base text-gray-500">
+                        Developed an audit-selecting program for pharmaceutical
+                        suppliers
+                      </p>
+                    </div>
+                  </div>
+                </FadeIn>
+              </div>
+            </div>
+          </FadeIn>
+
+          {/* Projects */}
+          <FadeIn delay={200}>
+            <div>
+              <div className="w-full p-2">
+                <h1 className="font-baskerville font-bold text-xs tablet:text-sm">
+                  Projects
+                </h1>
+                <div className="flex-grow border-b border-black mt-2"></div>
+              </div>
+
+              <div className="p-2 grid grid-cols-1 gap-6">
+                {/* Ivey */}
+                <FadeIn delay={250}>
+                  <div>
+                    <div className="flex items-center gap-2">
+                      <h3 className="font-baskerville font-bold">Ivey</h3>
+                      <a
+                        href="https://github.com/aaronkjin/ivey"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-baskerville italic text-[10px] tablet:text-xs text-gray-500 hover:text-black transition-colors duration-200"
+                      >
+                        GitHub <ExternalLinkIcon />
+                      </a>
+                    </div>
+                    <p className="text-sm tablet:text-base text-gray-500">
+                      An RL poker engine
+                    </p>
+                  </div>
+                </FadeIn>
+
+                {/* GPT2 */}
+                <FadeIn delay={300}>
+                  <div>
+                    <div className="flex items-center gap-2">
+                      <h3 className="font-baskerville font-bold">GPT2</h3>
+                      <a
+                        href="https://github.com/aaronkjin/gpt2"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-baskerville italic text-[10px] tablet:text-xs text-gray-500 hover:text-black transition-colors duration-200"
+                      >
+                        GitHub <ExternalLinkIcon />
+                      </a>
+                    </div>
+                    <p className="text-sm tablet:text-base text-gray-500">
+                      A decoder-only, autoregressive transformer
+                    </p>
+                  </div>
+                </FadeIn>
+
+                {/* GPT2 */}
+                <FadeIn delay={300}>
+                  <div>
+                    <div className="flex items-center gap-2">
+                      <h3 className="font-baskerville font-bold">
+                        PolymarketFM
+                      </h3>
+                      <a
+                        href="https://github.com/aaronkjin/polymarketfm"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-baskerville italic text-[10px] tablet:text-xs text-gray-500 hover:text-black transition-colors duration-200"
+                      >
+                        GitHub <ExternalLinkIcon />
+                      </a>
+                    </div>
+                    <p className="text-sm tablet:text-base text-gray-500">
+                      A foundation model for zero-shot prediction market
+                      forecasting
+                    </p>
+                  </div>
+                </FadeIn>
+
+                {/* PocketNeRF */}
+                <FadeIn delay={350}>
+                  <div>
+                    <div className="flex items-center gap-2">
+                      <h3 className="font-baskerville font-bold">PocketNeRF</h3>
+                      <a
+                        href="https://github.com/aaronkjin/pocketnerf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-baskerville italic text-[10px] tablet:text-xs text-gray-500 hover:text-black transition-colors duration-200"
+                      >
+                        GitHub <ExternalLinkIcon />
+                      </a>
+                    </div>
+                    <p className="text-sm tablet:text-base text-gray-500">
+                      A phone-to-3D indoor reconstruction pipeline
+                    </p>
+                  </div>
+                </FadeIn>
+
+                {/* Tungsten */}
+                <FadeIn delay={400}>
+                  <div>
+                    <div className="flex items-center gap-2">
+                      <h3 className="font-baskerville font-bold">Tungsten</h3>
+                      <a
+                        href="https://github.com/aaronkjin/tungsten"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-baskerville italic text-[10px] tablet:text-xs text-gray-500 hover:text-black transition-colors duration-200"
+                      >
+                        GitHub <ExternalLinkIcon />
+                      </a>
+                    </div>
+                    <p className="text-sm tablet:text-base text-gray-500">
+                      A compiler built from scratch with no libraries
+                    </p>
+                  </div>
+                </FadeIn>
+
+                {/* Flow */}
+                <FadeIn delay={450}>
+                  <div>
+                    <div className="flex items-center gap-2">
+                      <h3 className="font-baskerville font-bold">Flow</h3>
+                      <a
+                        href="https://github.com/aaronkjin/flow"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-baskerville italic text-[10px] tablet:text-xs text-gray-500 hover:text-black transition-colors duration-200"
+                      >
+                        GitHub <ExternalLinkIcon />
+                      </a>
+                    </div>
+                    <p className="text-sm tablet:text-base text-gray-500">
+                      A vibe-automation platform for knowledge work
+                    </p>
+                  </div>
+                </FadeIn>
+
+                {/* Roam */}
+                <FadeIn delay={500}>
+                  <div>
+                    <div className="flex items-center gap-2">
+                      <h3 className="font-baskerville font-bold">Roam</h3>
+                      <a
+                        href="https://github.com/aaronkjin/roam"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-baskerville italic text-[10px] tablet:text-xs text-gray-500 hover:text-black transition-colors duration-200"
+                      >
+                        GitHub <ExternalLinkIcon />
+                      </a>
+                    </div>
+                    <p className="text-sm tablet:text-base text-gray-500">
+                      An AI platform that turns your inspos into curated trips
+                    </p>
+                  </div>
+                </FadeIn>
+
+                {/* Slop */}
+                <FadeIn delay={550}>
+                  <div>
+                    <div className="flex items-center gap-2">
+                      <h3 className="font-baskerville font-bold">Slop</h3>
+                      <a
+                        href="https://github.com/aaronkjin/slop"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-baskerville italic text-[10px] tablet:text-xs text-gray-500 hover:text-black transition-colors duration-200"
+                      >
+                        GitHub <ExternalLinkIcon />
+                      </a>
+                    </div>
+                    <p className="text-sm tablet:text-base text-gray-500">
+                      An AI video generator for viral TikToks
+                    </p>
+                  </div>
+                </FadeIn>
+
+                {/* Jaike */}
+                <FadeIn delay={600}>
+                  <div>
+                    <div className="flex items-center gap-2">
+                      <h3 className="font-baskerville font-bold">Jaike</h3>
+                      <a
+                        href="https://github.com/aaronkjin/jaike"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-baskerville italic text-[10px] tablet:text-xs text-gray-500 hover:text-black transition-colors duration-200"
+                      >
+                        GitHub <ExternalLinkIcon />
+                      </a>
+                    </div>
+                    <p className="text-sm tablet:text-base text-gray-500">
+                      A lecture-to-brainrot web app
+                    </p>
+                  </div>
+                </FadeIn>
+
+                {/* Mentore
+                <FadeIn delay={650}>
+                  <div>
+                    <div className="flex items-center gap-2">
+                      <h3 className="font-baskerville font-bold">Mentore</h3>
+                      <a
+                        href="https://github.com/aaronkjin/mentore"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-baskerville italic text-[10px] tablet:text-xs text-gray-500 hover:text-black transition-colors duration-200"
+                      >
+                        GitHub <ExternalLinkIcon />
+                      </a>
+                    </div>
+                    <p className="text-sm tablet:text-base text-gray-500">
+                      An AI search platform for mentors
+                    </p>
+                  </div>
+                </FadeIn> */}
+
+                {/* Pullup
+                <FadeIn delay={650}>
+                  <div>
+                    <div className="flex items-center gap-2">
+                      <h3 className="font-baskerville font-bold">Pullup</h3>
+                      <a
+                        href="https://github.com/aaronkjin/pullup"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-baskerville italic text-[10px] tablet:text-xs text-gray-500 hover:text-black transition-colors duration-200"
+                      >
+                        GitHub <ExternalLinkIcon />
+                      </a>
+                    </div>
+                    <p className="text-sm tablet:text-base text-gray-500">
+                      A mobile bulletin to find campus events
+                    </p>
+                  </div>
+                </FadeIn> */}
+
+                {/* Jonin
+                <FadeIn delay={650}>
+                  <div>
+                    <div className="flex items-center gap-2">
+                      <h3 className="font-baskerville font-bold">Jonin</h3>
+                      <a
+                        href="https://github.com/aaronkjin/jonin"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-baskerville italic text-[10px] tablet:text-xs text-gray-500 hover:text-black transition-colors duration-200"
+                      >
+                        GitHub <ExternalLinkIcon />
+                      </a>
+                    </div>
+                    <p className="text-sm tablet:text-base text-gray-500">
+                      A pixel ninja platformer game
+                    </p>
+                  </div>
+                </FadeIn> */}
+              </div>
+            </div>
+          </FadeIn>
+        </div>
+      </div>
+    </Layout>
+  );
+}

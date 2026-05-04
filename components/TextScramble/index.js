@@ -1,6 +1,140 @@
-import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 
 const GLITCH = "abcdefghijklmnopqrstuvwxyz!?:;@#$%&";
+const WORD_PATTERN = /(\s+|[^\s]+)/g;
+
+const randomChar = () => GLITCH[(Math.random() * GLITCH.length) | 0];
+const canHoverScramble = () =>
+  typeof window !== "undefined" &&
+  window.matchMedia("(min-width: 768px)").matches;
+
+const flattenChildren = (children) => {
+  const parts = [];
+
+  const visit = (node) => {
+    if (node === null || node === undefined || typeof node === "boolean") {
+      return;
+    }
+
+    if (typeof node === "string" || typeof node === "number") {
+      parts.push({ type: "text", text: String(node) });
+      return;
+    }
+
+    if (Array.isArray(node)) {
+      node.forEach(visit);
+      return;
+    }
+
+    if (!React.isValidElement(node)) {
+      return;
+    }
+
+    const { children: elementChildren, ...props } = node.props;
+
+    if (node.type === "a") {
+      parts.push({
+        type: "link",
+        props,
+        text: flattenChildren(elementChildren)
+          .map((part) => part.text)
+          .join(""),
+      });
+      return;
+    }
+
+    visit(elementChildren);
+  };
+
+  visit(children);
+  return parts;
+};
+
+const splitWords = (text) => text.match(WORD_PATTERN) || [];
+
+const ScramblePiece = ({
+  text,
+  triggerKey,
+  duration,
+  onMouseEnter,
+  className = "",
+}) => {
+  const [displayChars, setDisplayChars] = useState(() =>
+    Array.from(text, (ch) => ({ ch, scrambling: false }))
+  );
+
+  useEffect(() => {
+    setDisplayChars(Array.from(text, (ch) => ({ ch, scrambling: false })));
+  }, [text]);
+
+  useEffect(() => {
+    if (!triggerKey || !text.trim()) {
+      return;
+    }
+
+    let rafId = null;
+    let startTime = null;
+    let lastTick = 0;
+    const chars = text.split("");
+    const perChar = duration / Math.max(1, chars.length);
+
+    const animate = (timestamp) => {
+      if (!startTime) {
+        startTime = timestamp;
+      }
+
+      if (timestamp - lastTick < 33) {
+        rafId = requestAnimationFrame(animate);
+        return;
+      }
+
+      lastTick = timestamp;
+      const elapsed = timestamp - startTime;
+      const revealedCount = Math.min(chars.length, (elapsed / perChar) | 0);
+
+      setDisplayChars(
+        chars.map((ch, index) => {
+          const isSpace = ch === " ";
+          const revealed = index < revealedCount || isSpace;
+
+          return {
+            ch: revealed ? ch : randomChar(),
+            scrambling: !revealed && !isSpace,
+          };
+        })
+      );
+
+      if (revealedCount < chars.length) {
+        rafId = requestAnimationFrame(animate);
+        return;
+      }
+
+      setDisplayChars(chars.map((ch) => ({ ch, scrambling: false })));
+    };
+
+    rafId = requestAnimationFrame(animate);
+
+    return () => {
+      if (rafId) {
+        cancelAnimationFrame(rafId);
+      }
+    };
+  }, [duration, text, triggerKey]);
+
+  return (
+    <span className={className} onMouseEnter={onMouseEnter}>
+      {displayChars.map(({ ch, scrambling }, index) => (
+        <span
+          key={index}
+          className={`scramble-letter ${scrambling ? "scramble-char" : ""}`}
+          style={{ animationDelay: `${-index * 0.05}s` }}
+        >
+          {ch}
+        </span>
+      ))}
+    </span>
+  );
+};
 
 const TextScramble = ({
   children,
@@ -8,133 +142,105 @@ const TextScramble = ({
   revealDuration = 600,
   className = "",
   rescrambleOnHover = false,
+  scrambleOnMount = false,
+  scrambleOnWordHover = false,
 }) => {
-  const text = typeof children === "string" ? children : "";
-  const [isStarted, setIsStarted] = useState(false);
-  const [isComplete, setIsComplete] = useState(false);
-  const [scrambleKey, setScrambleKey] = useState(0);
+  const parts = useMemo(() => flattenChildren(children), [children]);
+  const [triggerKey, setTriggerKey] = useState(0);
+  const [wordTriggerKeys, setWordTriggerKeys] = useState({});
 
-  const spanRefs = useRef([]);
-  const rafRef = useRef(null);
-  const startRef = useRef(null);
-
-  const isMobile = useMemo(() => {
-    if (typeof window === "undefined") return false;
-    return window.innerWidth < 768 || /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+  const triggerFullScramble = useCallback(() => {
+    setTriggerKey((key) => key + 1);
   }, []);
 
-  const actualDuration = isMobile ? revealDuration * 1.5 : revealDuration;
-  const tickMs = isMobile ? 60 : 33;
-
-  const chars = useMemo(() => text.split(""), [text]);
-
-  const triggerScramble = useCallback(() => {
-    if (rafRef.current) cancelAnimationFrame(rafRef.current);
-    setIsComplete(false);
-    setScrambleKey((k) => k + 1);
-  }, []);
-
-  const handleMouseEnter = useCallback(() => {
-    if (isMobile || !rescrambleOnHover || !isComplete) return;
-    triggerScramble();
-  }, [isMobile, rescrambleOnHover, isComplete, triggerScramble]);
-
-  const handleMouseLeave = useCallback(() => {}, []);
-
-  useEffect(() => {
-    const t = setTimeout(() => setIsStarted(true), delay);
-    return () => clearTimeout(t);
-  }, [delay]);
-
-  useEffect(() => {
-    if (!isStarted || !text) return;
-
-    setIsComplete(false);
-    startRef.current = null;
-
-    // Initialize spans with scrambled characters
-    for (let i = 0; i < chars.length; i++) {
-      const el = spanRefs.current[i];
-      if (!el) continue;
-      const isSpace = chars[i] === " ";
-      el.textContent = isSpace ? " " : GLITCH[(Math.random() * GLITCH.length) | 0];
-      el.classList.toggle("scramble-char", !isSpace);
-      el.classList.toggle("revealed", false);
+  const triggerWordScramble = useCallback((key) => {
+    if (!canHoverScramble()) {
+      return;
     }
 
-    let last = 0;
-    const perChar = actualDuration / Math.max(1, chars.length);
+    setWordTriggerKeys((keys) => ({
+      ...keys,
+      [key]: (keys[key] || 0) + 1,
+    }));
+  }, []);
 
-    const animate = (ts) => {
-      if (!startRef.current) startRef.current = ts;
-      if (ts - last < tickMs) {
-        rafRef.current = requestAnimationFrame(animate);
-        return;
-      }
-      last = ts;
+  useEffect(() => {
+    if (!scrambleOnMount) {
+      return undefined;
+    }
 
-      const elapsed = ts - startRef.current;
-      const revealedCount = Math.min(chars.length, (elapsed / perChar) | 0);
+    const timeoutId = setTimeout(triggerFullScramble, delay);
+    return () => clearTimeout(timeoutId);
+  }, [delay, scrambleOnMount, triggerFullScramble]);
 
-      for (let i = 0; i < chars.length; i++) {
-        const el = spanRefs.current[i];
-        if (!el) continue;
+  const handleMouseEnter = useCallback(() => {
+    if (!rescrambleOnHover || scrambleOnWordHover || !canHoverScramble()) {
+      return;
+    }
 
-        const ch = chars[i];
-        const isSpace = ch === " ";
-        const revealed = i < revealedCount || isSpace;
-
-        if (revealed) {
-          if (el.textContent !== ch) el.textContent = ch;
-          el.classList.toggle("scramble-char", false);
-          el.classList.toggle("revealed", true);
-        } else {
-          el.textContent = GLITCH[(Math.random() * GLITCH.length) | 0];
-        }
-      }
-
-      if (revealedCount < chars.length) {
-        rafRef.current = requestAnimationFrame(animate);
-      } else {
-        setIsComplete(true);
-      }
-    };
-
-    rafRef.current = requestAnimationFrame(animate);
-
-    return () => {
-      if (rafRef.current) cancelAnimationFrame(rafRef.current);
-    };
-  }, [isStarted, text, actualDuration, tickMs, chars, scrambleKey]);
+    triggerFullScramble();
+  }, [rescrambleOnHover, scrambleOnWordHover, triggerFullScramble]);
 
   return (
     <>
-      <style jsx>{`
+      <style jsx global>{`
         @keyframes colorCycle {
-          0% { color: rgb(190, 160, 220); }
-          8% { color: rgb(210, 145, 200); }
-          16% { color: rgb(225, 160, 185); }
-          24% { color: rgb(230, 180, 170); }
-          32% { color: rgb(225, 195, 140); }
-          40% { color: rgb(215, 210, 120); }
-          48% { color: rgb(185, 215, 130); }
-          56% { color: rgb(155, 205, 155); }
-          64% { color: rgb(140, 200, 180); }
-          72% { color: rgb(140, 195, 210); }
-          80% { color: rgb(150, 185, 220); }
-          88% { color: rgb(175, 175, 225); }
-          100% { color: rgb(190, 160, 220); }
+          0% {
+            color: rgb(190, 160, 220);
+          }
+          8% {
+            color: rgb(210, 145, 200);
+          }
+          16% {
+            color: rgb(225, 160, 185);
+          }
+          24% {
+            color: rgb(230, 180, 170);
+          }
+          32% {
+            color: rgb(225, 195, 140);
+          }
+          40% {
+            color: rgb(215, 210, 120);
+          }
+          48% {
+            color: rgb(185, 215, 130);
+          }
+          56% {
+            color: rgb(155, 205, 155);
+          }
+          64% {
+            color: rgb(140, 200, 180);
+          }
+          72% {
+            color: rgb(140, 195, 210);
+          }
+          80% {
+            color: rgb(150, 185, 220);
+          }
+          88% {
+            color: rgb(175, 175, 225);
+          }
+          100% {
+            color: rgb(190, 160, 220);
+          }
         }
+
+        .scramble-text,
+        .scramble-piece,
+        .scramble-letter {
+          font-family: inherit;
+        }
+
         .scramble-char {
           animation: colorCycle 0.5s linear infinite;
           will-change: color;
         }
-        .scramble-wrap {
-          contain: layout paint;
+
+        .scramble-word {
+          cursor: default;
         }
-        .revealed {
-          color: inherit;
-        }
+
         @media (max-width: 768px) {
           .scramble-char {
             animation: colorCycle 0.8s linear infinite;
@@ -143,20 +249,49 @@ const TextScramble = ({
       `}</style>
 
       <span
-        className={`scramble-wrap ${className}`}
-        style={{ opacity: isStarted ? 1 : 0, transition: "opacity 0.15s ease-out" }}
+        className={`scramble-text ${className}`}
         onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
       >
-        {chars.map((ch, i) => (
-          <span
-            key={i}
-            ref={(el) => (spanRefs.current[i] = el)}
-            style={{ animationDelay: `${-i * 0.05}s` }}
-          >
-            {ch === " " ? " " : ""}
-          </span>
-        ))}
+        {parts.map((part, partIndex) => {
+          if (part.type === "link") {
+            return (
+              <a key={partIndex} {...part.props}>
+                {part.text}
+              </a>
+            );
+          }
+
+          if (scrambleOnWordHover) {
+            return splitWords(part.text).map((word, wordIndex) => {
+              const key = `${partIndex}-${wordIndex}`;
+
+              if (!word.trim()) {
+                return <React.Fragment key={key}>{word}</React.Fragment>;
+              }
+
+              return (
+                <ScramblePiece
+                  key={key}
+                  text={word}
+                  triggerKey={wordTriggerKeys[key] || 0}
+                  duration={revealDuration}
+                  className="scramble-piece scramble-word"
+                  onMouseEnter={() => triggerWordScramble(key)}
+                />
+              );
+            });
+          }
+
+          return (
+            <ScramblePiece
+              key={partIndex}
+              text={part.text}
+              triggerKey={triggerKey}
+              duration={revealDuration}
+              className="scramble-piece"
+            />
+          );
+        })}
       </span>
     </>
   );
