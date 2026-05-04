@@ -91,7 +91,7 @@ export default function Home() {
                 <div className="flex-grow border-b border-black mt-2"></div>
               </div>
 
-              <div className="p-2 grid grid-cols-1 gap-4 tablet:grid-cols-2 tablet:grid-rows-6 tablet:grid-flow-col tablet:gap-x-8 tablet:gap-y-4">
+              <div className="p-2 grid grid-cols-1 gap-4 tablet:grid-cols-2 tablet:grid-rows-5 tablet:grid-flow-col tablet:gap-x-8 tablet:gap-y-4">
                 <div className="grid grid-cols-1 gap-4 tablet:contents">
                   {/* Ivey */}
                   <FadeIn delay={250}>
@@ -223,6 +223,9 @@ export default function Home() {
                     </div>
                   </FadeIn>
 
+                </div>
+
+                <div className="grid grid-cols-1 gap-4 tablet:contents">
                   {/* Flow */}
                   <FadeIn delay={500}>
                     <div>
@@ -248,9 +251,7 @@ export default function Home() {
                       </p>
                     </div>
                   </FadeIn>
-                </div>
 
-                <div className="grid grid-cols-1 gap-4 tablet:contents">
                   {/* Roam */}
                   <FadeIn delay={550}>
                     <div>
@@ -330,7 +331,7 @@ export default function Home() {
                     </div>
                   </FadeIn>
 
-                  {/* Mentore */}
+                  {/* Mentore
                   <FadeIn delay={700}>
                     <div>
                       <div className="flex items-center gap-2">
@@ -354,7 +355,7 @@ export default function Home() {
                         </TextScramble>
                       </p>
                     </div>
-                  </FadeIn>
+                  </FadeIn> */}
 
                   {/* Pullup
                 <FadeIn delay={650}>
