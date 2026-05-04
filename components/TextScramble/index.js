@@ -7,6 +7,17 @@ const randomChar = () => GLITCH[(Math.random() * GLITCH.length) | 0];
 const canHoverScramble = () =>
   typeof window !== "undefined" &&
   window.matchMedia("(min-width: 768px)").matches;
+const getScrambleDuration = (duration, mobileDuration) => {
+  if (
+    typeof window !== "undefined" &&
+    mobileDuration !== undefined &&
+    window.matchMedia("(max-width: 767px)").matches
+  ) {
+    return mobileDuration;
+  }
+
+  return duration;
+};
 
 const flattenChildren = (children) => {
   const parts = [];
@@ -56,6 +67,7 @@ const ScramblePiece = ({
   text,
   triggerKey,
   duration,
+  mobileDuration,
   onMouseEnter,
   className = "",
 }) => {
@@ -76,7 +88,8 @@ const ScramblePiece = ({
     let startTime = null;
     let lastTick = 0;
     const chars = text.split("");
-    const perChar = duration / Math.max(1, chars.length);
+    const actualDuration = getScrambleDuration(duration, mobileDuration);
+    const perChar = actualDuration / Math.max(1, chars.length);
 
     const animate = (timestamp) => {
       if (!startTime) {
@@ -119,7 +132,7 @@ const ScramblePiece = ({
         cancelAnimationFrame(rafId);
       }
     };
-  }, [duration, text, triggerKey]);
+  }, [duration, mobileDuration, text, triggerKey]);
 
   return (
     <span className={className} onMouseEnter={onMouseEnter}>
@@ -140,6 +153,7 @@ const TextScramble = ({
   children,
   delay = 0,
   revealDuration = 600,
+  mobileRevealDuration,
   className = "",
   rescrambleOnHover = false,
   scrambleOnMount = false,
@@ -243,7 +257,7 @@ const TextScramble = ({
 
         @media (max-width: 768px) {
           .scramble-char {
-            animation: colorCycle 0.8s linear infinite;
+            animation: colorCycle 0.45s linear infinite;
           }
         }
       `}</style>
@@ -275,6 +289,7 @@ const TextScramble = ({
                   text={word}
                   triggerKey={wordTriggerKeys[key] || 0}
                   duration={revealDuration}
+                  mobileDuration={mobileRevealDuration}
                   className="scramble-piece scramble-word"
                   onMouseEnter={() => triggerWordScramble(key)}
                 />
@@ -288,6 +303,7 @@ const TextScramble = ({
               text={part.text}
               triggerKey={triggerKey}
               duration={revealDuration}
+              mobileDuration={mobileRevealDuration}
               className="scramble-piece"
             />
           );

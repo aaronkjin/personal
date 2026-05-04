@@ -29,6 +29,7 @@ export default function Home() {
               <TextScramble
                 delay={50}
                 revealDuration={900}
+                mobileRevealDuration={420}
                 scrambleOnMount
                 rescrambleOnHover
               >
