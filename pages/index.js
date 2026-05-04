@@ -58,12 +58,12 @@ export default function Home() {
                   .
                 </TextScramble>{" "}
               </FadeIn>
-              <FadeIn as="span" delay={250} className="inline">
+              <FadeIn as="span" delay={250} className="hidden tablet:inline">
                 <TextScramble revealDuration={450} scrambleOnWordHover>
                   {introSentenceFour}
                 </TextScramble>{" "}
               </FadeIn>
-              <FadeIn as="span" delay={325} className="inline">
+              <FadeIn as="span" delay={325} className="hidden tablet:inline">
                 <TextScramble revealDuration={450} scrambleOnWordHover>
                   {introSentenceFive}
                 </TextScramble>
