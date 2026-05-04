@@ -13,7 +13,7 @@ const Socials = ({ className }) => {
     },
     {
       title: "Email",
-      link: "mailto:aaronjin@stanford.edu",
+      link: "mailto:aaronjin@alumni.stanford.edu",
     },
   ];
 
