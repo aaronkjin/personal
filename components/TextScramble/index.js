@@ -1,10 +1,22 @@
-import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import React, {
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 
 const GLITCH = "abcdefghijklmnopqrstuvwxyz!?:;@#$%&";
 const WORD_PATTERN = /(\s+|[^\s]+)/g;
-const TOUCH_SCRAMBLE_EVENT = "text-scramble-request";
-const TOUCH_SCRAMBLE_COOLDOWN_MS = 650;
+const SCRAMBLE_REQUEST_EVENT = "text-scramble-request";
+const SCRAMBLE_TRIGGER_COOLDOWN_MS = 650;
 const TOUCH_TAP_MOVE_TOLERANCE = 10;
+const RANDOM_SCRAMBLE_MIN_DELAY_MS = 2000;
+const RANDOM_SCRAMBLE_MAX_DELAY_MS = 6000;
+const RANDOM_SCRAMBLE_SELECTOR = "[data-scramble-random-word]";
+
+let randomScrambleTimerId = null;
+let randomScrambleSubscriberCount = 0;
 
 const randomChar = () => GLITCH[(Math.random() * GLITCH.length) | 0];
 const canHoverScramble = () =>
@@ -22,7 +34,72 @@ const canTouchScramble = (event) => {
   return window.matchMedia("(hover: none), (pointer: coarse)").matches;
 };
 const dispatchScrambleRequest = (element) => {
-  element?.dispatchEvent?.(new Event(TOUCH_SCRAMBLE_EVENT));
+  element?.dispatchEvent?.(new Event(SCRAMBLE_REQUEST_EVENT));
+};
+const getRandomScrambleDelay = () =>
+  RANDOM_SCRAMBLE_MIN_DELAY_MS +
+  Math.random() * (RANDOM_SCRAMBLE_MAX_DELAY_MS - RANDOM_SCRAMBLE_MIN_DELAY_MS);
+const isVisibleScrambleTarget = (element) => {
+  const rect = element.getBoundingClientRect();
+
+  return (
+    rect.width > 0 &&
+    rect.height > 0 &&
+    rect.bottom >= 0 &&
+    rect.right >= 0 &&
+    rect.top <= window.innerHeight &&
+    rect.left <= window.innerWidth
+  );
+};
+const getRandomScrambleTarget = () => {
+  if (typeof document === "undefined" || typeof window === "undefined") {
+    return null;
+  }
+
+  const candidates = Array.from(
+    document.querySelectorAll(RANDOM_SCRAMBLE_SELECTOR),
+  ).filter(isVisibleScrambleTarget);
+
+  if (!candidates.length) {
+    return null;
+  }
+
+  return candidates[(Math.random() * candidates.length) | 0];
+};
+const scheduleRandomScramble = () => {
+  if (
+    typeof window === "undefined" ||
+    randomScrambleTimerId ||
+    randomScrambleSubscriberCount <= 0
+  ) {
+    return;
+  }
+
+  randomScrambleTimerId = window.setTimeout(() => {
+    randomScrambleTimerId = null;
+    dispatchScrambleRequest(getRandomScrambleTarget());
+    scheduleRandomScramble();
+  }, getRandomScrambleDelay());
+};
+const subscribeRandomScramble = () => {
+  if (typeof window === "undefined") {
+    return () => {};
+  }
+
+  randomScrambleSubscriberCount += 1;
+  scheduleRandomScramble();
+
+  return () => {
+    randomScrambleSubscriberCount = Math.max(
+      0,
+      randomScrambleSubscriberCount - 1,
+    );
+
+    if (!randomScrambleSubscriberCount && randomScrambleTimerId) {
+      window.clearTimeout(randomScrambleTimerId);
+      randomScrambleTimerId = null;
+    }
+  };
 };
 const isInteractiveTarget = (target) =>
   target?.closest?.("a, button, input, textarea, select, [role='button']");
@@ -107,12 +184,13 @@ const ScramblePiece = ({
   className = "",
   isWord = false,
   enableTouchBrush = false,
+  enableRandomScramble = false,
 }) => {
   const pieceRef = useRef(null);
   const lastTouchTriggerRef = useRef(0);
   const [localTriggerKey, setLocalTriggerKey] = useState(0);
   const [displayChars, setDisplayChars] = useState(() =>
-    Array.from(text, (ch) => ({ ch, scrambling: false }))
+    Array.from(text, (ch) => ({ ch, scrambling: false })),
   );
 
   const triggerLocalScramble = useCallback(() => {
@@ -122,7 +200,7 @@ const ScramblePiece = ({
 
     const now = performance.now();
 
-    if (now - lastTouchTriggerRef.current < TOUCH_SCRAMBLE_COOLDOWN_MS) {
+    if (now - lastTouchTriggerRef.current < SCRAMBLE_TRIGGER_COOLDOWN_MS) {
       return;
     }
 
@@ -141,9 +219,9 @@ const ScramblePiece = ({
       return undefined;
     }
 
-    element.addEventListener(TOUCH_SCRAMBLE_EVENT, triggerLocalScramble);
+    element.addEventListener(SCRAMBLE_REQUEST_EVENT, triggerLocalScramble);
     return () =>
-      element.removeEventListener(TOUCH_SCRAMBLE_EVENT, triggerLocalScramble);
+      element.removeEventListener(SCRAMBLE_REQUEST_EVENT, triggerLocalScramble);
   }, [triggerLocalScramble]);
 
   useEffect(() => {
@@ -181,7 +259,7 @@ const ScramblePiece = ({
             ch: revealed ? ch : randomChar(),
             scrambling: !revealed && !isSpace,
           };
-        })
+        }),
       );
 
       if (revealedCount < chars.length) {
@@ -211,6 +289,7 @@ const ScramblePiece = ({
       aria-label={text}
       data-scramble-word={isWord ? "" : undefined}
       data-scramble-brush-word={enableTouchBrush ? "" : undefined}
+      data-scramble-random-word={enableRandomScramble ? "" : undefined}
     >
       <span className="scramble-placeholder" aria-hidden="true">
         {text}
@@ -242,12 +321,15 @@ const TextScramble = ({
   scrambleOnWordHover = false,
   scrambleOnWordTouch = false,
   scrambleOnWordTouchMove = false,
+  allowRandomScramble = true,
 }) => {
   const rootRef = useRef(null);
   const fullTouchStartRef = useRef(null);
   const wordTouchStartRef = useRef(null);
   const lastFullTouchTriggerRef = useRef(0);
   const parts = useMemo(() => flattenChildren(children), [children]);
+  const randomScrambleEnabled =
+    allowRandomScramble && (rescrambleOnHover || scrambleOnWordHover);
   const [triggerKey, setTriggerKey] = useState(0);
   const [wordTriggerKeys, setWordTriggerKeys] = useState({});
 
@@ -269,7 +351,7 @@ const TextScramble = ({
   const triggerTouchScramble = useCallback(() => {
     const now = performance.now();
 
-    if (now - lastFullTouchTriggerRef.current < TOUCH_SCRAMBLE_COOLDOWN_MS) {
+    if (now - lastFullTouchTriggerRef.current < SCRAMBLE_TRIGGER_COOLDOWN_MS) {
       return;
     }
 
@@ -294,6 +376,14 @@ const TextScramble = ({
     return () => clearTimeout(timeoutId);
   }, [delay, scrambleOnMount, triggerFullScramble]);
 
+  useEffect(() => {
+    if (!randomScrambleEnabled) {
+      return undefined;
+    }
+
+    return subscribeRandomScramble();
+  }, [randomScrambleEnabled]);
+
   const handleMouseEnter = useCallback(() => {
     if (!rescrambleOnHover || scrambleOnWordHover || !canHoverScramble()) {
       return;
@@ -314,7 +404,7 @@ const TextScramble = ({
 
       fullTouchStartRef.current = getPointerPoint(event);
     },
-    [rescrambleOnTouch]
+    [rescrambleOnTouch],
   );
 
   const handlePointerUp = useCallback(
@@ -333,7 +423,7 @@ const TextScramble = ({
 
       triggerTouchScramble();
     },
-    [rescrambleOnTouch, triggerTouchScramble]
+    [rescrambleOnTouch, triggerTouchScramble],
   );
 
   const handleWordPointerDown = useCallback(
@@ -351,7 +441,7 @@ const TextScramble = ({
         target: event.currentTarget,
       };
     },
-    [scrambleOnWordTouch]
+    [scrambleOnWordTouch],
   );
 
   const handleWordPointerUp = useCallback(
@@ -370,7 +460,7 @@ const TextScramble = ({
 
       dispatchScrambleRequest(start.target || event.currentTarget);
     },
-    [scrambleOnWordTouch]
+    [scrambleOnWordTouch],
   );
 
   const handleWordPointerMove = useCallback(
@@ -387,7 +477,7 @@ const TextScramble = ({
 
       dispatchScrambleRequest(target?.closest?.("[data-scramble-brush-word]"));
     },
-    [scrambleOnWordTouchMove]
+    [scrambleOnWordTouchMove],
   );
 
   return (
@@ -511,6 +601,7 @@ const TextScramble = ({
                   className="scramble-piece scramble-word"
                   isWord
                   enableTouchBrush={scrambleOnWordTouchMove}
+                  enableRandomScramble={randomScrambleEnabled}
                   onMouseEnter={() => triggerWordScramble(key)}
                   onPointerDown={
                     scrambleOnWordTouch ? handleWordPointerDown : undefined
@@ -531,6 +622,7 @@ const TextScramble = ({
               duration={revealDuration}
               mobileDuration={mobileRevealDuration}
               className="scramble-piece"
+              enableRandomScramble={randomScrambleEnabled}
             />
           );
         })}

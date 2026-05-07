@@ -79,6 +79,7 @@ export default function Home() {
                 scrambleOnMount
                 rescrambleOnHover
                 rescrambleOnTouch
+                allowRandomScramble={false}
               >
                 Aaron Jin
               </TextScramble>
