@@ -1,23 +1,39 @@
 import React, { useEffect, useState } from "react";
 
+const DEFAULT_OFFSET = "0.75rem";
+const MOBILE_DEFAULT_OFFSET = "0.5rem";
+const MOBILE_DELAY_SCALE = 0.45;
+const MOBILE_MAX_DURATION = 280;
+
 const getMotionTiming = (delay, duration, offset, mobileOffset) => {
   if (
     typeof window !== "undefined" &&
     window.matchMedia("(max-width: 767px)").matches
   ) {
     return {
-      delay: Math.round(delay * 0.45),
-      duration: Math.min(duration, 280),
-      offset: mobileOffset || offset || "0.5rem",
+      delay: Math.round(delay * MOBILE_DELAY_SCALE),
+      duration: Math.min(duration, MOBILE_MAX_DURATION),
+      offset: mobileOffset || offset || MOBILE_DEFAULT_OFFSET,
     };
   }
 
   return {
     delay,
     duration,
-    offset: offset || "0.75rem",
+    offset: offset || DEFAULT_OFFSET,
   };
 };
+
+const getFadeInClassName = (className, isVisible, isInline) =>
+  [
+    className,
+    "transition-all ease-out",
+    isVisible ? "opacity-100" : "opacity-0",
+    !isInline && "transform",
+    !isInline && (isVisible ? "translate-y-0" : "translate-y-4"),
+  ]
+    .filter(Boolean)
+    .join(" ");
 
 const FadeIn = ({
   children,
@@ -32,7 +48,7 @@ const FadeIn = ({
   const [timing, setTiming] = useState(() => ({
     delay,
     duration,
-    offset: "0.75rem",
+    offset: DEFAULT_OFFSET,
   }));
   const isInline = Component === "span";
 
@@ -49,13 +65,7 @@ const FadeIn = ({
 
   return (
     <Component
-      className={`${className} transition-all ease-out ${
-        isVisible ? "opacity-100" : "opacity-0"
-      } ${
-        isInline
-          ? ""
-          : `transform ${isVisible ? "translate-y-0" : "translate-y-4"}`
-      }`}
+      className={getFadeInClassName(className, isVisible, isInline)}
       style={{
         position: isInline ? "relative" : undefined,
         top: isInline ? (isVisible ? "0" : timing.offset) : undefined,

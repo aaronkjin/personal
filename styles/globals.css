@@ -14,7 +14,6 @@ body {
 .gradient-banner {
   position: absolute;
   pointer-events: none;
-  /* z-index: 100; */
   top: -120px;
   height: 300px;
   width: 100vw;
@@ -30,62 +29,82 @@ body {
   );
 }
 
-.gradient-shadow:hover::before {
-  content: "";
-  /* z-index: -1; */
+@keyframes colorCycle {
+  0% {
+    color: rgb(190, 160, 220);
+  }
+  8% {
+    color: rgb(210, 145, 200);
+  }
+  16% {
+    color: rgb(225, 160, 185);
+  }
+  24% {
+    color: rgb(230, 180, 170);
+  }
+  32% {
+    color: rgb(225, 195, 140);
+  }
+  40% {
+    color: rgb(215, 210, 120);
+  }
+  48% {
+    color: rgb(185, 215, 130);
+  }
+  56% {
+    color: rgb(155, 205, 155);
+  }
+  64% {
+    color: rgb(140, 200, 180);
+  }
+  72% {
+    color: rgb(140, 195, 210);
+  }
+  80% {
+    color: rgb(150, 185, 220);
+  }
+  88% {
+    color: rgb(175, 175, 225);
+  }
+  100% {
+    color: rgb(190, 160, 220);
+  }
+}
+
+.scramble-text,
+.scramble-piece,
+.scramble-placeholder,
+.scramble-animated,
+.scramble-letter {
+  font-family: inherit;
+}
+
+.scramble-piece {
+  display: inline-block;
+  position: relative;
+  white-space: pre;
+}
+
+.scramble-placeholder {
+  visibility: hidden;
+}
+
+.scramble-animated {
+  left: 0;
   position: absolute;
   top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background: linear-gradient(-45deg, #45caff 0%, #ff1b6b 100%);
-  transform: translate3d(0px, 20px, 0) scale(0.95);
-  filter: blur(20px);
-  opacity: var(0.7);
-  transition: opacity 0.3s;
-  border-radius: inherit;
+  white-space: pre;
 }
 
-/* 
-* Prevents issues when the parent creates a 
-* stacking context. (For example, using the transform
-* property )
-*/
-.gradient-shadow:hover::after {
-  content: "";
-  /* z-index: -1; */
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background: inherit;
-  border-radius: inherit;
+.scramble-char {
+  animation: colorCycle 0.5s linear infinite;
+  will-change: color;
 }
 
-.gradient-strip {
-  top: 0;
-  position: fixed;
-  pointer-events: none;
-  /* z-index: 1; */
-  height: 40px;
-  width: 100vw;
-  background: rgba(18, 18, 18, 255);
+.scramble-word {
+  cursor: default;
 }
 
-.gradient-border {
-  border-radius: 15px;
-  border: 5px solid transparent;
-  background-clip: padding-box;
-  background-image: radial-gradient(
-    circle,
-    rgba(107, 248, 175, 0.2) 0%,
-    rgba(107, 107, 248, 0.2) 100%
-  );
-  padding: 2px;
-}
-
-/* ASCII art bg styles */
 .ascii-art-background {
   position: absolute;
   top: 20px;
@@ -105,9 +124,14 @@ body {
   display: block;
 }
 
-/* Mobile positioning adjustment */
 @media (max-width: 480px) {
   .ascii-art-background {
     top: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .scramble-char {
+    animation: colorCycle 0.45s linear infinite;
   }
 }

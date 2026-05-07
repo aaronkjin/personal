@@ -1,32 +1,39 @@
 import React from "react";
 import { ArrowUpRight } from "lucide-react";
 
-const Socials = ({ className }) => {
-  const socialsData = [
-    {
-      title: "LinkedIn",
-      link: "https://www.linkedin.com/in/aaronkjin/",
-    },
-    {
-      title: "GitHub",
-      link: "https://www.github.com/aaronkjin",
-    },
-    {
-      title: "X",
-      link: "https://x.com/gunnyjin",
-    },
-    {
-      title: "Email",
-      link: "mailto:aaronjin@alumni.stanford.edu",
-    },
-  ];
+const SOCIAL_LINKS = [
+  {
+    title: "LinkedIn",
+    href: "https://www.linkedin.com/in/aaronkjin/",
+  },
+  {
+    title: "GitHub",
+    href: "https://www.github.com/aaronkjin",
+  },
+  {
+    title: "X",
+    href: "https://x.com/gunnyjin",
+  },
+  {
+    title: "Email",
+    href: "mailto:aaronjin@alumni.stanford.edu",
+  },
+];
+
+const Socials = ({ className = "" }) => {
+  const rootClassName = [
+    className,
+    "flex flex-wrap mob:flex-nowrap gap-4",
+  ]
+    .filter(Boolean)
+    .join(" ");
 
   return (
-    <div className={`${className} flex flex-wrap mob:flex-nowrap gap-4`}>
-      {socialsData.map((social, index) => (
+    <div className={rootClassName}>
+      {SOCIAL_LINKS.map((social) => (
         <a
-          key={index}
-          href={social.link}
+          key={social.title}
+          href={social.href}
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-0.5 font-baskerville italic text-[10px] tablet:text-xs text-gray-500 hover:text-[#bea0dc] transition-colors duration-200"

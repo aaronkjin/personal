@@ -10,15 +10,17 @@ const GLITCH = "abcdefghijklmnopqrstuvwxyz!?:;@#$%&";
 const WORD_PATTERN = /(\s+|[^\s]+)/g;
 const SCRAMBLE_REQUEST_EVENT = "text-scramble-request";
 const SCRAMBLE_TRIGGER_COOLDOWN_MS = 650;
-const TOUCH_TAP_MOVE_TOLERANCE = 10;
-const RANDOM_SCRAMBLE_MIN_DELAY_MS = 2000;
-const RANDOM_SCRAMBLE_MAX_DELAY_MS = 6000;
+const TOUCH_TAP_MOVE_TOLERANCE_PX = 10;
+const RANDOM_SCRAMBLE_MIN_DELAY_MS = 1000;
+const RANDOM_SCRAMBLE_MAX_DELAY_MS = 4000;
 const RANDOM_SCRAMBLE_SELECTOR = "[data-scramble-random-word]";
 
 let randomScrambleTimerId = null;
-let randomScrambleSubscriberCount = 0;
+let randomScrambleSubscriptionCount = 0;
 
 const randomChar = () => GLITCH[(Math.random() * GLITCH.length) | 0];
+const getSettledChars = (text) =>
+  Array.from(text, (ch) => ({ ch, scrambling: false }));
 const canHoverScramble = () =>
   typeof window !== "undefined" &&
   window.matchMedia("(hover: hover) and (pointer: fine)").matches;
@@ -70,7 +72,7 @@ const scheduleRandomScramble = () => {
   if (
     typeof window === "undefined" ||
     randomScrambleTimerId ||
-    randomScrambleSubscriberCount <= 0
+    randomScrambleSubscriptionCount <= 0
   ) {
     return;
   }
@@ -86,16 +88,16 @@ const subscribeRandomScramble = () => {
     return () => {};
   }
 
-  randomScrambleSubscriberCount += 1;
+  randomScrambleSubscriptionCount += 1;
   scheduleRandomScramble();
 
   return () => {
-    randomScrambleSubscriberCount = Math.max(
+    randomScrambleSubscriptionCount = Math.max(
       0,
-      randomScrambleSubscriberCount - 1,
+      randomScrambleSubscriptionCount - 1,
     );
 
-    if (!randomScrambleSubscriberCount && randomScrambleTimerId) {
+    if (!randomScrambleSubscriptionCount && randomScrambleTimerId) {
       window.clearTimeout(randomScrambleTimerId);
       randomScrambleTimerId = null;
     }
@@ -114,7 +116,7 @@ const isTapGesture = (start, event) => {
 
   return (
     Math.hypot(event.clientX - start.x, event.clientY - start.y) <=
-    TOUCH_TAP_MOVE_TOLERANCE
+    TOUCH_TAP_MOVE_TOLERANCE_PX
   );
 };
 const getScrambleDuration = (duration, mobileDuration) => {
@@ -187,11 +189,9 @@ const ScramblePiece = ({
   enableRandomScramble = false,
 }) => {
   const pieceRef = useRef(null);
-  const lastTouchTriggerRef = useRef(0);
+  const lastLocalTriggerRef = useRef(0);
   const [localTriggerKey, setLocalTriggerKey] = useState(0);
-  const [displayChars, setDisplayChars] = useState(() =>
-    Array.from(text, (ch) => ({ ch, scrambling: false })),
-  );
+  const [displayChars, setDisplayChars] = useState(() => getSettledChars(text));
 
   const triggerLocalScramble = useCallback(() => {
     if (!text.trim()) {
@@ -200,16 +200,16 @@ const ScramblePiece = ({
 
     const now = performance.now();
 
-    if (now - lastTouchTriggerRef.current < SCRAMBLE_TRIGGER_COOLDOWN_MS) {
+    if (now - lastLocalTriggerRef.current < SCRAMBLE_TRIGGER_COOLDOWN_MS) {
       return;
     }
 
-    lastTouchTriggerRef.current = now;
+    lastLocalTriggerRef.current = now;
     setLocalTriggerKey((key) => key + 1);
   }, [text]);
 
   useEffect(() => {
-    setDisplayChars(Array.from(text, (ch) => ({ ch, scrambling: false })));
+    setDisplayChars(getSettledChars(text));
   }, [text]);
 
   useEffect(() => {
@@ -267,7 +267,7 @@ const ScramblePiece = ({
         return;
       }
 
-      setDisplayChars(chars.map((ch) => ({ ch, scrambling: false })));
+      setDisplayChars(getSettledChars(text));
     };
 
     rafId = requestAnimationFrame(animate);
@@ -326,9 +326,9 @@ const TextScramble = ({
   const rootRef = useRef(null);
   const fullTouchStartRef = useRef(null);
   const wordTouchStartRef = useRef(null);
-  const lastFullTouchTriggerRef = useRef(0);
+  const lastTouchTriggerRef = useRef(0);
   const parts = useMemo(() => flattenChildren(children), [children]);
-  const randomScrambleEnabled =
+  const isRandomScrambleEnabled =
     allowRandomScramble && (rescrambleOnHover || scrambleOnWordHover);
   const [triggerKey, setTriggerKey] = useState(0);
   const [wordTriggerKeys, setWordTriggerKeys] = useState({});
@@ -351,11 +351,11 @@ const TextScramble = ({
   const triggerTouchScramble = useCallback(() => {
     const now = performance.now();
 
-    if (now - lastFullTouchTriggerRef.current < SCRAMBLE_TRIGGER_COOLDOWN_MS) {
+    if (now - lastTouchTriggerRef.current < SCRAMBLE_TRIGGER_COOLDOWN_MS) {
       return;
     }
 
-    lastFullTouchTriggerRef.current = now;
+    lastTouchTriggerRef.current = now;
 
     if (scrambleOnWordHover) {
       rootRef.current
@@ -377,12 +377,12 @@ const TextScramble = ({
   }, [delay, scrambleOnMount, triggerFullScramble]);
 
   useEffect(() => {
-    if (!randomScrambleEnabled) {
+    if (!isRandomScrambleEnabled) {
       return undefined;
     }
 
     return subscribeRandomScramble();
-  }, [randomScrambleEnabled]);
+  }, [isRandomScrambleEnabled]);
 
   const handleMouseEnter = useCallback(() => {
     if (!rescrambleOnHover || scrambleOnWordHover || !canHoverScramble()) {
@@ -481,153 +481,67 @@ const TextScramble = ({
   );
 
   return (
-    <>
-      <style jsx global>{`
-        @keyframes colorCycle {
-          0% {
-            color: rgb(190, 160, 220);
-          }
-          8% {
-            color: rgb(210, 145, 200);
-          }
-          16% {
-            color: rgb(225, 160, 185);
-          }
-          24% {
-            color: rgb(230, 180, 170);
-          }
-          32% {
-            color: rgb(225, 195, 140);
-          }
-          40% {
-            color: rgb(215, 210, 120);
-          }
-          48% {
-            color: rgb(185, 215, 130);
-          }
-          56% {
-            color: rgb(155, 205, 155);
-          }
-          64% {
-            color: rgb(140, 200, 180);
-          }
-          72% {
-            color: rgb(140, 195, 210);
-          }
-          80% {
-            color: rgb(150, 185, 220);
-          }
-          88% {
-            color: rgb(175, 175, 225);
-          }
-          100% {
-            color: rgb(190, 160, 220);
-          }
-        }
-
-        .scramble-text,
-        .scramble-piece,
-        .scramble-placeholder,
-        .scramble-animated,
-        .scramble-letter {
-          font-family: inherit;
-        }
-
-        .scramble-piece {
-          display: inline-block;
-          position: relative;
-          white-space: pre;
-        }
-
-        .scramble-placeholder {
-          visibility: hidden;
-        }
-
-        .scramble-animated {
-          left: 0;
-          position: absolute;
-          top: 0;
-          white-space: pre;
-        }
-
-        .scramble-char {
-          animation: colorCycle 0.5s linear infinite;
-          will-change: color;
-        }
-
-        .scramble-word {
-          cursor: default;
-        }
-
-        @media (max-width: 768px) {
-          .scramble-char {
-            animation: colorCycle 0.45s linear infinite;
-          }
-        }
-      `}</style>
-
-      <span
-        ref={rootRef}
-        className={`scramble-text ${className}`}
-        onMouseEnter={handleMouseEnter}
-        onPointerDown={handlePointerDown}
-        onPointerUp={handlePointerUp}
-        onPointerMove={handleWordPointerMove}
-      >
-        {parts.map((part, partIndex) => {
-          if (part.type === "link") {
-            return (
-              <a key={partIndex} {...part.props}>
-                {part.text}
-              </a>
-            );
-          }
-
-          if (scrambleOnWordHover) {
-            return splitWords(part.text).map((word, wordIndex) => {
-              const key = `${partIndex}-${wordIndex}`;
-
-              if (!word.trim()) {
-                return <React.Fragment key={key}>{word}</React.Fragment>;
-              }
-
-              return (
-                <ScramblePiece
-                  key={key}
-                  text={word}
-                  triggerKey={wordTriggerKeys[key] || 0}
-                  duration={revealDuration}
-                  mobileDuration={mobileRevealDuration}
-                  className="scramble-piece scramble-word"
-                  isWord
-                  enableTouchBrush={scrambleOnWordTouchMove}
-                  enableRandomScramble={randomScrambleEnabled}
-                  onMouseEnter={() => triggerWordScramble(key)}
-                  onPointerDown={
-                    scrambleOnWordTouch ? handleWordPointerDown : undefined
-                  }
-                  onPointerUp={
-                    scrambleOnWordTouch ? handleWordPointerUp : undefined
-                  }
-                />
-              );
-            });
-          }
-
+    <span
+      ref={rootRef}
+      className={`scramble-text ${className}`}
+      onMouseEnter={handleMouseEnter}
+      onPointerDown={handlePointerDown}
+      onPointerUp={handlePointerUp}
+      onPointerMove={handleWordPointerMove}
+    >
+      {parts.map((part, partIndex) => {
+        if (part.type === "link") {
           return (
-            <ScramblePiece
-              key={partIndex}
-              text={part.text}
-              triggerKey={triggerKey}
-              duration={revealDuration}
-              mobileDuration={mobileRevealDuration}
-              className="scramble-piece"
-              enableRandomScramble={randomScrambleEnabled}
-            />
+            <a key={partIndex} {...part.props}>
+              {part.text}
+            </a>
           );
-        })}
-      </span>
-    </>
+        }
+
+        if (scrambleOnWordHover) {
+          return splitWords(part.text).map((word, wordIndex) => {
+            const key = `${partIndex}-${wordIndex}`;
+
+            if (!word.trim()) {
+              return <React.Fragment key={key}>{word}</React.Fragment>;
+            }
+
+            return (
+              <ScramblePiece
+                key={key}
+                text={word}
+                triggerKey={wordTriggerKeys[key] || 0}
+                duration={revealDuration}
+                mobileDuration={mobileRevealDuration}
+                className="scramble-piece scramble-word"
+                isWord
+                enableTouchBrush={scrambleOnWordTouchMove}
+                enableRandomScramble={isRandomScrambleEnabled}
+                onMouseEnter={() => triggerWordScramble(key)}
+                onPointerDown={
+                  scrambleOnWordTouch ? handleWordPointerDown : undefined
+                }
+                onPointerUp={
+                  scrambleOnWordTouch ? handleWordPointerUp : undefined
+                }
+              />
+            );
+          });
+        }
+
+        return (
+          <ScramblePiece
+            key={partIndex}
+            text={part.text}
+            triggerKey={triggerKey}
+            duration={revealDuration}
+            mobileDuration={mobileRevealDuration}
+            className="scramble-piece"
+            enableRandomScramble={isRandomScrambleEnabled}
+          />
+        );
+      })}
+    </span>
   );
 };
 
