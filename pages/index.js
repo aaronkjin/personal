@@ -17,6 +17,7 @@ const introSentenceFive =
 
 const INTRO_WORD_DELAY = 28;
 const INTRO_START_DELAY = 100;
+const INTRO_SCRAMBLE_DURATION = 540;
 const splitIntroWords = (text) => text.trim().split(/\s+/).filter(Boolean);
 const getIntroWordDelay = (startDelay, index) =>
   startDelay + index * INTRO_WORD_DELAY;
@@ -44,7 +45,10 @@ const IntroWords = ({ text, startDelay }) => (
           mobileOffset="0.12rem"
           className="inline-block"
         >
-          <TextScramble revealDuration={450} scrambleOnWordHover>
+          <TextScramble
+            revealDuration={INTRO_SCRAMBLE_DURATION}
+            scrambleOnWordHover
+          >
             {word}
           </TextScramble>
         </FadeIn>

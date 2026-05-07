@@ -135,16 +135,21 @@ const ScramblePiece = ({
   }, [duration, mobileDuration, text, triggerKey]);
 
   return (
-    <span className={className} onMouseEnter={onMouseEnter}>
-      {displayChars.map(({ ch, scrambling }, index) => (
-        <span
-          key={index}
-          className={`scramble-letter ${scrambling ? "scramble-char" : ""}`}
-          style={{ animationDelay: `${-index * 0.05}s` }}
-        >
-          {ch}
-        </span>
-      ))}
+    <span className={className} onMouseEnter={onMouseEnter} aria-label={text}>
+      <span className="scramble-placeholder" aria-hidden="true">
+        {text}
+      </span>
+      <span className="scramble-animated" aria-hidden="true">
+        {displayChars.map(({ ch, scrambling }, index) => (
+          <span
+            key={index}
+            className={`scramble-letter ${scrambling ? "scramble-char" : ""}`}
+            style={{ animationDelay: `${-index * 0.05}s` }}
+          >
+            {ch}
+          </span>
+        ))}
+      </span>
     </span>
   );
 };
@@ -242,8 +247,27 @@ const TextScramble = ({
 
         .scramble-text,
         .scramble-piece,
+        .scramble-placeholder,
+        .scramble-animated,
         .scramble-letter {
           font-family: inherit;
+        }
+
+        .scramble-piece {
+          display: inline-block;
+          position: relative;
+          white-space: pre;
+        }
+
+        .scramble-placeholder {
+          visibility: hidden;
+        }
+
+        .scramble-animated {
+          left: 0;
+          position: absolute;
+          top: 0;
+          white-space: pre;
         }
 
         .scramble-char {
