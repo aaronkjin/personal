@@ -12,6 +12,10 @@ const Socials = ({ className }) => {
       link: "https://www.github.com/aaronkjin",
     },
     {
+      title: "X",
+      link: "https://x.com/gunnyjin",
+    },
+    {
       title: "Email",
       link: "mailto:aaronjin@alumni.stanford.edu",
     },
