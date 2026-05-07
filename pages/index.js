@@ -48,6 +48,8 @@ const IntroWords = ({ text, startDelay }) => (
           <TextScramble
             revealDuration={INTRO_SCRAMBLE_DURATION}
             scrambleOnWordHover
+            scrambleOnWordTouch
+            scrambleOnWordTouchMove
           >
             {word}
           </TextScramble>
@@ -76,6 +78,7 @@ export default function Home() {
                 mobileRevealDuration={420}
                 scrambleOnMount
                 rescrambleOnHover
+                rescrambleOnTouch
               >
                 Aaron Jin
               </TextScramble>
@@ -145,7 +148,7 @@ export default function Home() {
             <div>
               <div className="w-full p-2">
                 <h1 className="font-baskerville font-bold text-xs tablet:text-sm">
-                  <TextScramble revealDuration={450} rescrambleOnHover>
+                  <TextScramble revealDuration={450} rescrambleOnHover rescrambleOnTouch>
                     Projects
                   </TextScramble>
                 </h1>
@@ -159,7 +162,7 @@ export default function Home() {
                     <div>
                       <div className="flex items-center gap-2">
                         <h3 className="font-baskerville font-bold">
-                          <TextScramble revealDuration={450} rescrambleOnHover>
+                          <TextScramble revealDuration={450} rescrambleOnHover rescrambleOnTouch>
                             Ivey
                           </TextScramble>
                         </h3>
@@ -173,7 +176,7 @@ export default function Home() {
                         </a>
                       </div>
                       <p className="text-sm tablet:text-base text-gray-500">
-                        <TextScramble revealDuration={450} scrambleOnWordHover>
+                        <TextScramble revealDuration={450} scrambleOnWordHover rescrambleOnTouch>
                           An RL poker engine
                         </TextScramble>
                       </p>
@@ -185,7 +188,7 @@ export default function Home() {
                     <div>
                       <div className="flex items-center gap-2">
                         <h3 className="font-baskerville font-bold">
-                          <TextScramble revealDuration={450} rescrambleOnHover>
+                          <TextScramble revealDuration={450} rescrambleOnHover rescrambleOnTouch>
                             GPT2
                           </TextScramble>
                         </h3>
@@ -199,7 +202,7 @@ export default function Home() {
                         </a>
                       </div>
                       <p className="text-sm tablet:text-base text-gray-500">
-                        <TextScramble revealDuration={450} scrambleOnWordHover>
+                        <TextScramble revealDuration={450} scrambleOnWordHover rescrambleOnTouch>
                           A decoder-only, autoregressive transformer
                         </TextScramble>
                       </p>
@@ -211,7 +214,7 @@ export default function Home() {
                     <div>
                       <div className="flex items-center gap-2">
                         <h3 className="font-baskerville font-bold">
-                          <TextScramble revealDuration={450} rescrambleOnHover>
+                          <TextScramble revealDuration={450} rescrambleOnHover rescrambleOnTouch>
                             PolymarketFM
                           </TextScramble>
                         </h3>
@@ -225,7 +228,7 @@ export default function Home() {
                         </a>
                       </div>
                       <p className="text-sm tablet:text-base text-gray-500">
-                        <TextScramble revealDuration={450} scrambleOnWordHover>
+                        <TextScramble revealDuration={450} scrambleOnWordHover rescrambleOnTouch>
                           A foundation model for prediction market forecasting
                         </TextScramble>
                       </p>
@@ -237,7 +240,7 @@ export default function Home() {
                     <div>
                       <div className="flex items-center gap-2">
                         <h3 className="font-baskerville font-bold">
-                          <TextScramble revealDuration={450} rescrambleOnHover>
+                          <TextScramble revealDuration={450} rescrambleOnHover rescrambleOnTouch>
                             PocketNeRF
                           </TextScramble>
                         </h3>
@@ -251,7 +254,7 @@ export default function Home() {
                         </a>
                       </div>
                       <p className="text-sm tablet:text-base text-gray-500">
-                        <TextScramble revealDuration={450} scrambleOnWordHover>
+                        <TextScramble revealDuration={450} scrambleOnWordHover rescrambleOnTouch>
                           A phone-to-3D indoor reconstruction pipeline
                         </TextScramble>
                       </p>
@@ -263,7 +266,7 @@ export default function Home() {
                     <div>
                       <div className="flex items-center gap-2">
                         <h3 className="font-baskerville font-bold">
-                          <TextScramble revealDuration={450} rescrambleOnHover>
+                          <TextScramble revealDuration={450} rescrambleOnHover rescrambleOnTouch>
                             Tungsten
                           </TextScramble>
                         </h3>
@@ -277,7 +280,7 @@ export default function Home() {
                         </a>
                       </div>
                       <p className="text-sm tablet:text-base text-gray-500">
-                        <TextScramble revealDuration={450} scrambleOnWordHover>
+                        <TextScramble revealDuration={450} scrambleOnWordHover rescrambleOnTouch>
                           A compiler built from scratch with no libraries
                         </TextScramble>
                       </p>
@@ -291,7 +294,7 @@ export default function Home() {
                     <div>
                       <div className="flex items-center gap-2">
                         <h3 className="font-baskerville font-bold">
-                          <TextScramble revealDuration={450} rescrambleOnHover>
+                          <TextScramble revealDuration={450} rescrambleOnHover rescrambleOnTouch>
                             Flow
                           </TextScramble>
                         </h3>
@@ -305,7 +308,7 @@ export default function Home() {
                         </a>
                       </div>
                       <p className="text-sm tablet:text-base text-gray-500">
-                        <TextScramble revealDuration={450} scrambleOnWordHover>
+                        <TextScramble revealDuration={450} scrambleOnWordHover rescrambleOnTouch>
                           A vibe-automation platform for knowledge work
                         </TextScramble>
                       </p>
@@ -317,7 +320,7 @@ export default function Home() {
                     <div>
                       <div className="flex items-center gap-2">
                         <h3 className="font-baskerville font-bold">
-                          <TextScramble revealDuration={450} rescrambleOnHover>
+                          <TextScramble revealDuration={450} rescrambleOnHover rescrambleOnTouch>
                             Roam
                           </TextScramble>
                         </h3>
@@ -331,7 +334,7 @@ export default function Home() {
                         </a>
                       </div>
                       <p className="text-sm tablet:text-base text-gray-500">
-                        <TextScramble revealDuration={450} scrambleOnWordHover>
+                        <TextScramble revealDuration={450} scrambleOnWordHover rescrambleOnTouch>
                           An AI platform that turns your inspos into curated
                           trips
                         </TextScramble>
@@ -344,7 +347,7 @@ export default function Home() {
                     <div>
                       <div className="flex items-center gap-2">
                         <h3 className="font-baskerville font-bold">
-                          <TextScramble revealDuration={450} rescrambleOnHover>
+                          <TextScramble revealDuration={450} rescrambleOnHover rescrambleOnTouch>
                             Slop
                           </TextScramble>
                         </h3>
@@ -358,7 +361,7 @@ export default function Home() {
                         </a>
                       </div>
                       <p className="text-sm tablet:text-base text-gray-500">
-                        <TextScramble revealDuration={450} scrambleOnWordHover>
+                        <TextScramble revealDuration={450} scrambleOnWordHover rescrambleOnTouch>
                           An AI video generator for viral TikToks
                         </TextScramble>
                       </p>
@@ -370,7 +373,7 @@ export default function Home() {
                     <div>
                       <div className="flex items-center gap-2">
                         <h3 className="font-baskerville font-bold">
-                          <TextScramble revealDuration={450} rescrambleOnHover>
+                          <TextScramble revealDuration={450} rescrambleOnHover rescrambleOnTouch>
                             Jaike
                           </TextScramble>
                         </h3>
@@ -384,7 +387,7 @@ export default function Home() {
                         </a>
                       </div>
                       <p className="text-sm tablet:text-base text-gray-500">
-                        <TextScramble revealDuration={450} scrambleOnWordHover>
+                        <TextScramble revealDuration={450} scrambleOnWordHover rescrambleOnTouch>
                           A lecture-to-brainrot web app
                         </TextScramble>
                       </p>
@@ -396,7 +399,7 @@ export default function Home() {
                     <div>
                       <div className="flex items-center gap-2">
                         <h3 className="font-baskerville font-bold">
-                          <TextScramble revealDuration={450} rescrambleOnHover>
+                          <TextScramble revealDuration={450} rescrambleOnHover rescrambleOnTouch>
                             Mentore
                           </TextScramble>
                         </h3>
@@ -410,7 +413,7 @@ export default function Home() {
                         </a>
                       </div>
                       <p className="text-sm tablet:text-base text-gray-500">
-                        <TextScramble revealDuration={450} scrambleOnWordHover>
+                        <TextScramble revealDuration={450} scrambleOnWordHover rescrambleOnTouch>
                           An AI search platform for mentors
                         </TextScramble>
                       </p>
@@ -442,7 +445,7 @@ export default function Home() {
                     <div>
                       <div className="flex items-center gap-2">
                         <h3 className="font-baskerville font-bold">
-                          <TextScramble revealDuration={450} rescrambleOnHover>
+                          <TextScramble revealDuration={450} rescrambleOnHover rescrambleOnTouch>
                             Jonin
                           </TextScramble>
                         </h3>
@@ -456,7 +459,7 @@ export default function Home() {
                         </a>
                       </div>
                       <p className="text-sm tablet:text-base text-gray-500">
-                        <TextScramble revealDuration={450} scrambleOnWordHover>
+                        <TextScramble revealDuration={450} scrambleOnWordHover rescrambleOnTouch>
                           A pixel ninja platformer game
                         </TextScramble>
                       </p>

@@ -1,12 +1,45 @@
-import React, { useCallback, useEffect, useMemo, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
 const GLITCH = "abcdefghijklmnopqrstuvwxyz!?:;@#$%&";
 const WORD_PATTERN = /(\s+|[^\s]+)/g;
+const TOUCH_SCRAMBLE_EVENT = "text-scramble-request";
+const TOUCH_SCRAMBLE_COOLDOWN_MS = 650;
+const TOUCH_TAP_MOVE_TOLERANCE = 10;
 
 const randomChar = () => GLITCH[(Math.random() * GLITCH.length) | 0];
 const canHoverScramble = () =>
   typeof window !== "undefined" &&
-  window.matchMedia("(min-width: 768px)").matches;
+  window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+const canTouchScramble = (event) => {
+  if (typeof window === "undefined") {
+    return false;
+  }
+
+  if (event?.pointerType) {
+    return event.pointerType !== "mouse";
+  }
+
+  return window.matchMedia("(hover: none), (pointer: coarse)").matches;
+};
+const dispatchScrambleRequest = (element) => {
+  element?.dispatchEvent?.(new Event(TOUCH_SCRAMBLE_EVENT));
+};
+const isInteractiveTarget = (target) =>
+  target?.closest?.("a, button, input, textarea, select, [role='button']");
+const getPointerPoint = (event) => ({
+  x: event.clientX,
+  y: event.clientY,
+});
+const isTapGesture = (start, event) => {
+  if (!start) {
+    return false;
+  }
+
+  return (
+    Math.hypot(event.clientX - start.x, event.clientY - start.y) <=
+    TOUCH_TAP_MOVE_TOLERANCE
+  );
+};
 const getScrambleDuration = (duration, mobileDuration) => {
   if (
     typeof window !== "undefined" &&
@@ -69,18 +102,52 @@ const ScramblePiece = ({
   duration,
   mobileDuration,
   onMouseEnter,
+  onPointerDown,
+  onPointerUp,
   className = "",
+  isWord = false,
+  enableTouchBrush = false,
 }) => {
+  const pieceRef = useRef(null);
+  const lastTouchTriggerRef = useRef(0);
+  const [localTriggerKey, setLocalTriggerKey] = useState(0);
   const [displayChars, setDisplayChars] = useState(() =>
     Array.from(text, (ch) => ({ ch, scrambling: false }))
   );
+
+  const triggerLocalScramble = useCallback(() => {
+    if (!text.trim()) {
+      return;
+    }
+
+    const now = performance.now();
+
+    if (now - lastTouchTriggerRef.current < TOUCH_SCRAMBLE_COOLDOWN_MS) {
+      return;
+    }
+
+    lastTouchTriggerRef.current = now;
+    setLocalTriggerKey((key) => key + 1);
+  }, [text]);
 
   useEffect(() => {
     setDisplayChars(Array.from(text, (ch) => ({ ch, scrambling: false })));
   }, [text]);
 
   useEffect(() => {
-    if (!triggerKey || !text.trim()) {
+    const element = pieceRef.current;
+
+    if (!element) {
+      return undefined;
+    }
+
+    element.addEventListener(TOUCH_SCRAMBLE_EVENT, triggerLocalScramble);
+    return () =>
+      element.removeEventListener(TOUCH_SCRAMBLE_EVENT, triggerLocalScramble);
+  }, [triggerLocalScramble]);
+
+  useEffect(() => {
+    if ((!triggerKey && !localTriggerKey) || !text.trim()) {
       return;
     }
 
@@ -132,10 +199,19 @@ const ScramblePiece = ({
         cancelAnimationFrame(rafId);
       }
     };
-  }, [duration, mobileDuration, text, triggerKey]);
+  }, [duration, localTriggerKey, mobileDuration, text, triggerKey]);
 
   return (
-    <span className={className} onMouseEnter={onMouseEnter} aria-label={text}>
+    <span
+      ref={pieceRef}
+      className={className}
+      onMouseEnter={onMouseEnter}
+      onPointerDown={onPointerDown}
+      onPointerUp={onPointerUp}
+      aria-label={text}
+      data-scramble-word={isWord ? "" : undefined}
+      data-scramble-brush-word={enableTouchBrush ? "" : undefined}
+    >
       <span className="scramble-placeholder" aria-hidden="true">
         {text}
       </span>
@@ -161,9 +237,16 @@ const TextScramble = ({
   mobileRevealDuration,
   className = "",
   rescrambleOnHover = false,
+  rescrambleOnTouch = false,
   scrambleOnMount = false,
   scrambleOnWordHover = false,
+  scrambleOnWordTouch = false,
+  scrambleOnWordTouchMove = false,
 }) => {
+  const rootRef = useRef(null);
+  const fullTouchStartRef = useRef(null);
+  const wordTouchStartRef = useRef(null);
+  const lastFullTouchTriggerRef = useRef(0);
   const parts = useMemo(() => flattenChildren(children), [children]);
   const [triggerKey, setTriggerKey] = useState(0);
   const [wordTriggerKeys, setWordTriggerKeys] = useState({});
@@ -183,6 +266,25 @@ const TextScramble = ({
     }));
   }, []);
 
+  const triggerTouchScramble = useCallback(() => {
+    const now = performance.now();
+
+    if (now - lastFullTouchTriggerRef.current < TOUCH_SCRAMBLE_COOLDOWN_MS) {
+      return;
+    }
+
+    lastFullTouchTriggerRef.current = now;
+
+    if (scrambleOnWordHover) {
+      rootRef.current
+        ?.querySelectorAll("[data-scramble-word]")
+        .forEach(dispatchScrambleRequest);
+      return;
+    }
+
+    triggerFullScramble();
+  }, [scrambleOnWordHover, triggerFullScramble]);
+
   useEffect(() => {
     if (!scrambleOnMount) {
       return undefined;
@@ -199,6 +301,94 @@ const TextScramble = ({
 
     triggerFullScramble();
   }, [rescrambleOnHover, scrambleOnWordHover, triggerFullScramble]);
+
+  const handlePointerDown = useCallback(
+    (event) => {
+      if (
+        !rescrambleOnTouch ||
+        !canTouchScramble(event) ||
+        isInteractiveTarget(event.target)
+      ) {
+        return;
+      }
+
+      fullTouchStartRef.current = getPointerPoint(event);
+    },
+    [rescrambleOnTouch]
+  );
+
+  const handlePointerUp = useCallback(
+    (event) => {
+      const start = fullTouchStartRef.current;
+      fullTouchStartRef.current = null;
+
+      if (
+        !rescrambleOnTouch ||
+        !canTouchScramble(event) ||
+        isInteractiveTarget(event.target) ||
+        !isTapGesture(start, event)
+      ) {
+        return;
+      }
+
+      triggerTouchScramble();
+    },
+    [rescrambleOnTouch, triggerTouchScramble]
+  );
+
+  const handleWordPointerDown = useCallback(
+    (event) => {
+      if (
+        !scrambleOnWordTouch ||
+        !canTouchScramble(event) ||
+        isInteractiveTarget(event.target)
+      ) {
+        return;
+      }
+
+      wordTouchStartRef.current = {
+        ...getPointerPoint(event),
+        target: event.currentTarget,
+      };
+    },
+    [scrambleOnWordTouch]
+  );
+
+  const handleWordPointerUp = useCallback(
+    (event) => {
+      const start = wordTouchStartRef.current;
+      wordTouchStartRef.current = null;
+
+      if (
+        !scrambleOnWordTouch ||
+        !canTouchScramble(event) ||
+        isInteractiveTarget(event.target) ||
+        !isTapGesture(start, event)
+      ) {
+        return;
+      }
+
+      dispatchScrambleRequest(start.target || event.currentTarget);
+    },
+    [scrambleOnWordTouch]
+  );
+
+  const handleWordPointerMove = useCallback(
+    (event) => {
+      if (!scrambleOnWordTouchMove || !canTouchScramble(event)) {
+        return;
+      }
+
+      const target = document.elementFromPoint(event.clientX, event.clientY);
+
+      if (isInteractiveTarget(target)) {
+        return;
+      }
+
+      dispatchScrambleRequest(target?.closest?.("[data-scramble-brush-word]"));
+    },
+    [scrambleOnWordTouchMove]
+  );
 
   return (
     <>
@@ -287,8 +477,12 @@ const TextScramble = ({
       `}</style>
 
       <span
+        ref={rootRef}
         className={`scramble-text ${className}`}
         onMouseEnter={handleMouseEnter}
+        onPointerDown={handlePointerDown}
+        onPointerUp={handlePointerUp}
+        onPointerMove={handleWordPointerMove}
       >
         {parts.map((part, partIndex) => {
           if (part.type === "link") {
@@ -315,7 +509,15 @@ const TextScramble = ({
                   duration={revealDuration}
                   mobileDuration={mobileRevealDuration}
                   className="scramble-piece scramble-word"
+                  isWord
+                  enableTouchBrush={scrambleOnWordTouchMove}
                   onMouseEnter={() => triggerWordScramble(key)}
+                  onPointerDown={
+                    scrambleOnWordTouch ? handleWordPointerDown : undefined
+                  }
+                  onPointerUp={
+                    scrambleOnWordTouch ? handleWordPointerUp : undefined
+                  }
                 />
               );
             });
