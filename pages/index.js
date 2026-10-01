@@ -291,6 +291,7 @@ export default function Home() {
     <Layout>
       <Head>
         <title>Aaron Jin</title>
+        <link rel="icon" type="image/png" href="/favicon.ico?v=2" />
       </Head>
 
       <IntroSection />
