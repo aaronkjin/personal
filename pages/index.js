@@ -10,9 +10,9 @@ import TextScramble from "../components/TextScramble";
 const INTRO_COPY = {
   education: "I'm a Stanford BS/MS CS grad.",
   currentRole:
-    "Currently, I'm building high-throughput data pipelines for training/post-training LLMs at ",
+    "Currently, I'm working on data pipelines, infra, and evals for post-training LLMs at ",
   previousPlatform:
-    "Previously, I made a distributed benchmarking platform to orchestrate model evals at LinkedIn.",
+    "Previously, I built a distributed benchmarking platform to orchestrate evals at LinkedIn.",
   previousApple:
     "I also integrated Apple Intelligence into Safari Suggestions and built predictive battery performance models at Apple.",
 };

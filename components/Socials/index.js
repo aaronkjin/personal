@@ -11,10 +11,6 @@ const SOCIAL_LINKS = [
     href: "https://www.github.com/aaronkjin",
   },
   {
-    title: "X",
-    href: "https://x.com/gunnyjin",
-  },
-  {
     title: "Email",
     href: "mailto:aaronjin@alumni.stanford.edu",
   },

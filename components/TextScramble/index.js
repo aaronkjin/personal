@@ -71,7 +71,8 @@ const getRandomScrambleTarget = () => {
 const scheduleRandomScramble = () => {
   if (
     typeof window === "undefined" ||
-    randomScrambleTimerId ||
+    document.hidden ||
+    randomScrambleTimerId !== null ||
     randomScrambleSubscriptionCount <= 0
   ) {
     return;
@@ -79,9 +80,22 @@ const scheduleRandomScramble = () => {
 
   randomScrambleTimerId = window.setTimeout(() => {
     randomScrambleTimerId = null;
-    dispatchScrambleRequest(getRandomScrambleTarget());
+    if (!document.hidden) {
+      dispatchScrambleRequest(getRandomScrambleTarget());
+    }
     scheduleRandomScramble();
   }, getRandomScrambleDelay());
+};
+const clearRandomScrambleTimer = () => {
+  if (randomScrambleTimerId !== null) {
+    window.clearTimeout(randomScrambleTimerId);
+    randomScrambleTimerId = null;
+  }
+};
+const handleScrambleVisibilityChange = () => {
+  // Discard background work and wait a fresh delay when the tab returns.
+  clearRandomScrambleTimer();
+  scheduleRandomScramble();
 };
 const subscribeRandomScramble = () => {
   if (typeof window === "undefined") {
@@ -89,6 +103,9 @@ const subscribeRandomScramble = () => {
   }
 
   randomScrambleSubscriptionCount += 1;
+  if (randomScrambleSubscriptionCount === 1) {
+    document.addEventListener("visibilitychange", handleScrambleVisibilityChange);
+  }
   scheduleRandomScramble();
 
   return () => {
@@ -97,9 +114,9 @@ const subscribeRandomScramble = () => {
       randomScrambleSubscriptionCount - 1,
     );
 
-    if (!randomScrambleSubscriptionCount && randomScrambleTimerId) {
-      window.clearTimeout(randomScrambleTimerId);
-      randomScrambleTimerId = null;
+    if (!randomScrambleSubscriptionCount) {
+      clearRandomScrambleTimer();
+      document.removeEventListener("visibilitychange", handleScrambleVisibilityChange);
     }
   };
 };
@@ -194,7 +211,7 @@ const ScramblePiece = ({
   const [displayChars, setDisplayChars] = useState(() => getSettledChars(text));
 
   const triggerLocalScramble = useCallback(() => {
-    if (!text.trim()) {
+    if (document.hidden || !text.trim()) {
       return;
     }
 
@@ -225,7 +242,7 @@ const ScramblePiece = ({
   }, [triggerLocalScramble]);
 
   useEffect(() => {
-    if ((!triggerKey && !localTriggerKey) || !text.trim()) {
+    if (document.hidden || (!triggerKey && !localTriggerKey) || !text.trim()) {
       return;
     }
 
@@ -236,8 +253,24 @@ const ScramblePiece = ({
     const actualDuration = getScrambleDuration(duration, mobileDuration);
     const perChar = actualDuration / Math.max(1, chars.length);
 
+    const settle = () => {
+      if (rafId !== null) {
+        cancelAnimationFrame(rafId);
+        rafId = null;
+      }
+      setDisplayChars(getSettledChars(text));
+    };
+    const handleVisibilityChange = () => {
+      if (document.hidden) {
+        settle();
+      }
+    };
     const animate = (timestamp) => {
-      if (!startTime) {
+      if (document.hidden) {
+        settle();
+        return;
+      }
+      if (startTime === null) {
         startTime = timestamp;
       }
 
@@ -270,10 +303,12 @@ const ScramblePiece = ({
       setDisplayChars(getSettledChars(text));
     };
 
+    document.addEventListener("visibilitychange", handleVisibilityChange);
     rafId = requestAnimationFrame(animate);
 
     return () => {
-      if (rafId) {
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
+      if (rafId !== null) {
         cancelAnimationFrame(rafId);
       }
     };
@@ -334,11 +369,14 @@ const TextScramble = ({
   const [wordTriggerKeys, setWordTriggerKeys] = useState({});
 
   const triggerFullScramble = useCallback(() => {
+    if (document.hidden) {
+      return;
+    }
     setTriggerKey((key) => key + 1);
   }, []);
 
   const triggerWordScramble = useCallback((key) => {
-    if (!canHoverScramble()) {
+    if (document.hidden || !canHoverScramble()) {
       return;
     }
 
