@@ -10,7 +10,7 @@ import TextScramble from "../components/TextScramble";
 const INTRO_COPY = {
   education: "I'm a Stanford BS/MS CS grad.",
   currentRole:
-    "Currently, I'm working on data pipelines, infra, and evals for post-training LLMs at ",
+    "Currently, I'm working on data pipelines and RL environments for post-training LLMs at ",
   previousPlatform:
     "Previously, I built a distributed benchmarking platform to orchestrate evals at LinkedIn.",
   previousApple:
